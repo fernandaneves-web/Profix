@@ -10,14 +10,12 @@
   --roxo:#6600ff;--roxo-d:#4d00cc;--roxo-l:#f0e6ff;--roxo-xl:#f8f2ff;
   --verde:#55cc99;--verde-d:#3aaa7a;--verde-l:#eafaf4;
   --azul:#141b2e;--azul-m:#1e2a45;
-  --branco:#ededed;--white:#fff;
   --text:#141b2e;--text2:#4a5568;--border:#e2e8f0;--gray:#f8f9fa;
-  --amber:#f5a623;--amber-l:#fef8e7;--red:#e53e3e;--red-l:#fff5f5;
+  --amber-l:#fef8e7;--red:#e53e3e;--red-l:#fff5f5;
   --sw:290px;--font:'Poppins',sans-serif;
 }
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:var(--font);color:var(--text);background:#f4f5f8;display:flex;min-height:100vh;font-size:14px;line-height:1.6;}
-
 #sb{width:var(--sw);min-height:100vh;background:var(--azul);position:fixed;top:0;left:0;display:flex;flex-direction:column;z-index:100;overflow-y:auto;}
 .sb-brand{padding:20px 18px 16px;border-bottom:1px solid rgba(255,255,255,0.07);}
 .sb-brand img{max-height:40px;width:auto;display:block;}
@@ -33,39 +31,33 @@ body{font-family:var(--font);color:var(--text);background:#f4f5f8;display:flex;m
 .ni:hover{background:rgba(255,255,255,0.04);}
 .ni.active{background:rgba(102,0,255,0.15);border-left-color:var(--verde);}
 .ni.done .nn{background:var(--verde);color:var(--azul);}
-.ni.done .nt{color:rgba(255,255,255,0.4);}
 .nn{width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,0.07);color:rgba(255,255,255,0.35);font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .3s;}
 .ni.active .nn{background:var(--roxo);color:#fff;}
 .nt{font-size:12px;color:rgba(255,255,255,0.55);font-weight:500;line-height:1.3;}
 .ni.active .nt{color:#fff;font-weight:600;}
+.ni.done .nt{color:rgba(255,255,255,0.4);}
 .nck{margin-left:auto;color:var(--verde);font-size:12px;display:none;}
 .ni.done .nck{display:block;}
-
 #main{margin-left:var(--sw);flex:1;display:flex;flex-direction:column;min-height:100vh;}
 .mod{display:none;flex-direction:column;min-height:100vh;}
 .mod.on{display:flex;}
-
 .hero{background:var(--azul);padding:40px 48px 32px;position:relative;overflow:hidden;}
 .hero::after{content:'';position:absolute;right:-50px;top:-50px;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(102,0,255,0.15) 0%,transparent 70%);pointer-events:none;}
 .h-big{position:absolute;right:44px;bottom:-10px;font-size:130px;font-weight:800;color:rgba(255,255,255,0.03);line-height:1;pointer-events:none;}
-.h-tag{display:inline-flex;align-items:center;gap:5px;background:rgba(102,0,255,0.18);color:var(--roxo);border:1px solid rgba(102,0,255,0.25);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:2px;padding:3px 11px;border-radius:20px;margin-bottom:12px;}
+.h-tag{display:inline-flex;align-items:center;background:rgba(102,0,255,0.18);color:var(--roxo);border:1px solid rgba(102,0,255,0.25);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:2px;padding:3px 11px;border-radius:20px;margin-bottom:12px;}
 .h-title{font-size:30px;font-weight:800;color:#fff;line-height:1.15;margin-bottom:8px;max-width:560px;}
 .h-title span{color:var(--verde);}
 .h-sub{font-size:13px;color:rgba(255,255,255,0.48);max-width:500px;line-height:1.65;}
 .h-meta{display:flex;gap:18px;margin-top:18px;}
-.h-pill{display:flex;align-items:center;gap:5px;font-size:11px;color:rgba(255,255,255,0.32);}
-
-.ct{padding:40px 48px;flex:1;max-width:900px;}
+.h-pill{font-size:11px;color:rgba(255,255,255,0.32);}
+.ct{padding:40px 48px;flex:1;max-width:920px;}
 .sl{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:2.5px;color:var(--roxo);margin-bottom:12px;display:flex;align-items:center;gap:8px;}
 .sl::after{content:'';flex:1;height:1px;background:var(--border);}
 h2{font-size:21px;font-weight:700;color:var(--azul);margin-bottom:9px;line-height:1.2;}
-h3{font-size:14px;font-weight:600;color:var(--azul);margin-bottom:7px;}
 p{color:var(--text2);margin-bottom:13px;font-size:13px;}
 .sp{height:32px;}.sps{height:18px;}
-
 .concept{background:var(--roxo-xl);border:1px solid rgba(102,0,255,0.13);border-left:4px solid var(--roxo);border-radius:8px;padding:16px 20px;margin-bottom:20px;}
 .concept p{margin:0;color:var(--azul);font-size:13px;line-height:1.7;}
-
 .al{border-radius:8px;padding:13px 17px;margin-bottom:17px;display:flex;gap:11px;align-items:flex-start;}
 .al-ic{font-size:16px;flex-shrink:0;margin-top:1px;}
 .al-b{flex:1;}
@@ -79,15 +71,12 @@ p{color:var(--text2);margin-bottom:13px;font-size:13px;}
 .al-ok .al-t,.al-ok .al-tx{color:#1a5c40;}
 .al-i{background:var(--roxo-xl);border:1px solid rgba(102,0,255,0.13);}
 .al-i .al-t,.al-i .al-tx{color:var(--azul);}
-
 .g2{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-bottom:20px;}
 .g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:13px;margin-bottom:20px;}
-.card{background:#fff;border:1px solid var(--border);border-radius:10px;padding:16px;transition:all .2s;}
-.card:hover{border-color:var(--roxo);box-shadow:0 3px 14px rgba(102,0,255,0.07);}
+.card{background:#fff;border:1px solid var(--border);border-radius:10px;padding:16px;}
 .c-ic{font-size:20px;margin-bottom:7px;}
 .c-t{font-size:13px;font-weight:700;color:var(--azul);margin-bottom:4px;}
 .c-tx{font-size:12px;color:var(--text2);line-height:1.5;margin:0;}
-
 .clg{display:grid;grid-template-columns:repeat(3,1fr);gap:11px;margin-bottom:20px;}
 .clc{background:#fff;border:1px solid var(--border);border-radius:10px;overflow:hidden;}
 .clh{padding:11px 13px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;}
@@ -101,7 +90,6 @@ p{color:var(--text2);margin-bottom:13px;font-size:13px;}
 .bl{background:#e8f5ee;color:#1a5c40;}
 .bm{background:var(--amber-l);color:#7a5200;}
 .bh{background:var(--red-l);color:#822a2a;}
-
 .steps{display:flex;flex-direction:column;margin-bottom:20px;}
 .step{display:flex;gap:16px;padding-bottom:22px;position:relative;}
 .step::before{content:'';position:absolute;left:15px;top:32px;width:2px;height:calc(100% - 32px);background:var(--border);}
@@ -110,19 +98,16 @@ p{color:var(--text2);margin-bottom:13px;font-size:13px;}
 .s-b{flex:1;padding-top:4px;}
 .s-t{font-size:13px;font-weight:700;color:var(--azul);margin-bottom:3px;}
 .s-d{font-size:12px;color:var(--text2);line-height:1.6;margin:0;}
-
 .qg{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:20px;}
 .qg1{grid-template-columns:1fr;}
 .qc{background:#fff;border:1px solid var(--border);border-radius:9px;padding:13px 15px;cursor:pointer;transition:all .2s;}
-.qc:hover{border-color:var(--roxo);box-shadow:0 3px 10px rgba(102,0,255,0.07);transform:translateY(-1px);}
+.qc:hover{border-color:var(--roxo);transform:translateY(-1px);}
 .qn{font-size:9px;font-weight:700;color:var(--roxo);margin-bottom:4px;text-transform:uppercase;letter-spacing:1px;}
 .qt{font-size:12px;color:var(--text);font-weight:500;line-height:1.5;}
 .qw{font-size:11px;color:var(--text2);margin-top:7px;line-height:1.4;display:none;border-top:1px solid var(--border);padding-top:7px;}
 .qc.rv .qw{display:block;}
 .qc.rv{border-color:var(--roxo);background:var(--roxo-xl);}
-.qc.rv .qt{color:var(--azul);}
 .cp-hint{font-size:10px;color:var(--text2);text-align:center;margin-bottom:12px;}
-
 .case{background:#fff;border:1px solid var(--border);border-radius:11px;overflow:hidden;margin-bottom:20px;}
 .case-hd{background:var(--azul);padding:13px 20px;display:flex;align-items:center;gap:9px;}
 .ctag{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;padding:3px 9px;border-radius:4px;}
@@ -133,15 +118,12 @@ p{color:var(--text2);margin-bottom:13px;font-size:13px;}
 .cs-l{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text2);margin-bottom:4px;}
 .cs-tx{font-size:12px;color:var(--text2);line-height:1.6;margin:0;}
 .hl{background:var(--red-l);border-left:3px solid var(--red);padding:9px 13px;border-radius:0 6px 6px 0;font-size:12px;color:#822a2a;}
-
 .cklist{list-style:none;display:flex;flex-direction:column;gap:6px;margin-bottom:20px;}
 .cklist li{display:flex;align-items:flex-start;gap:9px;padding:10px 13px;background:#fff;border:1px solid var(--border);border-radius:7px;font-size:12px;color:var(--text2);cursor:pointer;transition:all .2s;}
-.cklist li:hover{border-color:var(--roxo);}
 .cb{width:17px;height:17px;border:2px solid var(--border);border-radius:4px;flex-shrink:0;margin-top:1px;display:flex;align-items:center;justify-content:center;transition:all .2s;font-size:10px;}
 .cklist li.ck{background:var(--verde-l);border-color:rgba(85,204,153,0.38);color:#1a5c40;}
 .cklist li.ck .cb{background:var(--verde);border-color:var(--verde);color:#fff;}
-.cklist li.ck .cb::after{content:'✓';}
-
+.cklist li.ck .cb::after{content:'&#10003;';}
 .quiz{background:#fff;border:1px solid var(--border);border-radius:11px;padding:20px;margin-bottom:13px;}
 .qq{font-size:14px;font-weight:700;color:var(--azul);margin-bottom:13px;}
 .qopts{display:flex;flex-direction:column;gap:6px;}
@@ -156,18 +138,25 @@ p{color:var(--text2);margin-bottom:13px;font-size:13px;}
 .qfb.on{display:block;}
 .qfb.ok-f{background:var(--verde-l);color:#1a5c40;border:1px solid rgba(85,204,153,0.28);}
 .qfb.no-f{background:var(--red-l);color:#822a2a;border:1px solid rgba(229,62,62,0.18);}
-
 .tbl{width:100%;border-collapse:collapse;background:#fff;border-radius:9px;overflow:hidden;border:1px solid var(--border);margin-bottom:20px;font-size:12px;}
 .tbl th{background:var(--azul);color:#fff;padding:10px 13px;text-align:left;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:1px;}
 .tbl td{padding:10px 13px;border-bottom:1px solid var(--border);color:var(--text2);vertical-align:top;}
 .tbl tr:last-child td{border-bottom:none;}
 .tbl tr:nth-child(even) td{background:#fafafa;}
 .tbl td:first-child{font-weight:600;color:var(--azul);}
-
+/* DYNAMIC TABLES */
+.dyn-table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--border);border-radius:8px;overflow:hidden;margin-bottom:8px;}
+.dyn-table th{padding:9px 12px;text-align:left;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#fff;}
+.dyn-table td{padding:7px 8px;border-bottom:1px solid var(--border);vertical-align:top;}
+.dyn-table tr:last-child td{border-bottom:none;}
+.dyn-table input,.dyn-table select{width:100%;border:1px solid var(--border);border-radius:5px;padding:5px 8px;font-family:var(--font);font-size:12px;color:var(--text);background:#fff;}
+.dyn-table input:focus,.dyn-table select:focus{outline:none;border-color:var(--roxo);}
+.btn-add{font-size:11px;background:var(--roxo-xl);color:var(--roxo);border:1px solid rgba(102,0,255,0.2);padding:6px 14px;border-radius:6px;cursor:pointer;font-family:var(--font);font-weight:700;margin-bottom:18px;transition:all .2s;}
+.btn-add:hover{background:var(--roxo-l);}
 /* ACTION BOX */
 .abox{background:#fff;border:1px solid var(--border);border-radius:10px;padding:20px;margin-bottom:20px;}
 .abox-title{font-size:13px;font-weight:700;color:var(--azul);margin-bottom:4px;display:flex;align-items:center;gap:8px;}
-.abox-title .abadge{font-size:9px;background:var(--roxo);color:#fff;padding:2px 8px;border-radius:10px;font-weight:600;text-transform:uppercase;letter-spacing:1px;}
+.abadge{font-size:9px;background:var(--roxo);color:#fff;padding:2px 8px;border-radius:10px;font-weight:600;text-transform:uppercase;letter-spacing:1px;}
 .abox-desc{font-size:11px;color:var(--text2);margin-bottom:14px;}
 .afield{margin-bottom:14px;}
 .afield:last-child{margin-bottom:0;}
@@ -175,46 +164,30 @@ p{color:var(--text2);margin-bottom:13px;font-size:13px;}
 .afield label span{font-weight:400;color:var(--text2);}
 .aa{width:100%;min-height:72px;border:1.5px solid var(--border);border-radius:7px;padding:10px 12px;font-family:var(--font);font-size:12px;color:var(--text);resize:vertical;transition:border .2s;background:#fff;}
 .aa:focus{outline:none;border-color:var(--roxo);box-shadow:0 0 0 3px rgba(102,0,255,0.07);}
-.aa-sm{min-height:44px;}
+.aa-sm{min-height:40px;}
 .sv-ok{font-size:10px;color:var(--verde-d);margin-top:3px;display:none;}
 .sv-ok.on{display:block;}
-
-/* RACI TABLE */
-.raci-table{width:100%;border-collapse:collapse;background:#fff;border-radius:9px;overflow:hidden;border:1px solid var(--border);margin-bottom:8px;font-size:12px;}
-.raci-table th{background:var(--roxo);color:#fff;padding:9px 12px;text-align:left;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;}
-.raci-table td{padding:9px 12px;border-bottom:1px solid var(--border);vertical-align:top;}
-.raci-table tr:last-child td{border-bottom:none;}
-.raci-table td:first-child{font-weight:600;color:var(--azul);font-size:11px;white-space:nowrap;}
-.raci-table td input[type=text]{width:100%;border:1px solid var(--border);border-radius:5px;padding:5px 8px;font-family:var(--font);font-size:12px;color:var(--text);}
-.raci-table td input[type=text]:focus{outline:none;border-color:var(--roxo);}
-
-/* LINK/FILE FIELD */
-.attach-row{display:flex;gap:10px;margin-bottom:10px;}
-.attach-row .aa{min-height:40px;}
-.file-lbl{display:inline-flex;align-items:center;gap:6px;padding:9px 16px;background:var(--roxo-xl);border:1.5px dashed rgba(102,0,255,0.3);border-radius:7px;cursor:pointer;font-size:12px;font-weight:600;color:var(--roxo);transition:all .2s;white-space:nowrap;}
+.file-lbl{display:inline-flex;align-items:center;gap:6px;padding:9px 16px;background:var(--roxo-xl);border:1.5px dashed rgba(102,0,255,0.3);border-radius:7px;cursor:pointer;font-size:12px;font-weight:600;color:var(--roxo);transition:all .2s;}
 .file-lbl:hover{background:var(--roxo-l);}
 .file-input{display:none;}
 .file-name{font-size:11px;color:var(--text2);margin-top:4px;}
-
-/* DOC BUTTON */
-.doc-btn{display:inline-flex;align-items:center;gap:8px;padding:11px 22px;background:var(--verde);color:var(--azul);border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;transition:all .2s;font-family:var(--font);}
-.doc-btn:hover{background:var(--verde-d);transform:translateY(-1px);box-shadow:0 4px 12px rgba(85,204,153,0.3);}
-.doc-btn:disabled{opacity:.4;cursor:not-allowed;transform:none;}
+/* DOC SECTION */
 .doc-section{background:var(--verde-l);border:1px solid rgba(85,204,153,0.3);border-radius:10px;padding:18px 20px;margin-top:28px;}
 .doc-section-title{font-size:12px;font-weight:700;color:#1a5c40;margin-bottom:4px;}
 .doc-section-desc{font-size:11px;color:#2d7a55;margin-bottom:14px;}
-
+.doc-btn{display:inline-flex;align-items:center;gap:8px;padding:11px 22px;background:var(--verde);color:var(--azul);border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;transition:all .2s;font-family:var(--font);}
+.doc-btn:hover{background:var(--verde-d);transform:translateY(-1px);box-shadow:0 4px 12px rgba(85,204,153,0.3);}
+/* FOOTER */
 .mf{padding:24px 48px;background:#fff;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;gap:14px;}
 .btn{display:inline-flex;align-items:center;gap:6px;padding:10px 20px;border-radius:7px;font-size:12px;font-weight:700;cursor:pointer;border:none;transition:all .2s;font-family:var(--font);}
 .btn-p{background:var(--roxo);color:#fff;}
-.btn-p:hover{background:var(--roxo-d);transform:translateY(-1px);box-shadow:0 4px 12px rgba(102,0,255,0.22);}
+.btn-p:hover{background:var(--roxo-d);transform:translateY(-1px);}
 .btn-s{background:transparent;color:var(--text2);border:1px solid var(--border);}
 .btn-s:hover{border-color:var(--roxo);color:var(--roxo);}
 .btn-g{background:var(--verde);color:var(--azul);}
 .btn-g:hover{background:var(--verde-d);transform:translateY(-1px);}
 .btn:disabled{opacity:.3;cursor:not-allowed;transform:none!important;}
 .mf-info{font-size:11px;color:var(--text2);text-align:center;}
-
 .fin{display:none;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;padding:60px;text-align:center;background:var(--azul);}
 .fin.on{display:flex;}
 .fin-ic{font-size:56px;margin-bottom:18px;}
@@ -224,7 +197,6 @@ p{color:var(--text2);margin-bottom:13px;font-size:13px;}
 .fin-st{text-align:center;}
 .fin-sn{font-size:32px;font-weight:800;color:var(--verde);}
 .fin-sl{font-size:10px;color:rgba(255,255,255,0.32);text-transform:uppercase;letter-spacing:1px;margin-top:3px;}
-
 #toast{position:fixed;bottom:26px;right:26px;background:var(--azul);color:#fff;padding:10px 16px;border-radius:7px;font-size:11px;font-weight:600;transform:translateY(60px);opacity:0;transition:all .3s;z-index:999;pointer-events:none;}
 #toast.on{transform:translateY(0);opacity:1;}
 ::-webkit-scrollbar{width:5px;}
@@ -234,6 +206,9 @@ p{color:var(--text2);margin-bottom:13px;font-size:13px;}
 </head>
 <body>
 
+
+  <div class="sps"></div>
+  <div class="sl">Quiz de Fixacao — todos os modulos</div>
 <nav id="sb">
   <div class="sb-brand">
     <img src="data:image/png;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCAWJBX4DASIAAhEBAxEB/8QAHAABAAMAAwEBAAAAAAAAAAAAAAUGBwMECAEC/8QATxABAAEDAQIHCQ4FAgYBAwUAAAECAwQFBhESITFBUWHRBxMWNVRyk7GyFBgiIzI2UlZxc4GRocFCdJSi0jNiFSQ0Q+HwU4KSwghjg+Lx/8QAHAEBAAICAwEAAAAAAAAAAAAAAAUGBAcCAwgB/8QAQhEBAAECAgMKDQQBBQEAAwEAAAECAwQFBhExEiFBUWFxgZHB0QcTFBYiMjM1UlRyobFTgpLwIxVCYqLhwjSy4tL/2gAMAwEAAhEDEQA/APGQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOTGqtUX6Kr1rvtuJ+FRwt2+PtXnTtD2d1DEpyca1XVRVyx32rfTPRPHyqEkND1XI0rL77anhW6uK5bmeKqO3rWXRvNMHgr+4x1mmu3VtmaYmaeWOTjjpjlysLeot1arlMTC6+C2i+T1+lq7TwW0Xyev0tXak9OzcfUMSnJxq+FRVyxz0z0T1uw3dayPJr1EXLeHtzTO/ExTTv/ZPRh7FUa4pjqQngtovk9fpau08FtF8nr9LV2psdnm7lPy1H8Y7n3yaz8MdSE8FtF8nr9LV2ngtovk9fpau1Nh5u5T8tR/GO48ms/DHUhPBbRfJ6/S1dp4LaL5PX6WrtTYebuU/LUfxjuPJrPwx1ITwW0Xyev0tXaeC2i+T1+lq7U2Hm7lPy1H8Y7jyaz8MdSE8FtF8nr9LV2ngtovk9fpau1Nh5u5T8tR/GO48ms/DHUhPBbRfJ6/S1dp4LaL5PX6WrtTYebuU/LUfxjuPJrPwx1ITwW0Xyev0tXaeC2i+T1+lq7U2Hm7lPy1H8Y7jyaz8MdSE8FtF8nr9LV2ngtovk9fpau1Nh5u5T8tR/GO48ms/DHUhPBbRfJ6/S1dp4LaL5PX6WrtTYebuU/LUfxjuPJrPwx1ITwW0Xyev0tXaeC2i+T1+lq7U2Hm7lPy1H8Y7jyaz8MdSE8FtF8nr9LV2ngtovk9fpau1Nh5u5T8tR/GO48ms/DHUhPBbRfJ6/S1dp4LaL5PX6WrtTYebuU/LUfxjuPJrPwx1ITwW0Xyev0tXaeC2i+T1+lq7U2Hm7lPy1H8Y7jyaz8MdSE8FtF8nr9LV2ngtovk9fpau1Nh5u5T8tR/GO48ms/DHUhPBbRfJ6/S1dp4LaL5PX6WrtTYebuU/LUfxjuPJrPwx1ITwW0Xyev0tXaeC2i+T1+lq7U2Hm7lPy1H8Y7jyaz8MdSE8FtF8nr9LV2ngtovk9fpau1Nh5u5T8tR/GO48ms/DHUhPBbRfJ6/S1dp4LaL5PX6WrtTYebuU/LUfxjuPJrPwx1ITwW0Xyev0tXaeC2i+T1+lq7U2Hm7lPy1H8Y7jyaz8MdSE8FtF8nr9LV2ngtovk9fpau1Nh5u5T8tR/GO48ms/DHUhPBbRfJ6/S1dp4LaL5PX6WrtTYebuU/LUfxjuPJrPwx1ITwW0Xyev0tXaeC2i+T1+lq7U2Hm7lPy1H8Y7jyaz8MdSE8FtF8nr9LV2ngtovk9fpau1Nh5u5T8tR/GO48ms/DHUhPBbRfJ6/S1dp4LaL5PX6WrtTYebuU/LUfxjuPJrPwx1ITwW0Xyev0tXaeC2i+T1+lq7U2Hm7lPy1H8Y7jyaz8MdSE8FtF8nr9LV2ngtovk9fpau1Nh5u5T8tR/GO48ms/DHUhPBbRfJ6/S1dp4LaL5PX6WrtTYebuU/LUfxjuPJrPwx1ITwW0Xyev0tXaeC2i+T1+lq7U2Hm7lPy1H8Y7jyaz8MdSE8FtF8nr9LV2ngtovk9fpau1Nh5u5T8tR/GO48ms/DHUhPBbRfJ6/S1dp4LaL5PX6WrtTYebuU/LUfxjuPJrPwx1ITwW0Xyev0tXaeC2i+T1+lq7U2Hm7lPy1H8Y7jyaz8MdSE8FtF8nr9LV2ngtovk9fpau1Nh5u5T8tR/GO48ms/DHUhPBbRfJ6/S1dp4LaL5PX6WrtTYebuU/LUfxjuPJrPwx1ITwW0Xyev0tXaeC2i+T1+lq7U2Hm7lPy1H8Y7jyaz8MdSE8FtF8nr9LV2ngtovk9fpau1Nh5u5T8tR/GO48ms/DHUhPBbRfJ6/S1dpOyujTH/T1x//ACVJsPN3KflqP4x3Hk1n4Y6leubIaTVyVZNHm1x+8Ovc2LxJ/wBPMv0+dET2LSMa5onk1zbh6ejXH4mHGcHYn/apl3Yq7H+lqFFXnWpj95dS9sfqlHHRXjXPsrmJ/WF+Ebe0ByW56tE081U9ut1VZdYnZGrpZpf2d1m18rBrqj/ZVFXql0b+Hl2N/f8AFvWt307cx62siIxHgzwdXsb1VPPET+Ny6asqon1apY+NXyNPwcjf3/DsXJnnqtxv/NG5Oy2j3t802K7Mzz2659U74QOJ8GuPo37N2mrn1xPbH3Y1eV3I9WYlnQuWVsVRO+cXOqjopuUb/wBY7EVlbK6vY3zRbt34jnt1/tO5XMXojnGF367EzH/HVV+NcsavBX6NtKCHPlYmVizuyMa7a8+iYcCvXLddurc1xMTxTvMaYmJ1SAOD4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAkND1XI0rL77anhW6uK5bmeKqO3raRp2bj6hiU5ONXwqKuWOemeietk6Q0PVcjSsvvtqeFbq4rluZ4qo7etd9EtLa8prjD4iddmf+vLHJxx0xv7c/B4ybM7mr1fw1AdXTM/H1HEpycavfTPFMTy0z0S7Tetm9bv24uW510zvxMcKwU1RVGuAB2PoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD5VEVRNNURMTyxKOzNC0nK3zcwrdNU/xW/gT+iSGNicHh8VTub9EVRyxE/lxqoprjVVGtU83YuzVvnDzK6P9t2N8fnG5B52zWr4u+fc/f6Y/itTwv05f0aQKnjtAcoxWubdM25/4zvdU646tTDuZdZr2RqZDXRXRVNFdNVNUcsTG6YflrOXh4uXTwcnHtXY3bvh0xO77OhBZ+x+Be31Yt25jVdHyqf14/1UnMPBxj7OurC1xcji9WfvvfeGBcyy5T6k61DE3qGzGq4m+qi1GTRHPanfP5cqGrpqoqmiumaao5YmN0wo+Ny7F4GrcYm3NE8sfidk9DArtV251VRqfkBhOsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB39F1TI0vLi9ZnfTPFctzPFXHb1tH0zPx9RxKcnGr30zxTE8tM9Espd/RdUyNLy4vWZ30zxXLczxVx29a66J6WXMoueIv79mf8Aryx2x0xv7c7B4ybM7mr1fw1EdXTM/H1HEpycavfTPFMTy0z0S7Te9m9bv24uW510zvxMcKw01RVGuAB2PoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA62dgYWbTwcrGt3eiZjjj7J5Ydkdd2zbvUTRcpiqJ4JjXD5NMVRqlU9S2NtVb68DJm3PNRd44/OOOP1VnUtJ1DT5n3TjV00/Tjjpn8YakTETExMb4nlhSc00Ay3F66rGu1Vyb8dU9kwwLuXWq9+nelj40XVNmdMzd9VFv3Ndn+K1xR+McnqVXVdmdSwt9duiMm1H8VuOOPtp5fy3ta5toXmmXa6txu6OOnf642x1auVF3sDdtb+rXHIhB9mJid0xumHxU2GAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA7+i6pkaXlxeszvpniuW5nirjt62jaVqGNqWLGRjV745KqZ5aZ6JZU7uj6lkaZlxfsVcXJXRPJXHRK6aKaWXcnuRZvelZnbHDTyx2x2s7B4ybM7mr1WpjqaTqGPqWJTkY9XFyVUzy0z0S7be9i/bxFum7aq10zvxMcKw01RVGuNgA7X0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABHaroun6lEzfsxTc/wDko4qv/P4qjq+ymdib7mL/AM1ajmpjdXH4c/4L+K1nGieW5rrquUbmv4qd6engnpYt/B2r2/Map42QVRNNU01RMTHFMTzPjUNV0fA1KmfdFmO+c1yjiqj8ef8AFTtY2XzsLfcx/wDmrMc9EfCj7Y7Gp860HzDLddy3HjKOONsc9O3q1wh7+AuWt+N+EAApjBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAd3R9SyNMy4v2KuLkronkrjolpGk6hj6liU5GPVxclVM8tM9Esqd3R9SyNMy4v2KuLkronkrjolc9FNK7mT3PE3t+zO2Ph5Y7Y4ednYPGTYnc1eq1MdPSdRxtTxYv49e/6dE8tE9Eu43xYv28Rbpu2qoqpnfiYWGmqKo1xsAHa+gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAInWdAwNSia66O835/wC7RHHP2xzqVrOhZ2mTNVyjvtjmu0ccfj0NLJiJiYmImJ4piVSzzQ7AZrrriNxc+KOHnjh+08rDxGBt3t/ZLHxe9c2UxsnhXsCace7y8D+CrsUzOw8nBvzZyrNVuuOnknriedpvOtG8dk9f+enXTwVRvxPdPJKDv4W5Yn0o3uN1wEAxwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHb0nUMjTcunIx6t08lVM8lUdEtI0fUsfVMSL9id08ldE8tE9EssdvSdQyNNy6cjHq3TyVUzyVR0SuOiulV3JrvirvpWatscXLHbHDzs3B4ybE6p9Vqo6Wj6lj6piRfsTunkronlonol3W+cPiLWJtU3bVW6pq34mFhpqiqNcbAB3OQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA4M7Dxs6xNnKs03KJ6eWOuJ5nOOF21Rdomi5ETE7YnfiXyYiY1SoOvbL5OHwr+FwsixHHMfx0x+/4K62BA6/s1i6hwr+Pux8mePfEfBrnrj9/W1ZpF4PonXfy3pon/wCZ7J6+BE4nLf8Ada6mejsahhZOBkTYyrVVuuOTfyTHTE87rtU3bVdmubdyJiqNsTvTCHmJpnVIA63wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB29J1DI03LpyMerdPJVTPJVHRLSNH1LG1TEi/Yq3TyV0TPHRPRLLHa0zPyNOy6cnGr3VRxTE8lUdErhotpXdya54u56VmdscXLHbHCzcJjJsTqn1WrDo6LqmPqmJF6zO6qOK5bmeOiezrd5vnDYm1irVN6zVuqat+JhYaaorjdU7AB3uQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADrajg4uoY82Mq1FdPNPPTPTE8yh7QbPZOmTVdt77+LzVxHHT50fu0UqiKomJiJieKYnnVvP9F8HnVGuuNzcjZVG3p44/sTDFxOEovxv708bHxcto9loq4WVpdMRPLVY6fN7P/8AFOqpqpqmmqmaaondMTG6YaKzjI8XlF7xWIp5pjZPNPZthX7+Hrs1aqnwBEOkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB2tMz8jTsunJxq91UcUxPJVHRLSNF1TH1TEi9ZndVHFctzPHRPZ1stdrTM/I07LpycavdVHFMTyVR0St+i2lN3Jrvi7npWatscXLHbHCzcJi5sTqn1WrDo6LqmPqmJF6zO6qOK5bmeOiezrd5vrDYm1irVN6zVuqat+JhYaaorjdU7AB3uQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAhNotn8fVKZvWt1nKiOKvdxVdVXamxh4/L8PmFibGIp3VM/3XHFPK4XLdNync1RvMlzcXIw8irHybVVu5TyxPrjphwtS1nSsXVMbvV+ndXHyLkfKpn/3mZ3rGl5Wl5PesinfTPyK4+TVH/vM0VpNoliMmr8ZR6Vqdk8XJV37J+yv4rB1WJ1xvw6ICoMIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB2dOzcjT8qnIxq+DXTyxzVR0T1NH0PVcfVcTvtqeDcp4rluZ46Z7Otl7s6dm5Gn5dOTjV8GunljmqjonqW3RfSm9kt3cV+laq2xxcscv56pZmExdVidU7GriP0PVcfVcTvtqeDcp4rluZ46Z7OtIN+YXFWsXapvWat1TVvxMLFRXFcbqnYAO9yAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHX1DDx87Fqx8m3FdFX5xPTHRLsDhdtUXaJouRrid6YnZL5MRVGqWabQaLkaTf3zvuY9U/AuRH6T0SimuZNizk2K7F+3Tct1xuqpnnZ9tLoN3S7s3rW+5iVT8Grno6p7WktLdDa8tmcVhI12uGOGnvjl4OHjQWMwM2vTo2fhCANfo0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB2dOzcjT8unJxq+DXTyxzVR0T1NH0PVcfVcTvtqeDcp4rluZ46Z7Otl7safmZGBk05GNcmiun8pjonphbNF9Kb2S3dxV6VqrbHFyxy/nqlmYTF1WJ1TsawI3QNXsati8OjdRep/wBS3v46Z7Ek35hMXZxdmm/Yq3VNWyViorprpiqmd4AZDkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPzet271qq1doprorjdVTMcUw/Q+VUxVExMbxtZ7tRoFemVzkY/CrxKp5eWbc9E9XWgWvXKKLluq3cpiuiqN1VMxviYZ/tVoVWmXu/wCPFVWJXPFPL3ueif2lpbTHQ7yHXjcHH+Phj4eWP+P45tkFjcF4v06Nn4QIDXKMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAc+Bl38HKoycauaLlP5THRPU0fQNXsati8OjdRep/1Le/jpnsZi58DLv4OVRk41c0XKfymOiepa9F9KL2S3tzV6VqrbHbHL+eqYzMJi6rFXI1kRugavY1bF4dG6i9T/qW9/HTPYkm/cJi7OLs037FW6pq2SsVFdNdMVUzvADIcgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB+b1u3etVWrtFNdFcbqqZjimH6HyqmKomJjeNrOdp9EuaVkd8t76sW5PwKvoz9GUK1zKsWsnHrsX6Irt1xuqiWb7RaRd0nL4E767FfHar6Y6J62j9MtE5y2ucXhY/xTtj4Z7p4OLZxIDHYPxU7ujZ+EWAoCOAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAc+Bl5GDlU5ONcmi5T+Ux0T1NF2e1ixq2Nwqd1F+iPjLe/k646mZubCyr+Hk0ZGPcmi5RPFMer7Fp0Z0nv5Le1T6VqdtPbHL+dk8Exl4XF1WKuRrQi9ntYsatjcKndRfoj4y3v5OuOpKN/YPGWcZZpv2Kt1TVslY6K6a6YqpneAGS5AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADralhWNQw68XIp30Vck89M80x1uyOu7aovUTbuRrpnemJ4YfJiKo1SyvWNOv6Zm1Y1+N+7joqiOKqOmHTahr+lWdVwps17qbtPHar+jPYzTLx72LkV49+iaLlE7qol5/0s0aryXEbqjftVerPF/wAZ5Y4OOOlXMZhZsVb2yXEAqbDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAc2FlX8PJoyMe5NFyieKY9X2NG2e1ixq2Nwqd1F+iPjLe/k646mZubCyr+Hk0ZGPcmi5RPFMer7Fp0Y0mvZLe1T6Vqr1qe2OX87J4JjLwuKqsVcjWhFbO61Y1bH5reRRHxlvf+sdSVb9weNsY2xTfsVbqmrZP94eRYqK6blMVUzvADKcwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA7XaLGo43unHp/5q1HFu/jp6Pt6E8MHMsusZjhqsNfjXTV9uKY5Ydd21TdpmmpkExMTumN0w+LZtxove651PFo+BVPx9MRyT9L8edU3nHOcpvZTi6sNe4Nk8ccEx/d6d5Wb9mqzXNNQAi3SAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA5cTIvYmRRkY9yaLlE74mGi7Oa1Z1bH5qMmiPjLf7x1M1cuJkXsTIoyMe5NFyid8TCz6NaS38kv8AxWqvWp7Y5fzsngmMvC4qqxVyNbETs5rVnVsfmoyaI+Mt/vHUlm/8FjbGNsU37FW6pq2T/eHjhYqK6blMVUzvADKcwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHy5RTct1W66YqpqjdVExxTDNdptJq0rPmmmJnHub6rVXV0fbDS3S1rT7Wp4FeNc4pnjoq+jVzSq2lej1Oc4PVRH+Wnfpn8xzT+dUsTGYaL9G9tjYywcuXYu4uTcx79PBuW6t1UOJ56roqoqmmqNUxvSrcxMTqkAcXwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABy4mRexMijIx7k0XKJ3xMNE2c1uzq1ngzut5NEfDt7+XrjqZs5Ma/dxr9F+xcm3confTVHMs2jekt/JL296VufWp7Y4p/OyeTKwuKqsVcjXBEbN63a1Wxwat1vKoj4dHT1x1epLt/4HHWMdYpv2Kt1TV/etY7dym5TFVM7wAy3MAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABWNudI90Y/wDxGxT8baj4yI/ip6fw9SjNgmImN0xviWcbWaVOmajM26f+Xvb6rfV00/g1B4QdHvF1/wCpWI3p3q+fgq6dk8urjQuZYbVPjaelDANXIkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAByY1+7jX6L9i5Nu5RO+mqOZouzet2tVscGrdbyqI+HR09cdXqZs5Ma/dxr9F+xcm3confTVHMsujekl/JL+uPStz61PbHL+dk8mVhcVVYq5GuCH2b12zqtmLde63lUx8OjmnrjqTD0BgcdYx9im/h6t1TP91TxTyLHbuU3Kd1TO8AMtzAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHR13Trep6dcxqt0V/Kt1T/DVHJLvDoxOHt4m1VZuxrpqjVMckuNVMVxNM7JZFet12b1dq7TNNdFU01RPNMPwt232l8GqnVLNPFVupvREc/NV+35Ki82Z5lNzKcbXhq+DZPHE7J7+XWq+IszZuTRIAiXSAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA5LF67YvUXrNdVFyid9NUcsS0LZnXbWq2e9XeDRl0R8KnmqjphnLksXrti9Res11UXKJ301RyxKx6OaR38kv7qnftz61PHyxxTH/AJLKwuKqsVa42NcELszrtrVbPervBoy6I+FTzVR0wmnoHAY+xj7FOIw9Wumf7qnimFjt3KblMVUzvADMcwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHHlWLeTj3Me9Twrdymaao6mW6ph3NPz7uJd5aKuKfpRzT+TVlZ28033RhU59qnfcscVe6OWj/x+8qJp5kfl+B8ptx6drf56eGOjb18aPzDD+Mt7uNsfhRQGilfAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAcli9dsXqL1muqi5RO+mqOWJaFszrtrVLMWrs028umPhU81XXHYzl+7Ny5Zu03bVdVFdE76aonjiVj0c0jxGSX91Tv0T61PHyxxT/ZZOGxVVirXGxrog9l9et6naixfmmjLojjjmrjpjsTj0Bl+YYfMMPTiMPVrpn+6p4phY7dym7TuqdgAzXYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPldFNdFVFdMVU1RumJ54fR8mImNUjLddwK9N1O7i1b+DE8K3M89M8jor7t5p/unTqcy3TvuY/yuuieX8uX81CectKcn/0nMa7NMehO/TzTwdE73QrGLseJuzTGzgAFdYwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD92blyzdpu2q6qK6J301RPHEtB2X163qdqLF+aaMuiOOOauOmOxnb92blyzdpu2q6qK6J301RPHErFo7pFiMkxG7o36J9anj5Y4pjglk4bE1WKtcbGuiD2X163qdqLF+aaMumOOOSK46Y7E49A5fmGHzDD04jD1a6Z/uqeKYWO3cpu07qnYAM12AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPldFNdFVFdMVU1RumJ54ZZrOFVp+pXsWrfMUVfAmeemeSWqKt3QMDvmLa1C3T8K1PAuebPJP4T61F0+yjy3LvKKI9K1v/ALeHv6EfmNnxlrdRthSAGiVfAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAATOxumYWra3Riajev2cbgzVXXZiJriOLjiJ5eVteH3A9n8zFt5WLtPm3bNynhUV02qN0wxzYDx7V9zV64bNsPtZkbP5HebsVX8C5VvuWt/HRP0qevq514y/ROrNMm8rw3taapjV8Ub3VP5Y2Z5ZjcRhPHYGuYrp17296UdOyfy/XvetG+sOf6Gg971o31hz/Q0NkwcvHzsS3l4l2m7Zu08KiunklzKTXRVRVNNUaphrCrPszoqmmq5MTHJHcxX3vWjfWHP9DQe960b6w5/oaG1Di4+cOZfqz1R3MV971o31hz/Q0HvetG+sOf6GhtQHnDmX6s9UdzFfe9aN9Yc/0NB73rRvrDn+hobUB5w5l+rPVHcxX3vWjfWHP9DQe960b6w5/oaG1AecOZfqz1R3MV971o31hz/Q0HvetG+sOf6GhtQHnDmX6s9UdzFfe9aN9Yc/0NB73rRvrDn+hobUB5w5l+rPVHcxX3vWjfWHP9DQe960b6w5/oaG1AecOZfqz1R3MV971o31hz/Q0HvetG+sOf6GhtQHnDmX6s9UdzFfe9aN9Yc/0NB73rRvrDn+hobUB5w5l+rPVHcxX3vWjfWHP9DQe960b6w5/oaG1AecOZfqz1R3MV971o31hz/Q0HvetG+sOf6GhtQHnDmX6s9UdzFfe9aN9Yc/0NB73rRvrDn+hobUB5w5l+rPVHcxX3vWjfWHP9DQe960b6w5/oaG1AecOZfqz1R3MV971o31hz/Q0HvetG+sOf6GhtQHnDmX6s9UdzFfe9aN9Yc/0NB73rRvrDn+hobUB5w5l+rPVHcxX3vWjfWHP9DQe960b6w5/oaG1AecOZfqz1R3MV971o31hz/Q0HvetG+sOf6GhtQHnDmX6s9UdzF7f/AOn7Sbdym5b2k1Giumd9NUWqImJVfuqaNtDsNctX6LdrUdKubqacuaJpqpr3fJriJ3RM808k/o9IOvqeDh6np9/Az8e3k4t+iaLtquN8VRKSy/OMbl268luTTr26mfl+luYYW7FVde6p4Y3u7a8d+Gef5Ljf3dp4Z5/kuN/d2pbuu9zrN2K1Ob9iK8jRsiufc9/dvmieXvdfRVHNPPH4xFCSXnfnXzE/bubOw2bV4q1F21XriVn8M8/yXG/u7Twzz/Jcb+7tVgPO/OvmJ+3c7/Lb/wASz+Gef5Ljf3dp4Z5/kuN/d2qwHnfnXzE/buPLb/xLP4Z5/kuN/d2nhnn+S4393arAed+dfMT9u48tv/Es/hnn+S4393aeGef5Ljf3dqsB53518xP27jy2/wDEs/hnn+S4393aeGef5Ljf3dqsB53518xP27jy2/8AEs/hnn+S4393aeGef5Ljf3dqsB53518xP27jy2/8Sz+Gef5Ljf3dp4Z5/kuN/d2qwHnfnXzE/buPLb/xLP4Z5/kuN/d2nhnn+S4393arAed+dfMT9u48tv8AxLP4Z5/kuN/d2nhnn+S4393arAed+dfMT9u48tv/ABLP4Z5/kuN/d2nhnn+S4393arAed+dfMT9u48tv/Es/hnn+S4393aeGef5Ljf3dqsB53518xP27jy2/8Sz+Gef5Ljf3dp4Z5/kuN/d2qwHnfnXzE/buPLb/AMSz+Gef5Ljf3dp4Z5/kuN/d2qwHnfnXzE/buPLb/wASz+Gef5Ljf3dp4Z5/kuN/d2qwHnfnXzE/buPLb/xLP4Z5/kuN/d2nhnn+S4393arAed+dfMT9u48tv/Es/hnn+S4393aeGef5Ljf3dqsB53518xP27jy2/wDEs/hnn+S4393aeGef5Ljf3dqsB53518xP27jy2/8AEs/hnn+S4393a57G2tyP9bApq66Lm71wqI50aZZ3ROuL89MUz+YfYx1+P9zQMTa3Sr26Lvfsef8AfRvj9N6ZxMzEy6eFjZFq7H+2qJmPtjmZM/VFVVFUV0VTTVHJMTumFgwPhJx1qYjE26a45PRntj7Mi3mlyPWjW14Z3p21GqYm6mu5GTbj+G7xz+fL+e9ZtL2q07L3UX5nFuTzV/J/+7t3L5lemuVZhMU7vcVcVW999n318iRtY+zc3teqeVPD5TVTVTFVNUVUzxxMTviX1bYnXvwzAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABxZdi3lYt3HuxvouUzTP4uUca6KblM0VRrid6XyYiY1SyTMsXMXKu492N1duqaZ/BxLR3QMHvWdazqKfg3o4NfnR/wCPUq7zNneW1Zbj7uFn/bO9zTvx9lWv2vFXJoAEU6QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFh2A8e1fc1euF/UDYDx7V9zV64X9vbwee5/3VdiwZb7HpWTYfarI2ey+BXwruBdq+Ntc9P8Aup6/W2fTs3F1DDt5mHepvWLkb6ao/wDeKep50WHYvafK2ezf4ruFcn46zv8A7qeifW6tL9D6cypnFYSNV6NscFX/ALxTw7J44quleiVOY0zisLGq7G2OCr/3inh2TxxuQ6+m52LqOFbzMO9Tds3I301R6p6J6nYaQroqt1TTXGqY2w0xXRVbqmmqNUxtgAcXEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB1dX07B1fTb+m6ljW8nEv0cC5brjimP2nnieWJeT+653Ps3YnWJqtxcv6PkVf8rkzG/dz97r6Ko/WOOOeI9dOlrmlafrelX9L1TGoycS/Twblur1x0THLExyCZybOLmW3de2idsdscrwyLr3WNgM3YfWYo315Gl5EzOLkzT/AGVc0VR+scfTEUobUw+It4m3F21OuJAB3AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAO9pmrZ+nVROLfqijfx26uOmfwW7SNrMPJ4NrNp9y3Z4uFv30T+PN+P5qGLFk+lOY5TMRar10fDO/HRxdGpk2MXds7J3uJr9FVNdMVUVRVTMb4mJ3xL6zDSNZz9Mqj3Pd329/Har46Z7PwXbRNo8HUeDaqn3PkT/ANuueKZ6p523ci00wGaardc+LucU7J5p4ebenkTWHx1u9vTvSmQFxZoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACM2nwvd2i37URvuUx3yj7Y/8b4/FmTYGYbR4fuHWcixEbqJq4dHmzxx+XJ+DU3hKyzftY6mP+M/mO37IfNLWy5HMjgGqEOAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAsOwHj2r7mr1wv6gbAePavuavXC/t7eDz3P8Auq7Fgy32PSAL0kE9sdtLl7O53Do33cS5Md+s7+Xrjoltml5+JqeDbzcK7F2zcjfExzdU9EvOqc2R2kzNns6LlqZuY1c/HWJniqjpjonrUTS3RCjNaZxOGjVejqq5J5eKeieSk6VaKUZnTOIw8arsdVXJPLxT0TybuOpo+pYerYFvOwbsXLNcfjTPPExzTDttG3LddquaK41TG9MTwNK3LddquaK41TG9MSAODgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA6G0Ojadr+kX9K1XGpyMW/TuqpnlieaYnmmOaXk3up7A6jsPrHernCyNNv1TOJlbvlR9Groqj9eWOr2CjdptC0zaPRr+k6tjxfxr0ccclVFXNVTPNVHSJvJc5uZdc1Tv0Ttjtjl/Lw8Lb3TdhdT2I1mcbJib+DemZxMuKd1Nynonoqjnj9lSG07F+3iLcXLc64kAHaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAsOhbUZWFwbOXwsmxyb5n4dP2Tz/AGSu+n52Ln2IvYt2m5Tz9MT0THMyd2MHMycG/F/Fu1W646OSeqY5170f05xeXarOJ13Lf/aOaeHmnomEhhswrtejXvw1gV/Z/aXHz+DYyuDYyZ4o+jX9nRPUsDc+XZlhcysxew1e6p+8ckxwSnLV2i7TuqZAGc7AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABUu6Jh8K1j51McdM97r+yeOP3/NbXS1zE926Rk40RvqqomafOjjj9YQmkWXf6jlt6xEb8xrjnjfj7xqdGJteNtVUssAealWAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWHYDx7V9zV64X9QNgPHtX3NXrhf29vB57n/dV2LBlvsekAXpIAAJrZPaPN2ezu/Y898sVzEXrNU8VcftPW2zRNUw9Y0+3nYN3h26+WOemeemY5peeUzsptBmbP6hGRjzw7Ne6L1mZ4q4/aeiVH0t0Rt5tROIw8ar0dVXJPLxT0TvbKZpTorRmlE37Ear0f9uSeXinone2b0OhoOr4WtadRm4VzhUVcVVM/Koq54mOl32i71m5YuTbuRqqjemJ4Gk71muzXNu5GqqN6YkAdbrAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAARe1WgabtNoeRo+q2e+496OWOKqiqOSqmeaY/8AHJMvJPdI2J1TYnW5ws2Ju4tyZqxcqmndTep/aqOeOb7JiXspE7W7PaZtPod/SNVsRdsXY301fxW6uaumeaY/8ckidyTOq8uubmrftztjtj+77xELL3QtjdV2L1yrT9Qp4dmvfVjZNMbqL1HTHRMc8c32bpmtDaVm9Reoi5bnXE7JAB2AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACzbO7UXcWacbUJqu2OSLnLVR2x+qsiRyvNsVld+L2Gq1Tw8U8kxw/3U7bV6u1VuqJa7YvWr9mm9ZuU3LdUb6aqZ3xL9sy0LWsrSr2+3PfLFU/DtTPFPXHRLQtK1DF1LFi/jV74/ipn5VM9Ew3ro5pVhs6o3Hq3Y209sccfePusGFxlF+NWyeJ2wFqZYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADMdpcT3HreTaiN1E18Oj7KuP9934I1b+6Li7q8XNiOWJtVeuP3VB5s0mwHkGaXrMRva9cc078dWvUq+Kt+LvVUgCCY4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACw7AePavuavXC/qBsB49q+5q9cL+3t4PPc/7quxYMt9j0gC9JAAAABLbL69m6BqMZWLVwqKuK7amfg3Kej7eiW26BrGDreBTmYN3hU8ldE/Koq6Jh58Sezet5ug6jTmYdW+OS5bmfg3Keie3mUvSvRK3m9E37Po3ojoq5J7J697ZT9KNFrebUeOs716OqrknsnsegBHbO61ha5p1OZhV745LluflW6uiUi0RfsXLFyq1dp1VRvTE8DSN6zcsXJt3I1VRvTEgDqdQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH2x2a0ravQ7uk6tY4dqvjorjirtV81dM80x+vJPE8jbf7I6psbr1zTNRomq3MzVjZERuov0b+KqOiemOafwmfaKD232W0ra7Q7mlara30z8K1dp+XZr5qqZ6fXyCfyPO68vr3Fe/bnbHFyx/d94oE/t3spqex+v3dJ1Kjfu+FZv0xMUXqOaqP3jmlADaFq7RdoiuidcTsAB2AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADtabn5OnZVORjXODVHLHNVHRMOqOyzeuWLkXLczFUb8TG2H2mqaZ1w07QtXxtWx+Hb+Bdp/1LUzx09fXHWkmS4WVfw8mjIx7k0XKJ4pj1fY0fZ7WLOrYvDpiKL9HFct9HXHU3lolpfRmtMYbE716Oqrljl446Y5J/B42L3o1et+UmAvSQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAARO12L7q0DIiI31W475T+HL+m9mrXrlFNy3VbrjfTVExMdTJsyzVjZd7Hq+Vbrmifwnc094S8Fub9nFRHrRNM9G/H5nqQua29VVNbiAawRIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACw7AePavuavXC/qBsB49q+5q9cL+3t4PPc/7quxYMt9j0gC9JAAAAAABI7Pazm6HqNGbhV7pjiron5Nynolt+zWuYWvadTl4lW6Y4rtqZ+Fbq6J/aed5/SGg6vnaLqFOZg3Zpqjirpn5NdPRMdCn6VaKWs5t+Ntaqb0bJ4+SeyeBUtJ9F7eb2/GW/Ruxsnj5J7J4HoMROy+vYWv6dGVizwblO6L1mZ+Fbq7OiUs0LicNdw12qzep3NVO9MS0fiMPdw12q1dp1VRvTEgDpdIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACv7e7JaVtjodemanb3VRvqx8imPh2K/pR+8c7yTtvstquyOuXNK1W1uqj4Vq7T8i9RzVUz+3NyPayt90LY3SttNDq0/UKOBeo31Y2TTG+uxX0x0xPPHP9u6YLDkWeVYCvxdzftz9uWO2HjATO2OzWq7Ka5d0nVrHAu0cdFdPHRdo5q6Z54n9OSeNDDZ9u5TcpiuidcSADmAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOxp2ZfwMujJx6uDXTP4THPE9TrjstXa7NcXLc6qo34mOCX2JmmdcNU0fUbGp4VOTZndPJXRv46Kuh3GY7P6rd0rOi9TvqtVcV2jpjthpePet5Fii9Zriu3XHCpqjnh6B0T0kpzrDaq967T60cf/ACjkn7T0LHg8VF+jf2w/YC1swAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAZ3tvj941+7VEbqb1NNyPVP6xLRFR7o2Pvt4mVEck1W6p/WPVKlafYPyjJ6q420TFXZP2lg5jRurEzxKaA0IroAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACw7AePavuavXC/qBsB49q+5q9cL+3t4PPc/7quxYMt9j0gC9JAAAAAAAAB39C1bN0XUKM3BucGuniqpn5NdPPTMc8Nr2T2hw9odPi/YmKL1G6L1mZ46J/eOiWCu7oup5mkahbzsG7NF2jljmqjniY54VHSnRaznVrd0ejejZPHyTycU8H2VXSXRm1nFrd0ejdjZPHyTycvB9noYQmyW0eFtDg99sfF5FG7v1iZ46Z6Y6Y6020LisLewl6qzep3NVO2JaNxOFu4W7VZvU7mqNsSAMd0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKx3R9jNN210GrT834rItzNeLk0076rNe79aZ545/tiJjyTtZs9qmzGt3tI1fHm1ftzviY46blPNXTPPE/8AieOHt1Ve6XsTpu22hVYWVFNrMtRNWJlcHfVaq/emeeP3iBZMhz2rAVeKu79uftyx2x/Z8bCT2m0LU9nNZv6Tq2PNjJsz9tNdPNVTPPTPSjBs2iumumKqZ1xIAOQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAs+xGse5r8adkVfE3Z+LmZ+RV0fZPrVgSWU5peyvF0YmzO/HBxxwxPP/AOu2zdqtVxXS2AQeyGrf8RwO9Xqt+TYiIr38tUc1XanHpHLsfZzDDUYmzOumqNffHPE7y0WrlNymKqeEAZrmAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIbbSx37Z6/MRvm1NNcfhO6f0mUy4c+z7pwb+P/8AJbqo/ONzAzTC+V4K7Y+KmY643nXdo3duaeOGSgPLypgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALDsB49q+5q9cL+oGwHj2r7mr1wv7e3g89z/uq7Fgy32PSAL0kAAAAAAAAAAHb0jUcvSs+3m4V2bd63P4THPExzxLbNkNpcPaHC4dqYt5VEfHWJnjp646Y62EOzpeflabnW83Cu1Wr1ud9NUeqemOpVdJ9F7OdWt1Ho3adlXZPJ+OuJrGkmjVnOLW6j0bsbJ7J5Px1xPooQOxu02LtFg8Kng2su3Hx1nfyf7o6afUnmgsZg72DvVWL9O5qp2w0Xi8Jewl6qzep1VRtgAYzHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAVLunbC6Ztvos42RFNjOsxM4mVEfCt1dE9NM88fjyvJO0OjajoGr39K1XGqx8qxVuqpnkmOaYnnieaXuNTu6lsDp22+kd7ucHH1KxTPuXK3cdM/Rq6aZ/TljrLNkGfTgavE3p125+3/nHHTz+PR3tf0nP0LV8jStTx6rGVj18Guif0mJ54mOOJ54dEbLpqiumKqZ1xIAOQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADuaPn3NN1C3lW+Pgzuqp+lTzw1DGvW8jHt37NXCt3KYqpnqlka4bAan8vTLtXTXZ3/AKx+/wCbY3g+z3yXEzgbs+hc2clX/uzn1JPLcRuK/Fzsn8rgA3UnQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGVazZ9z6tl2YjdFN6rd9m/idRObb2u9bQ3qua5TTX+m79kG8w5xh/Jswv2fhqqjo1732VS/TuLlVPKAI11AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALDsB49q+5q9cL+oGwHj2r7mr1wv7e3g89z/uq7Fgy32PSAL0kAAAAAAAAAAAAHY07NytPzLeZh3qrV63O+mqn1dcdTatitqMbaHD3TwbWbbj46zv8A7qemPV68NdjT8zK0/Mt5eHeqs37c76a6ebtjqVjSXRmxndj4btPq1dk8n42xwxNb0j0cs5zZ+G5Hq1dk8n42xy+ixW9h9qsfaDE73c4NrPt0/G2uaqPpU9XqWRoHG4K/gb9Vi/Tuaqf71cUtFY3BXsFeqsX6dVUf3qAGIxQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFJ7q/c+0/bfSt8cDG1axTPuXK3f2V9NM/pyxzxPk/XNK1DRNVv6XqmNXjZdirg3LdXrjpieWJjle5lE7rnc6wtttM79Z4GNrOPRMY2RMcVccve6+mnr5pnf0xJacgz6cHVFi/P+Of+v/jyOO3q+m52kalf03Usa5jZdivgXLdcccT+8c8TyTDqDZNNUVRExOuJAB9AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHLiX7mLk28izVwbluqKqZcQ5UV1UVRVTOqY34fYmYnXDWdOyrebhWsq18m5Tv3dE88fhLnU/ufahx3dNuVf8A7lrf+seqfzXB6U0fzWM1y+3ieGY1VfVG3vjklaMNe8dbioATTvAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAUnujWt2bi3vp25p/Kd/wD+Sqrv3Rbe/Axb30bs0/nG/wDZSHnvTix4nO73FOqeumO3WrePp1X6gBU2GAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAsOwHj2r7mr1wv6gbAePavuavXC/t7eDz3P+6rsWDLfY9IAvSQAAAAAAAAAAAAAAc2DlZGFl28rFu1Wr1urhUV0zxxLZthtrcfaDH7xe4NnULcb67cTxVx9Kns5mJuXEyL+Jk28nGu1Wr1urhUV0zumJVvSTRvD53Y1Vb1yPVq7J44/G2Fe0h0esZzZ1Vb1yPVq7J44/HA9HCrbC7XY+vWIxsiabOo0U/Co5IuRH8VP7wtLz/j8BiMvv1YfEU7mqP7rjjhojHYG/gL9Vi/Tqqj+6444AGGxAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFA7sXc5xdttNjJxe94+s41E94vTG6Lsf/HX1dE80z1y8qang5mmahfwM/HuY2VYrmi7arjdNMw91M87svc4xts9NnNwKLdnXMen4m5PFF6mP+3XPqnmnqmRa9H8/nCTGHvz6E7J4v8Az8PJ458/EysDNvYWbYuY+TZrmi5buU7qqao5YmHANjxMTGuAAfQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHY03Krws+zl0ctuuJ3dMc8fk1azcou2qLtueFRXTFVM9MTyMhaDsLm+6dH7xVO+vHq4P8A9M8cfvH4NmeDfNPF4m5gqp3q43Uc8beuPwlcru6qptzwp8BuRNgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAILbu3w9n66v/juU1fru/dnjTNq6O+bPZlO7koir8pif2Zm0h4SLW5zSivjoj7TP/iBzSNV2J5ABr5GgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALDsB49q+5q9cL+oGwHj2r7mr1wv7e3g89z/uq7Fgy32PSAL0kAAAAAAAAAAAAAAAAHJjX72NfoyMe5Vau26oqorpndMTHO2PYPa+xrtinEy6qLWo0Rx08kXY+lT19Mf+xjD92LtyxeovWblVu5RVFVNVM7piY54V7SLR3D53Y3Fe9XHq1cXJPHHIgM/wBH7Gc2NxXvVx6tXF3xyPSAqGwG19vW7NOFm1U29Rop+yL0Rzx19MfjHVb3n7McuxGXYirD4inVVH35Y44lojMMvv5ffqsX6dVUffljkAGCwgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGb92fua422GBXqWnW6LOu2KPgVRuiMmmP4Kuvoq5uSeLk8s5eNkYeVdxcqzcsX7Vc0XLddO6qmqOKYmOaXu5mXdo7mOPtdi1atpNFuxrlqj7KcqmP4auiroq/CeLdMFu0fz/wAmmMPiJ9Dgni/8/HM8sjkybF7GyLmPkWq7V61VNFyiuN1VNUTumJjmlxjYsTr34AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE/sLl+59aizVVuoyKZo/GOOP3j8UA5cW9Vj5Nq/R8q3XFcfbE70hlOOnAY21iY/2zE9HD1xrdlm54u5FXE1sfmzcpu2aLtE76a6Yqpnql+np+mqKo1xsWwAfQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB1Nao4ej5tHTYr3f/AGyyprmXTw8W7Tyb6Ko/RkbUHhOt6r+Hr44qjqmO9C5rHpUyANXIkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABYdgPHtX3NXrhf1A2A8e1fc1euF/b28Hnuf91XYsGW+x6QBekgAAAAAAAAAAAAAAAAAA/dq5ctXabtquqiumd9NVM7piemJa73PtsaNYt06fqFdNGoUR8Grki9Ec8f7umPx+zH36tXK7Vym5brqoromKqaqZ3TExzwgNINH8PnWH8Xc3q49Wrhie2J4Y7UHnuQ4fOLHi7m9VHq1cMT3ccdr0iKT3Pts6dWpp03U66aM+I+Lr5IvR+1XVzrs8/ZnlmIyzETh8RTqqjqmOOOOP7taHzLLcRluImxiI1THVMcccgAj2AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAyzu19y+ztTj161otui1rdun4dHJTl0xzT0V9E/hPNMeY8izex8i5j5Fqu1et1TRXRXTuqpqid0xMTyS93sm7t3ctt7SWrmv6Dapt6zRTvu2o4oy4iP0rjmnn5J5pFx0e0g8RMYbEz6PBPFyTyfjm2eZR+71u5Zu12rtuq3coqmmuiqN00zHFMTHNL8DYQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADSdjsj3Rs/j7531W99ufwni/Tcl1S7nN/fZy8aZ+TVTciPtjdPqhbXpDRbF+V5RYuTt3Or+Po9iz4Svd2aZAFgZIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAyCqJpqmmeWJ3S19kmVTwcq7Tv37q5j9WqfCfT6OGq+v/wCURm0b1HT2OIBqVDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALDsB49q+5q9cL+oGwHj2r7mr1wv7e3g89z/uq7Fgy32PSAL0kAAAAAAAAAAAAAAAAAAAAH6oqqorproqmmqmd8TE7pielrHc+21p1OLel6pXFGbEbrd2Z3Re6p6KvWyV9pmaaoqpmYmJ3xMcyDz7IMNnOH8VejVVHq1cMT2xxx26pQud5Hh84seKuxqqjZVwxPdxx2770kKH3Pdtac+m3pWrXODmfJtXquS71T/u9f28t8efc1yrE5XiJw+Ip1TGyeCY445P7LQ2Z5XiMsxE2MRGqY2cUxxxyACNR4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADIe7n3LvCCi5tFs/ZiNVt078jHpiI91Uxzx/vj9Y4uXl82V01UV1UV0zTVTO6qmY3TE9D3ixzu7dy6NZt3dpNnMaI1OmJqyseiP+pj6VMfT6v4vt5S56PaQeK1YXEz6PBPFyTycXFzbPN4+1RNNU01RMTE7pieZ8GwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFh2Bvd71ybe/iu2qqfxjdP7Sv7Mtl7vetoMOrpucH843fu01u/wcX/GZXXbn/bXPVMRP51p7LKtdqY4pAGwUkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMlzv+tv/AHlXra0yXO/62/8AeVetqzwneyw/PV2IjNdlPS4QGokMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAsOwHj2r7mr1wv6gbAePavuavXC/t7eDz3P+6rsWDLfY9IAvSQAAAAAAAAAAAAAAAAAAAAAAfYmYmJid0w1Pud7aRmU29J1e9EZMfBs36p/1P8AbVP0uvn+3lysQueZHhs5w/ib0apjZPDE93HHD1Sh86yXD5vh/E3o342TwxP92xwvSYzzuc7ad/73pGr3fjvk2L9U/L6Kap6eief7eXQ3n3N8oxOU4mcPiI3+CeCY44aGzXKsRleImxfjf4J4JjjgARaNAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYt3du5bTqVu/tPs3jbs+n4eXi26f9eOeumPp9Mfxfby+dZ4p3S95sQ7uncqpzKcjajZrHinJiJuZuJRHFdjlm5RH0umOfljj5S7aPaQbjVhcTO9wT2T2S89gC+gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOxptfetRxrn0LtNX5TDWGQUzNNUVRyxO+GvxMTETHHE8jbngwua6MTRxTTPXuu5M5VO9VHMANqJcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAZLnf9bf+8q9bWmSZVXCyrtW7dvrmf1as8J0/48NHLV/8ojNdlPS4gGokMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAsOwHj2r7mr1wv6gbAePavuavXC/t7eDz3P+6rsWDLfY9IAvSQAAAAAAAAAAAAAAAAAAAAAAAAGmdzrbWa5t6RrN7fVPwbGRXPL0U1T09EszERnWS4bOMNNi/HNPDE8cdscKKzjJ8Pm2HmzfjmnhieOO2OF6TGa9zzbeYm3pGtXfg8VNjJqnk6Kap9U/m0p58znJsTlGImxiI5p4Jjjj+7zQub5PiMqxE2b8c08Exxx/d4ARKLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYV3c+5R33v8AtRsvjfGcdzNwrdPyum5RHT008/LHHy4C95sC7uvcpm3ORtTsxj76J33M3Dtx8nnm5RHRzzTzcscXIXnR3SDZhcTP0z2T2SwkAXoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAa7Y/wBC35sepkTXMaIpx7dMckUREfk2r4MPXxPNT/8ASXynbV0drkAbbTIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAyCqZqqmqeWZ3y1rLq4GLer+jRVP6Mkal8J9fpYan6//AJQ+bT6kc/YANUocAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABYdgPHtX3NXrhf1A2A8e1fc1euF/b28Hnuf91XYsGW+x6QBekgAAAAAAAAAAAAAAAAAAAAAAAAAANF7nm2/eYtaRrN34vipsZFU/J6Kauronm+zkzoRWcZPhs2w82MRHNPDE8cf3fRmbZThs1w82L8c08MTxx/d96TGXdzzbWMWLek6zdnvHybF+r/t/wC2rq6J5vs5NRiYmImJiYnkmHnzO8kxOT4ibN+N7gngmOTtjgaFznJsRlOImzeje4J4Jjk7Y4ABDokAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB597u/csqxa8jarZrH3407683Dt0/6XTcoiP4eeY5uXk5MOe85443S8793fuWzp1d7afZvF/5Gd9eZi24/0J566Y+h0x/Dy8nIXzR3SDdasLiZ3+CeyeyWKAC7gAAAAAAAAAAAAAAAAAAAAAAAAAAADX6KeDRTT0RuZNhUd8zLFuP4rlMfnLWm2vBhb9HE1/TH/wCyZymN6qebtAG1kuAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA6et18DRs2vosV7vt4MsraZtZX3vZ3Mq6aIp/OYj92ZtMeEy5rx1m3xU6+uZ7kHms/wCSmOQAa2RYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACw7AePavuavXC/qBsB49q+5q9cL+3t4PPc/7quxYMt9j0gC9JAAAAAAAAAAAAAAAAAAAAAAAAAAAAAX7udbZzgzb0nVrsziz8Gzeqn/AEuqf9vq+zkoIjM2ynDZrhpw+Ije4J4YnjhHZpleHzTDzYvxvcE8MTxw9J0zFURMTExPHExzjJu53tnVptVGl6pcmrCmd1q7PLZnon/b6msU1U1UxVTMVUzG+JieKYefc9yLE5NifE3t+J9WrgmO/jjg5tUtDZ3kmIyjEeKu78TsngmO/jjgfQEIhgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAqiKqZpqiJiY3TE84A8493buWxo03dpdnMef+HVVcLLxaI/6aZ/jpj6HTH8P2cmNPeVdNNdFVFdMVU1RuqpmN8THQ8293LuWToNV3aPZ6zM6VVVwsjHp5cWZnlj/Zv/L7OQv+j2kHjNWGxM+lwTx8k8vFx8+3HwBdAAAAAAAAAAAAAAAAAAAAAAAAAAEhs7b77ruFRu3/AB1NX5Tv/ZqDPNhrXfNoLde7f3qiqv8ATd+7Q27PBtY3GW3Lk/7q56oiO3Wnsrp1WpnlAGxEkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgdu7nA0Cqn/5LlNP7/sz1du6Nd3YOLZ3/ACrs1bvsjd+6ktDeEG94zOaqfhppjt7VezKrXf1cUACkMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABYdgPHtX3NXrhf1A2A8e1fc1euF/b28Hnuf8AdV2LBlvsekAXpIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC79z7bOvS7lGm6ncqrwKp3UVzxzY/wD69XMpAjs0yvDZph5w+Ip1xPXE8ccv92MDMssw+ZYebGIjXE9cTxxyvSVFdNyimuiqmqiqN9NUTviY6YfWQbAbZ3NIro07UapuafVO6mrlqszPR009X5dE67auUXbVN21XTXRXEVU1UzviYnnh59z/ACDE5LiPF3d+mfVq4JjsnjjsaGz3IsRk9/xd3fpn1auCY7+OOx+gEEhAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB+b1u3etV2rtum5brpmmuiqN8VRPLExzw/QDzN3bu5bc2cu3Nf0CzVc0aurfesxxziTPro6J5uSeaWSveN+1bv2a7N63TctXKZproqjfFUTG6YmOeHmLu19y69stfr1vRLdd3RLlXw6I3zViVTPJPTR0Tzck80ybC0e0g8fqw2Jn0uCePknl/PPtysAXEAAAAAAAAAAAAAAAAAAAAAAABbu5zY33svJmOSmmiJ+3jn1QuSB2Ex+86DTcmN03rlVf4cn7J56L0QwnkuTWKZ2zG6/lOv8TCzYKjcWKYAFlZQAAAAAAAAAAAAAAAAAAAAAAAAAAAAACk90W7vzsWzv+Ramr853f/iqqb22vd92hvRE74t000R+W/1zKEebtKcR5RnGIr/5TH8fR7FYxdW6v1TygCAYwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACw7AePavuavXC/qBsB49q+5q9cL+3t4PPc/wC6rsWDLfY9IAvSQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFx2B2yuaLXGBnzXd0+qeKeWbMzzx1dMfl104YGZZbh8yw9WHxFOumeuJ444p/uxg5jl2HzGxNjEU66Z64njjil6QsXbV+zRes3KbluumKqaqZ3xMTzw/bGtgNr7uh3ows2qq5p1dX2zZmeeOrpj/wBnYca/ZycejIx7tN21cp4VFdM74mHn7SDR7EZLiPF3N+ifVq4J7p447Gh8+yDEZPf3Fe/RPq1cE908cOQBX0EAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPxkWbORYuY+Raou2blM0V0V0xNNVM8UxMTyw/YETqeWu7V3Mr+yeZc1jSbdd3Q71fJHHOLVM/Iq/wBvRV+E8e6ZzF7uy8exl4t3FyrNu/Yu0TRct1076aqZ4piY54eW+7T3Nb+yGfVqemWrl3Qr9fwKt/CnHqn+Cqejon8J4+U2Lo9n/lMRh8RPp8E8f/v552agC3AAAAAAAAAAAAAAAAAAAAD7TE1VRTTG+ZndEPiV2TxPdeu49Mxvotz3yr7KeOP13MrA4WrGYm3h6NtUxHXLnbomuqKY4Wiafjxi4NjGj/tW4p+3dDnB6jtW6bVEUU7IjVHQtkRERqgAc30AAAAAAAAAAAAAAAAAAAAAAAAAAAABwajf9zafkZH/AMduqqPtiHC7cptUTXVsiNfU+TOqNcsx1e97o1XKvb+Ku7VMfZv4nUB5Xv3ar1yq5VtqmZ61RqndTMyAOp8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWHYDx7V9zV64X9QNgPHtX3NXrhf29vB57n/AHVdiwZb7HpAF6SAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAltN2/1DYzSr9y3j052NvjdYuXJpimqZ3b4ndO77EShNt/m7f8AOo9qEDpPYt3spxEXKdeqmZjkmI1xLAzTCWcXha7V+ndU6lt98PmfVax/WT/ge+HzPqtY/rJ/wYaPNqh+bmW/pfee9uXvh8z6rWP6yf8AA98PmfVax/WT/gw0Dzcy39L7z3ty98PmfVax/WT/AIHvh8z6rWP6yf8ABhoHm5lv6X3nvbl74fM+q1j+sn/A98PmfVax/WT/AIMNA83Mt/S+897cvfD5n1Wsf1k/4Hvh8z6rWP6yf8GGgebmW/pfee9uXvh8z6rWP6yf8D3w+Z9VrH9ZP+DDQPNzLf0vvPe3L3w+Z9VrH9ZP+B74fM+q1j+sn/BhoHm5lv6X3nvbl74fM+q1j+sn/A98PmfVax/WT/gw0Dzcy39L7z3ty98PmfVax/WT/ge+HzPqtY/rJ/wYaB5uZb+l95725e+HzPqtY/rJ/wAD3w+Z9VrH9ZP+DDQPNzLf0vvPe3L3w+Z9VrH9ZP8Age+HzPqtY/rJ/wAGGgebmW/pfee9uXvh8z6rWP6yf8D3w+Z9VrH9ZP8Agw0Dzcy39L7z3ty98PmfVax/WT/ge+HzPqtY/rJ/wYaB5uZb+l95725e+HzPqtY/rJ/wPfD5n1Wsf1k/4MNA83Mt/S+897cvfD5n1Wsf1k/4Hvh8z6rWP6yf8GGgebmW/pfee9uXvh8z6rWP6yf8D3w+Z9VrH9ZP+DDQPNzLf0vvPe3L3w+Z9VrH9ZP+B74fM+q1j+sn/BhoHm5lv6X3nvbl74fM+q1j+sn/AAcOf3fK8/CvYWbsfiZGPeomi5buZczTVTPLExwGJg+xo7lsTri396u9z59zHu5t67iY9WNYrrmbdmbnDm3HNTwt0b93S4AEzEao1AA+gAAAAAAAAAAAAAAAAAC69zzD4OPkZ1UcddXe6Psjjn9d35KXRTVXXTRTEzVVO6Ijnlquk4lODp1jFp3fF0RE7ueeefz3tgeDvLfKMxnE1RvW4+870fbX9klllrdXN3xO0A3gngAAAAAAAAAAAAAAAAAAAAAAAAAAAAABCbbX+87P3aYndN2qm3H575/SJTan90bI/wCkxYn6Vyr1R+6u6W4vyXJ79fDMbn+W92sbGV7ixVKngPOKsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALDsB49q+5q9cL+oGwHj2r7mr1wv7e3g89z/ALquxYMt9j0gC9JAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQm2/zdv+dR7UJtCbb/ADdv+dR7UIbSL3Tifoq/EujE+xq5pZ0A80KsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAn9h8D3Xq8X66d9vGjhz538Pb+DQUTspp/wDw/SLdNdO69d+MudUzyR+EfulnojRDKP8ATMsoorjVXV6VXPOyOiNUc+tZcFZ8VaiJ2zvgC0MsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAZxtnke6NoL8RO+m1EW4/COP9Zlol+5TZs13a53U0UzVVPVEb2TZF2q9fuXq/lXKpqn7Zne1n4S8buMLZw0f7pmZ5qY1fmfsis0r1UU0cbjAabQgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACw7AePavuavXC/qBsB49q+5q9cL+3t4PPc/7quxYMt9j0gC9JAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQm2/zdv+dR7UJtCbb/N2/wCdR7UIbSL3Tifoq/EujE+xq5pZ0A80KsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJnZDTf8AiGq0zcp32LPw6+ieiPz9UoemJqmIiJmZ4oiOdpmzOmxpml0Wqojv1fw7s9fR+HIt+heSf6pmEVVx/jt788vFHTP2iWbgbHjbmudkJMB6BWMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABDbZ5XubQL0RO6q9MWo/Hl/SJZwtfdEyuFlY+HTPFbpmuqOueKP0j9VUaD09x/lWb1URO9biKenbP3nV0K7mNzd3pji3gBS2CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAsOwHj2r7mr1wv6gbAePavuavXC/t7eDz3P+6rsWDLfY9IAvSQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEJtv8AN2/51HtQm0Jtv83b/nUe1CG0i904n6KvxLoxPsauaWdAPNCrAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAO1pWDe1HOt4tmPhVTxzzUxzzLts2bl+5TatxrqqnVEccy+00zVOqE5sLpXunLnUL1O+1Zn4ET/FX/47F6cODjWsPEt41indbt07o6+tzPRujmS0ZPgabEetO/VPHPdGyFnw1iLFuKeHhAE8yAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEbtPl+4tEyLsTurqp4FH2zxf+fwY+MxNGEsV369lMTM9Ea3GuuKKZqngZ9ruX7t1fJyYnfTVXMU+bHFH6Q6QPLuIv14i9Ver21TMzzzOtU6qpqqmqeEAdLiAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAsOwHj2r7mr1wv6gbAePavuavXC/t7eDz3P+6rsWDLfY9IAvSQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEJtv8AN2/51HtQm0Jtv83b/nUe1CG0i904n6KvxLoxPsauaWdAPNCrAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPtMTVVFNMTMzO6IjnaLspo8aZhcO7THuq7G+ufoxzUonYjROOnVMujrsUzH93Z+fQuDcWgejM4eiMxxMelPqRxRPDzzwcnOm8vwu5jxtW3gAGzkqAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKZ3RMzhXsfApniojvlf2zxR+m/8ANcqqoppmqqYiIjfMzzMr1jLnO1PIyp37rlc8HfzU8kfpuUDwh5l5Nl0YamfSuT9o35++qEdmV3c2tzHC6gDRyAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWHYDx7V9zV64X9QNgPHtX3NXrhf29vB57n/dV2LBlvsekAXpIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACE23+bt/zqPahNoTbf5u3/Oo9qENpF7pxP0VfiXRifY1c0s6AeaFWAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFg2S0KdRvRlZNMxiW55J/7k9H2dLg2Z0S5quRw7kVUYtE/Dr6Z+jHW0Sxat2LNFm1RFFuiN1NMckQ2LoXolOOrjG4un/FGyJ/3T/8A5j77NmtJ4HB+Mnxlez8v3ERERERERHFEQA3WnQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEJtpm+49EuUU1brl+e90/ZPL+nrZ0n9uM73VrE2KKt9vGjgR538XZ+CAefdNs0/1DNa4pn0bfox0bZ69fRqVvH3fGXp1bI3gBUWGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAsOwHj2r7mr1wv6gbAePavuavXC/t7eDz3P+6rsWDLfY9IAvSQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEJtv83b/AJ1HtQm0Jtv83b/nUe1CG0i904n6KvxLoxPsauaWdAPNCrAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACY2b0O9qt6K64qt4tM/Dr6eqOtz7M7PXdRqpycmKreJE8XNNzqjq61+sWrVizTZs0U0W6I3U00xxQ2JoloZXjppxeNjVa2xHDV3U/ng40ng8DNz069n5fMaxaxrFFixbi3bojdTTHM5AbqoopopimmNUQnIjVvQAOT6AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOprGbTp+m38urdvop+DE89U8kfm7al90HP4d+1p1urit/DuedPJH5etBaSZrGVZdcvxPpbKfqnZ1behj4q94m1NXCqldVVddVdUzNVU75meeXwHm2ZmZ1yq4A+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACw7AePavuavXC/qBsB49q+5q9cL+3t4PPc/7quxYMt9j0gC9JAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQm2/wA3b/nUe1CbQm2/zdv+dR7UIbSL3Tifoq/EujE+xq5pZ0A80KsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA7Gn4WTn5EWMW1Vcrnl3ckR0zPM7LVqu9XFu3EzVOyI35l9iJqnVDgiJmYiI3zPJC27N7LTVNOVqlG6nlosTyz53YltntncbTYpvXt1/K+lMcVH2dqcbc0Y0Dps6sTmMa6uCjgj6uOeTZx60zhMvin0rvU+UxFNMU0xEREboiOZ9BtDYlgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHDnZNvExLuTdndRbpmqevqZVmZFzKyruTdnfXcqmqVr7oGo/6emW6ui5d3fpH7/kp7SPhCznyvGxg7c+jb2/VO3qje59aBzK/u69xGyPyANeo0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABYdgPHtX3NXrhf1A2A8e1fc1euF/b28Hnuf91XYsGW+x6QBekgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAITbf5u3/Oo9qE2hNt/m7f8AOo9qENpF7pxP0VfiXRifY1c0s6AeaFWAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABJ6RoeoalMVWbXAtc92vip/Dp/BddF2dwdN4Nzg9/yI/wC5XHJ9kcy1ZHohmGbTFcU7i38U9kbZ/HKy8Pgrl7f2Rxqzoey+VmcG9mcLGsTx7pj4dUdUc34rtgYWNg2IsYtqm3RHLu5Znpmed2BubI9GsDk1H+GnXXw1Tt/8jkjp1pzD4W3Yj0dvGALAyQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABw52Tbw8S7k3p3UW6Zqnr6nMpm3+pcK5Rplqrip3V3d3TzR+/5IXSDN6cpwFeJnbspjjqnZ3zyRLoxN6LNualYzcm5l5d3JuzvruVTVPV1OEHmy5cquVzXXOuZ3551XmZmdcgDg+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALDsB49q+5q9cL+oGwHj2r7mr1wv7e3g89z/ALquxYMt9j0gC9JAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQm2/zdv+dR7UJtCbb/ADdv+dR7UIbSL3Tifoq/EujE+xq5pZ0A80KsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA5sTEycu53vGsXLtXRTTv3fb0Odu3XcqiiiNczwQ+xEzOqHCLNp2x+bd3VZl2jHp+jHwquxZtM0DTMDdVbsRcuR/3Lvwp/Dmj8FxyvQTNMbqquU+Lp46tv8AHb16mbay+9c270cqkaXoGpahuqt2e92p/wC5c+DH4c8/gtmk7Lafh8G5kR7quxz1x8GP/p7d6fGy8o0Iy3LtVddPjK+OrZ0Rs69c8qVs4C1a35355SIiI3RG6IAXFmgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOprGdb07T7uVc3TwY+DT9Krmhlt+7cv36712rhV11TVVPTMp7bbVPdmf7ktVb7GPO7i/ir55/Dk/NXmhtOc9/1HHeItT/jt73PPDPZHXwq9mGI8bc3MbIAFIYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACw7AePavuavXC/qBsB49q+5q9cL+3t4PPc/7quxYMt9j0gC9JAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQm2/wA3b/nUe1CbQm2/zdv+dR7UIbSL3Tifoq/EujE+xq5pZ0A80KsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAL53PPEt7+Zq9mlQ187nniW9/M1ezSu/g+980/TUz8t9v0LIA3ysIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAhtrdV/4bps026t2Re302+mOmr8Etfu27Fmu9dqii3RTNVUzzRDMNc1G5qeo3MmvfFPybdP0aY5IU3TTP/8ASsF4u1P+W5vRyRwz2Ry8zBx2J8TRqjbLogNAq6AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAsOwHj2r7mr1wv6gbAePavuavXC/t7eDz3P+6rsWDLfY9IAvSQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEJtv83b/nUe1CbQm2/zdv8AnUe1CG0i904n6KvxLoxPsauaWdAPNCrAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC+dzzxLe/mavZpUNfO554lvfzNXs0rv4PvfNP01M/Lfb9CyAN8rCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAidp9Wp0vAmqiYnIub6bUeufwYuNxlnBYevEXp1U0xrn+8c7IcLldNumaqtkIHbvV++XP+F49XwaJ33pjnnmp/D/3kVN9rqqrqmuqZqqqnfMzyzL483Z1m13NsZXibvDsjijgj+8OuVYv3pvVzXIAinSAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAsOwHj2r7mr1wv6gbAePavuavXC/t7eDz3P+6rsWDLfY9IAvSQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEJtv8AN2/51HtQm0Jtv83b/nUe1CG0i904n6KvxLoxPsauaWdAPNCrAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC+dzzxLe/mavZpUNfO554lvfzNXs0rv4PvfNP01M/Lfb9CyAN8rCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA4szItYmLcyb9XBt2431SzHWdQu6nn15N3iieKin6NPNCU2x1n3fk+5Mev/lrU8sfx1dP2dCvNG6caS/6jf8AJMPP+Kid+fiq4+aODr4kBj8V42rcU7IAFBRwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACw7AePavuavXC/qBsB49q+5q9cL+3t4PPc/7quxYMt9j0gC9JAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQm2/wA3b/nUe1CbQm2/zdv+dR7UIbSL3Tifoq/EujE+xq5pZ0A80KsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAL53PPEt7+Zq9mlQ187nniW9/M1ezSu/g+980/TUz8t9v0LIA3ysIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAq222t94tzpuLX8bXHx1UT8mOj7Z9SR2o1mjSsTdbmKsq5G63T0f7p6mc3K67lyq5cqmquqd9VUzvmZa2060o8ltzgMNPp1etPwxPBzz9o50XmGL3EeLo28L8gNMIMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABYdgPHtX3NXrhf1A2A8e1fc1euF/b28Hnuf91XYsGW+x6QBekgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAITbf5u3/Oo9qE2hNt/m7f8AOo9qENpF7pxP0VfiXRifY1c0s6AeaFWAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAF87nniW9/M1ezSoa+dzzxLe/mavZpXfwfe+afpqZ+W+36FkAb5WEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAdLWtSsaXhVZF6d9XJRRz1T0OXUMyxgYleTkV8GimPxmeiOtmut6nf1TNm/endTHFbojkphUNLNJ6MmseLt796rZHF/wAp7OOelhYzFxYp1R60uDPy7+dl15ORVwrlc/hEdEdTgBoG7dru1zcrnXM78zPDKuzMzOuQBwfAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFh2A8e1fc1euF/UDYDx7V9zV64X9vbwee5/3VdiwZb7HpAF6SAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAhNt/m7f8AOo9qE2hNt/m7f86j2oQ2kXunE/RV+JdGJ9jVzSzoB5oVYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAXzueeJb38zV7NKhr53PPEt7+Zq9mld/B975p+mpn5b7foWQBvlYQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABxZeRZxcevIyK4ot0Rvqql+si9ax7Nd69XFFuiN9VU8kM62k1u7qt/g077eLRPwKOnrnr9StaS6SWckw+ud+5V6tPbPJH32RyYuKxVNinl4HHtFrF7VsvhTvox6J+Kt9HXPWiwefcZjL2Nv1X79WuqrbP9+yuV11V1TVVtAGM4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALDsB49q+5q9cL+oGwHj2r7mr1wv7e3g89z/uq7Fgy32PSAL0kAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABCbb/N2/wCdR7UJtCbb/N2/51HtQhtIvdOJ+ir8S6MT7GrmlnQDzQqwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAvnc88S3v5mr2aVDXzueeJb38zV7NK7+D73zT9NTPy32/QsgDfKwgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADjyb9rGsV379yLduiN9VU8z5l5NnEx68jIuRbt0RvmZZ3tHrd7Vr3BiJt41E/At7+Xrnr9Ss6SaS4fJLO/wClcn1ae2eKPzsjkxcViqbFPK/e02u3dVvd7t8K3iUT8GjnqnplCg0Dj8ffx9+rEYirXVP91RxQrly5Vcq3VU74Aw3AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABYdgPHtX3NXrhf1A2A8e1fc1euF/b28Hnuf8AdV2LBlvsekAXpIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACE23+bt/zqPahNoTbf5u3/Oo9qENpF7pxP0VfiXRifY1c0s6AeaFWAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAF87nniW9/M1ezSoa+dzzxLe/mavZpXfwfe+afpqZ+W+36FkAb5WEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAdbUs7G0/FqyMmuKaY5I56p6I63BrerYulY/fL1XCuVR8XbieOqf2jrZ3q2pZWp5U38mvqooj5NMdEKbpRpdYyeibVr0r08HBHLV3bZ5IYOLxtNiNUb9Tn17WMjVsjhXPgWaZ+LtxPFHXPTKMBorF4u9jL1V+/Vuqqtsyr9ddVdW6qnfAGM4gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALDsB49q+5q9cL+oGwHj2r7mr1wv7e3g89z/uq7Fgy32PSAL0kAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABCbb/ADdv+dR7UJtCbb/N2/51HtQhtIvdOJ+ir8S6MT7GrmlnQDzQqwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAvnc88S3v5mr2aVDXzueeJb38zV7NK7+D73zT9NTPy32/QsgDfKwgAAAAAAAAAAAAAAAAAAAAAAAAAAPlUxTTNVUxERG+ZnmJ3h9Qe0e0NjTKarFng3suY+TzUdc9iM2j2piOFi6XVv5qr/APj2qfVM1VTVVMzMzvmZ5Zax0o07osa8Nl066uGvgj6eOeXZHLwRWLzCKfQtbeNy5mTfy8irIyLlVy5VPHMuEGoLlyq5VNdc65nbMoWZmZ1yAOD4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAsOwHj2r7mr1wv6gbAePavuavXC/t7eDz3P8Auq7Fgy32PSAL0kAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABCbb/N2/51HtQm0Jtv8AN2/51HtQhtIvdOJ+ir8S6MT7GrmlnQDzQqwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAvnc88S3v5mr2aVDXzueeJb38zV7NK7+D73zT9NTPy32/QsgDfKwgAAAAAAAAAAAAAAAAAAAAAAAAILX9pMXToqs2ODkZMcXBifg0/bP7ephZhmOGy6zN7E1xTTH35Ijhnmddy7Rap3VU6kpqOdi4GPN/KuxRTHJHPVPREc6h7QbQ5Op1Tat77GLzURPHV53YjdQzcnPyJv5V2blc8nREdERzOs0ppJpric012MProtfern5OSOnWgsVjqr3o070ACjsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABYdgPHtX3NXrhf1A2A8e1fc1euF/b28Hnuf91XYsGW+x6QBekgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAITbf5u3/Oo9qE2hNt/m7f86j2oQ2kXunE/RV+JdGJ9jVzSzoB5oVYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAXzueeJb38zV7NKhr53PPEt7+Zq9mld/B975p+mpn5b7foWQBvlYQAAAAAAAAAAAAAAAAAAAACZiI3zO6IAcGdmY2FYm/lXqbVEc88s9URzoLXNqsbF4VnBinJvcnC/gp7fw/NS8/Nys6/N7KvVXK+bfyR1RHMoef6d4TL9drC/wCS5/1jnnh5o64R+IzCi3vUb8/ZN69tRkZnCsYXCx7E8U1fx1diuA03mWaYrM73jsTXup+0ckRwIO7eru1bquQBHusAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABK7Laha03Vqb9+Jm3VTNFUx/Dv3cf6NJt10XLdNy3VFdFUb6aonfEwyFP7La/XptyMbJma8Sqftm3PTHV1Nh6FaV0ZbPkeJ3rdU64n4Znj5J+3NsksBjItehXsaCPzauUXbdNy3XTXRVG+mqmd8TD9N2RMVRrhPAD6AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACE23+bt/zqPahNoTbf5u3/ADqPahDaRe6cT9FX4l0Yn2NXNLOgHmhVgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABfO554lvfzNXs0qGvnc88S3v5mr2aV38H3vmn6amflvt+hZAG+VhAAAAAAAAAAAAAAAAAAB0NV1jA02n/mb3xm7fFunjqn8Ob8VO1nanOzOFbxt+LZn6M/Dn7Z5vwVrOtK8uymJpuVbqv4Y356eCOnqli38Zas70zrniWvWdewNMiaK7nfb8clqid8/j0KTrOvZ2pzNFdferHNaoni/GedFzMzO+Z3zL41BnmmOPzbXb17i38McPPPD9o5ELiMbcvb2yABU2GAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAnNl9euaZdixfmqvErnjjnonpjsaFZuW71qm7arprorjfTVE8UwyFObMa9c0u53m9wrmJVPHTHLRPTHY2JofpjOAmMHjJ12uCfh//n8cyTwWN8X6Fez8NEH4x71rIs0XrNdNduuN9NUckw/bdVNUVRFVM64lOxOsAcgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQm2/wA3b/nUe1CbQm2/zdv+dR7UIbSL3Tifoq/EujE+xq5pZ0A80KsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAL53PPEt7+Zq9mlQ187nniW9/M1ezSu/g+980/TUz8t9v0LIA3ysIAAAAAAAAAAAABVMUxM1TERHLMgCE1PafTMPfTbuTk3Y/ht8n41cn5b1V1TabUs3hUUV+5rU/w2+WY655fUqebaaZXl2und7uvip3+udkdevkYd7HWrW9r1zyLpqmtadp0TF+/E3P/AI6OOr8ub8VS1bavOypmjE/5W1008dc/jzfgr0zMzvmd8y+NX5xpzmWYa6Lc+Ko4qdvTVt6tSJv5hdub0b0PtdVVdU1VVTVVM75mZ3zL4CmTOudcsEAfAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABNbM67d0q93u5wq8SufhU89M9MNDx71rIs0XrNdNduuN9NUckwyJM7N67e0q9Fuvfcxap+HRzx1x1+tsLRDTGcumMJi512p2T8P/APP44Elgsb4r0K9n4aOOPGv2smxRfsXIuW64301RzuRuyiumumKqZ1xKdide/AA5PoAAAAAAAAAAAAAAAAAAAAAAAAAAAAhNt/m7f86j2oTaE23+bt/zqPahDaRe6cT9FX4l0Yn2NXNLOgHmhVgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABfO554lvfzNXs0qGvnc88S3v5mr2aV38H3vmn6amflvt+hZAG+VhAAAAAAAAB1s3PwsON+Vk2rXFv3VVcc/hyygc/bHCt76cSxcv1c1VXwae39ETj89y/L/wD8m9FM8WvXPVGufs6bmIt2/WqWd1c/UcHBp35WTbtz9GZ31T+EcahahtLquXvpi/3iif4bUcH9eVD1TNVU1VTMzPLMqJmXhKtU66cFa3U8dW9HVG/PXCPu5pEb1uOtctS2yojfRp+NNU/Tu8UflHarOo6rqGoTPurJrrp+hHFTH4Q6Q17mekuZZnri/dnc/DG9HVG3p1o27irt31pAEExwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAExs3rd3Sr/Bq33MWufh0dHXHX62iY1+zk2KL9i5Tct1xvpqhkaW2c1q9pORz141c/GW/3jrX/AER0wqy2YwuKnXanZPDT/wCcccG2OKZHBY2bXoV7Pw0ocWJkWcvHoyMe5FduuN8TDlbvorpuUxXROuJ2SnomJjXAA5PoAAAAAAAAAAAAAAAAAAAAAAAAAAhNt/m7f86j2oTaE23+bt/zqPahDaRe6cT9FX4l0Yn2NXNLOgHmhVgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABfO554lvfzNXs0qGvnc88S3v5mr2aV38H3vmn6amflvt+hZAfKqqaaZqqqimI55nc3xM6t+VhfR0cjWNLx/wDVz7ETHNFfCn8oRuTtdpNrit9/vz/to3R+u5F4nPctwvtr9McmuNfVtdNeItUbaoWAUzJ21uzvjGwaKeiblcz+kbvWisraXWMjfHurvVM81umKf15VcxfhByixvW5qrnkjV/8AtqY1eZWadm+0a7ct2qJruV00UxyzVO6EXmbR6Pjb4nLi7VHNajhb/wAeT9Wc3796/Xw7965dq6a6pmf1caq43wmYirewtmKeWqZn7Rq7WHXmtU+pSuGZtpyxh4X2VXav2jtQmbtBq2XvivLqt0z/AA2vgx+nGihUcdpTm2O1xdvTq4o9GPtq19LDuYu9c21PszNUzMzMzPLMvgK+xgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEts7rV7ScjnuY1c/GW/3jraJhZVjMxqMjHuRXbrjimPVPWyVKbP6xf0nJ4VO+uxXPxlvfy9cda+aI6X15XVGGxU67M9dPNyccdMcUyGDxs2p3Ffq/hpg4cLKsZmNRkY9yK7dccUx6p63M3jbuUXKIronXE78THCn4mJjXAA5voAAAAAAAAAAAAAAAAAAAAAAAAhNt/m7f8AOo9qE2hNt/m7f86j2oQ2kXunE/RV+JdGJ9jVzSzoB5oVYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASOm61qGnYtWPiXabdFVc1zPAiZ37ojn+xHDIw2Lv4WvxliuaauOJ1T1w5UV1UTrpnUkb+t6te+XqF+PNq4Pq3Ojdu3btXCu3K7k9NVUy/A+38ZiMR7a5NXPMz+Squqr1p1gDGcQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEnoGsZGk5HCo+HZqn4y3M8U9cdEtGwMuxnYtGTjVxXbq/OJ6J62TJLQdXv6Tld8t767NX+pb38VUdq86JaXV5VXGHxM67M/9eWOTjjpjf2yGDxs2Z3NXq/hpw4MDLsZ2LRk41cV26vzieietzt6WrtF2iK6J1xO/Exwp+JiY1wAOb6AAAAAAAAAAAAAAAAAAAAAAITbf5u3/Oo9qE2hNt/m7f8AOo9qENpF7pxP0VfiXRifY1c0s6AeaFWAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASGh6rkaVl99tTwrdXFctzPFVHb1tI07Nx9QxKcnGr4VFXLHPTPRPWydIaHquRpWX321PCt1cVy3M8VUdvWu+iWlteU1xh8ROuzP/Xljk446Y39ufg8ZNmdzV6v4agOtpmdjaji05ONXwqZ4pieWmeiXZb1s3rd+3Fy3Oumd+JjZKwU1RVGuAB2PoAAAAAAAAAAAAAAAAAAAAhNt/m7f86j2oTaE23+bt/zqPahDaRe6cT9FX4l0Yn2NXNLOgHmhVgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHf0XVMjS8uL1md9M8Vy3M8VcdvW0fTM/H1HEpycavfTPFMTy0z0Syl3tG1PJ0vK79jzvpnironkqj/3nXTRPSy5k9fib2/Znrp5Y7Y6Y39udg8ZNmdzV6rUh1NJ1DH1LEpyMeri5KqZ5aZ6Jdtvexft4i3TdtVa6Z34mOFYaaoqjXGwAdr6AAAAAAAAAAAAAAAAAAITbf5u3/Oo9qE2hNt/m7f86j2oQ2kXunE/RV+JdGJ9jVzSzoB5oVYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB3dH1LI0zLi/Yq4uSuieSuOiWkaTqGPqWJTkY9XFyVUzy0z0Syp29J1DI03LpyMerdPJVTPJVHRK5aK6WXcnueKu+lZnbHw8sdscPOzsHjJsTqn1WqjpaPqWPqmJF+xO6eSuieWieiXdb4w+ItYm1TdtVbqmrfiYWCmqKo1xsAHc5AAAAAAAAAAAAAAAACE23+bt/wA6j2oTaE23+bt/zqPahDaRe6cT9FX4l0Yn2NXNLOgHmhVgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHb0nUMjTcunIx6t08lVM8lUdEtH0bU8bVMXv2PVuqjironlon/wB52Wu1pmfkadl05ONXuqjimJ5Ko6JXDRbSu7k1zxdz0rMzvxxcsdscLNwmMmxOqfVasOjouqY+qYkXrM7qo4rluZ46J7Ot3m+cNibWKtU3rNW6pq34mFhpqiuN1TsAHe5AAAAAAAAAAAAAACE23+bt/wA6j2oTaE23+bt/zqPahDaRe6cT9FX4l0Yn2NXNLOgHmhVgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHa0zOydOyqcnGr4NUcUxPJVHRLRtD1XH1XE77ang3KeK5bmeOmezrZe7OnZuRp+XTk41fBrp5Y5qo6J6lt0X0pvZLd3FfpWZ2xxcscvJw/dmYTF1WJ1T6rVxH6HquPquJ321PBuU8Vy3M8dM9nWkG/MLirWLtU3rNW6pq34mFioriuN1TsAHe5AAAAAAAAAAAACE23+bt/zqPahNoTbf5u3/Oo9qENpF7pxP0VfiXRifY1c0s6AeaFWAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAdjAy8jByqMnGrmiun8pjonqaNoGr2NWxeHRuovU/6lvfx0z2Mxc+Bl38HKoycauaLlP5THRPUtejGlF7Jb25q9K1Vtji5Y5fz1TGZhMXVYq5GsiM0DWMfVsfhUTFF+mPjLc8sdcdMJNvzCYuzjLNN+xVuqatkwsVFdNdO6pneAGS5AAAAAAAAAACE23+bt/zqPahNoTbf5u3/Oo9qENpF7pxP0VfiXRifY1c0s6AeaFWAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAc2FlX8PJoyMe5NFyieKY9X2NG2e1ixq2Nwqd1F+iPjLe/k646mZubCyr+Hk0ZGPcmi5RPFMer7Fp0Y0mvZLe1T6Vqr1qe2OX87J4JjLwuKqsVcjWhFbO61Z1bH5reTRHxlv946kq37gsbYxtim/Yq3VNWyf7w8ixUV03KYqpneAGU5gAAAAAAACE23+bt/zqPahNoTbf5u3/Oo9qENpF7pxP0VfiXRifY1c0s6AeaFWAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAcuJkXsTIoyMe5NFyid8TDRdnNas6tj81GTRHxlv946mauXFv3sa/RfsXKrdyid8VQs+jWk1/JL3xW6vWp7Y5fzsng1ZeFxVVirka2IjZvW7Wq2ODVut5VEfDo6euOr1Jdv7A46xjrFN+xVuqav71rFbuU3KYqpneAGW5gAAAAACE23+bt/zqPahNoTbf5u3/Oo9qENpF7pxP0VfiXRifY1c0s6AeaFWAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAcmNfu41+i/YuTbuUTvpqjmaJs3rtnVbMW691vKpj4dHNPXHUzdyWL12xeovWa6qLlE76ao5YlZNHNJMRkl/XT6VufWp7Y4p/PCysLiqrFXI1wQuzOu2tVs96u8GjLoj4VPNVHTCaegMBj7GPsU4jD1a6Z/uqeKYWO3cpuUxVTO8AMxzAAAAEJtv83b/nUe1CbQm2/zdv8AnUe1CG0i904n6KvxLoxPsauaWdAPNCrAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOSxeu2L1F6zXVRconfTVHLEtA2Y163qlvvN7g28umOOnmrjpjsZ2/dm5cs3abtquqiuid9NUTxxKxaO6R4jJb+6o36J9anj5Y4p5etk4bE1WKtcbOJrog9l9et6naixfmmjLojjjmrjpjsTj0Dl+YYfMMPTiMPVrpn+6p4phY7dym7TuqdgAzXYAAITbf5u3/ADqPahNoTbf5u3/Oo9qENpF7pxP0VfiXRifY1c0s6AeaFWAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAfq1crtXKbluuqiumd9NVM7piWgbLa/RqVuMbJmKMumPsi5HTHX1M9fq3XXbuU3LdU0V0zvpqid0xKwaPaQ4jJcRu6N+ifWp4J7p4p7GThsTVYq1xsa8IDZfaC3qNFONk1RRlxH2Rc646+pPvQWXZlh8yw9OIw9WumeuJ4p4pWO1dpu07qmQBnOwQm2/zdv8AnUe1CbQm2/zdv+dR7UIbSL3Tifoq/EujE+xq5pZ0A80KsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/VFVVFdNdFU01UzviYndMSvuyu0FOoURi5VUU5dMcU8kXI6ft6lAfqiqqiumuiqaaqZ3xMTumJT2j+kGIyXEeMt79M+tTwTHZMcE9jIw2JqsVa42NeFd2V2hpz4pxMyYpyoj4NXJFz/AMrE9BZZmeGzPDxiMPVrpnrieKeKf7sWS1dpu07qkQm2/wA3b/nUe1CbQm2/zdv+dR7UMbSL3Tifoq/EuGJ9jVzSzoB5oVYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB9pqqpqiqmZpqid8TE8cSvmym0NOdTTh5lUU5UR8GqeS5HaoT7TM01RVTMxMTviY5YTuQZ/iMlxHjbW/TPrU8Ex38U9m8yMPiKrFWuNjX0Jtv83b/nUe1DqbJ7QxlxTg51cRkRxUVz/3Oqev1u3tv83b/nUe1DdONzXDZpkOIxGHnXE0Vc8TuZ3p5U5cvU3sPVVTxSzoB55VsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB9iZiYmJmJjkmE/k6/Ods5dwcuZnJpmngV/TiJjl61fGfgsyxGCpuUWqvRrpmmqOCYmNXXHBPZrdlu7VRExHCAMB1gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP/9k=" alt="Profixlab">
@@ -259,12 +234,12 @@ p{color:var(--text2);margin-bottom:13px;font-size:13px;}
 
 <!-- M1 INSTRUÇÕES -->
 <div class="mod on" id="m0">
-<div class="hero"><div class="h-big">01</div><div class="h-tag">📋 Módulo 1</div><div class="h-title">Bem-vindo à Metodologia <span>Profixlab</span></div><div class="h-sub">Entenda como este treinamento funciona, o padrão de qualidade e a sequência que seguimos em todo mapeamento.</div><div class="h-meta"><div class="h-pill">⏱ 15 min</div><div class="h-pill">📖 Conceitual + Quiz</div></div></div>
+<div class="hero"><div class="h-big">01</div><div class="h-tag">📋 Módulo 1</div><div class="h-title">Bem-vindo à Metodologia <span>Profixlab</span></div><div class="h-sub">Entenda o padrão de qualidade e a sequência de todo mapeamento.</div><div class="h-meta"><div class="h-pill">⏱ 15 min</div></div></div>
 <div class="ct">
   <div class="sl">O que é um mapeamento</div>
   <h2>Mapeamento não é documentar. É entender.</h2>
   <p>A maioria dos consultores trata o mapeamento como preenchimento de formulário. O problema: o que o cliente diz nem sempre é o que o cliente faz.</p>
-  <div class="concept"><p>Um mapeamento Profixlab tem dois objetivos simultâneos: <strong>entender o processo como realmente acontece hoje (As-Is)</strong> e <strong>desenhar como deve funcionar na solução (To-Be)</strong>. Um bom mapeamento elimina ambiguidades e acelera o desenvolvimento — seja você quem desenvolve ou outro membro do time.</p></div>
+  <div class="concept"><p>Um mapeamento Profixlab tem dois objetivos: <strong>entender o processo como realmente acontece hoje (As-Is)</strong> e <strong>desenhar como deve funcionar na solução (To-Be)</strong>. Um bom mapeamento elimina ambiguidades e acelera o desenvolvimento.</p></div>
   <div class="sps"></div>
   <div class="sl">Padrão de qualidade</div>
   <h2>O que separa um mapeamento bom de um excelente</h2>
@@ -272,240 +247,190 @@ p{color:var(--text2);margin-bottom:13px;font-size:13px;}
     <div class="card"><div class="c-ic">😐</div><div class="c-t">Mapeamento suficiente</div><div class="c-tx">Fluxo documentado. Surgem dúvidas no desenvolvimento. Cliente pede ajustes. Retrabalho moderado.</div></div>
     <div class="card"><div class="c-ic">🎯</div><div class="c-t">Mapeamento Profixlab</div><div class="c-tx">As-Is preciso com gravação. Gaps investigados. To-Be validado em BPMN. Campos, automações e integrações documentados. Zero dúvidas no desenvolvimento.</div></div>
   </div>
-  <div class="al al-i"><div class="al-ic">💡</div><div class="al-b"><div class="al-t">Por que o mapeamento impacta diretamente o desenvolvimento</div><div class="al-tx">Em muitos projetos, quem mapeia e quem desenvolve é a mesma pessoa. Cada lacuna vira uma decisão tomada no chute. Um mapeamento completo é a diferença entre desenvolver com segurança e refazer o que foi construído.</div></div></div>
+  <div class="al al-i"><div class="al-ic">💡</div><div class="al-b"><div class="al-t">Por que o mapeamento impacta o desenvolvimento</div><div class="al-tx">Em muitos projetos, quem mapeia e quem desenvolve é a mesma pessoa. Cada lacuna vira uma decisão no chute. Um mapeamento completo é a diferença entre desenvolver com segurança e refazer o que foi construído.</div></div></div>
   <div class="sps"></div>
   <div class="sl">A sequência completa</div>
   <h2>As-Is → Gap → To-Be</h2>
   <div class="steps">
-    <div class="step"><div class="s-num">1</div><div class="s-b"><div class="s-t">Kick Off — alinhar antes de mapear</div><div class="s-d">Classificar o projeto, alinhar expectativas, coletar documentos, identificar stakeholders e apresentar a metodologia ao cliente.</div></div></div>
-    <div class="step"><div class="s-num">2</div><div class="s-b"><div class="s-t">As-Is — o processo como é hoje</div><div class="s-d">Entender profundamente como o processo funciona antes de sugerir qualquer solução. Usar gravação de tela. Confirmar quem executa.</div></div></div>
+    <div class="step"><div class="s-num">1</div><div class="s-b"><div class="s-t">Kick Off — alinhar antes de mapear</div><div class="s-d">Classificar o projeto, alinhar expectativas, coletar documentos, identificar stakeholders.</div></div></div>
+    <div class="step"><div class="s-num">2</div><div class="s-b"><div class="s-t">As-Is — o processo como é hoje</div><div class="s-d">Entender o processo antes de sugerir qualquer solução. Usar gravação de tela. Confirmar quem executa.</div></div></div>
     <div class="step"><div class="s-num">3</div><div class="s-b"><div class="s-t">Gap — o que está quebrando</div><div class="s-d">Onde o processo dói? O que se perde? Cada gap define o valor que a solução vai entregar.</div></div></div>
-    <div class="step"><div class="s-num">4</div><div class="s-b"><div class="s-t">To-Be — o processo na solução</div><div class="s-d">Com o As-Is entendido e gaps mapeados, desenhar o To-Be em BPMN e validar formalmente com todos os stakeholders.</div></div></div>
-    <div class="step"><div class="s-num">5</div><div class="s-b"><div class="s-t">Documentação — entregar sem ambiguidade</div><div class="s-d">SIPOC, BPMN, campos, automações, integrações e comunicações documentados. Quem desenvolve não precisa perguntar nada.</div></div></div>
+    <div class="step"><div class="s-num">4</div><div class="s-b"><div class="s-t">To-Be — o processo na solução</div><div class="s-d">Com o As-Is entendido e gaps mapeados, desenhar o To-Be em BPMN e validar formalmente.</div></div></div>
+    <div class="step"><div class="s-num">5</div><div class="s-b"><div class="s-t">Documentação — entregar sem ambiguidade</div><div class="s-d">SIPOC, BPMN, campos, automações e integrações documentados. Quem desenvolve não precisa perguntar nada.</div></div></div>
   </div>
   <div class="al al-w"><div class="al-ic">⚠️</div><div class="al-b"><div class="al-t">Regra de ouro</div><div class="al-tx">Se quem está na reunião não conhece o processo em detalhe, reagende e inclua quem realmente executa. Quanto mais você aproveita a extração com as pessoas certas, menos reuniões você precisará.</div></div></div>
   <div class="sps"></div>
-  <div class="sl">Erros que geram retrabalho</div>
-  <h2>Os 5 erros mais comuns — conheça antes de começar</h2>
-  <div class="case"><div class="case-hd"><span class="ctag ctag-r">Erro 01</span><span class="case-ht">Mapear com quem não executa o processo</span></div><div class="case-bd"><div class="cs"><div class="cs-l">O que acontece</div><p class="cs-tx">O cliente descreve o processo como acha que deveria ser. Exceções e detalhes operacionais ficam de fora. A solução é desenvolvida para um processo ideal que não existe.</p></div><div class="hl">Pergunta que evita: <strong>"Você mesmo executa esse processo no dia a dia? Conhece todos os detalhes?"</strong></div></div></div>
-  <div class="case"><div class="case-hd"><span class="ctag ctag-r">Erro 02</span><span class="case-ht">Não entender como os dados chegam</span></div><div class="case-bd"><div class="cs"><div class="cs-l">O que acontece</div><p class="cs-tx">O consultor assume que os dados chegam um a um. Na prática, o cliente opera em lote. A solução é desenvolvida para unitário quando deveria ser em massa.</p></div><div class="hl">Pergunta que evita: <strong>"Como esse dado chega até você hoje? Me mostra o arquivo ou o sistema."</strong></div></div></div>
-  <div class="case"><div class="case-hd"><span class="ctag ctag-r">Erro 03</span><span class="case-ht">Deixar "depende" sem resolver</span></div><div class="case-bd"><div class="cs"><div class="cs-l">O que acontece</div><p class="cs-tx">O cliente diz "depende da situação". No desenvolvimento, não há como saber qual caminho implementar. Resultado: chute ou retrabalho.</p></div><div class="hl">Pergunta que evita: <strong>"Me dá um exemplo de quando é X e quando é Y. Qual é a regra?"</strong></div></div></div>
-  <div class="case"><div class="case-hd"><span class="ctag ctag-r">Erro 04</span><span class="case-ht">Não mapear integrações antes de desenvolver</span></div><div class="case-bd"><div class="cs"><div class="cs-l">O que acontece</div><p class="cs-tx">O cliente menciona no final que precisa sincronizar com outro sistema. A integração não foi especificada. Quem desenvolve descobre no meio da construção.</p></div><div class="hl">Pergunta que evita: <strong>"Existe algum sistema externo que precisa receber ou enviar dados nesse processo?"</strong></div></div></div>
-  <div class="case"><div class="case-hd"><span class="ctag ctag-r">Erro 05</span><span class="case-ht">Desenvolver sem aprovação formal do To-Be</span></div><div class="case-bd"><div class="cs"><div class="cs-l">O que acontece</div><p class="cs-tx">O desenvolvimento começa com um "ok verbal". O dono do processo vê a solução pela primeira vez e pede mudanças estruturais.</p></div><div class="hl">O que evita: <strong>Aprovação formal documentada de todos os stakeholders antes de qualquer desenvolvimento.</strong></div></div></div>
+  <div class="sl">Erros mais comuns</div>
+  <div class="case"><div class="case-hd"><span class="ctag ctag-r">Erro 01</span><span class="case-ht">Mapear com quem não executa</span></div><div class="case-bd"><div class="hl">Evita: <strong>"Você mesmo executa esse processo? Conhece todos os detalhes?"</strong></div></div></div>
+  <div class="case"><div class="case-hd"><span class="ctag ctag-r">Erro 02</span><span class="case-ht">Não entender como os dados chegam</span></div><div class="case-bd"><div class="hl">Evita: <strong>"Como esse dado chega até você? Me mostra o arquivo ou o sistema."</strong></div></div></div>
+  <div class="case"><div class="case-hd"><span class="ctag ctag-r">Erro 03</span><span class="case-ht">Deixar "depende" sem resolver</span></div><div class="case-bd"><div class="hl">Evita: <strong>"Me dá um exemplo de quando é X e quando é Y. Qual é a regra?"</strong></div></div></div>
+  <div class="case"><div class="case-hd"><span class="ctag ctag-r">Erro 04</span><span class="case-ht">Não mapear integrações antes de desenvolver</span></div><div class="case-bd"><div class="hl">Evita: <strong>"Existe algum sistema externo que precisa receber ou enviar dados nesse processo?"</strong></div></div></div>
+  <div class="case"><div class="case-hd"><span class="ctag ctag-r">Erro 05</span><span class="case-ht">Desenvolver sem aprovação formal do To-Be</span></div><div class="case-bd"><div class="hl">Evita: <strong>Aprovação formal documentada de todos os stakeholders antes de qualquer desenvolvimento.</strong></div></div></div>
   <div class="sps"></div>
-  <div class="sl">Quiz de fixação</div>
-  <div class="quiz"><div class="qq">Um cliente te explica um processo com detalhes. Qual o próximo passo correto antes de desenhar o To-Be?</div><div class="qopts" id="q1"><div class="qo" onclick="qz(this,'q1',false)"><div class="qi">A</div>Desenhar o To-Be com base no que foi explicado</div><div class="qo" onclick="qz(this,'q1',false)"><div class="qi">B</div>Pedir os documentos e montar a planilha</div><div class="qo" onclick="qz(this,'q1',true)"><div class="qi">C</div>Verificar se quem estava na reunião executa o processo no dia a dia e conhece todos os detalhes operacionais</div><div class="qo" onclick="qz(this,'q1',false)"><div class="qi">D</div>Apresentar uma proposta de solução</div></div><div class="qfb" id="q1f"></div></div>
-  <div class="quiz"><div class="qq">O cliente confirma o To-Be verbalmente. O que você faz antes de iniciar qualquer desenvolvimento?</div><div class="qopts" id="q2"><div class="qo" onclick="qz(this,'q2',false)"><div class="qi">A</div>Começa — aprovação verbal é suficiente</div><div class="qo" onclick="qz(this,'q2',false)"><div class="qi">B</div>Envia o BPMN por e-mail e começa enquanto aguarda resposta</div><div class="qo" onclick="qz(this,'q2',true)"><div class="qi">C</div>Garante aprovação formal documentada de todos os stakeholders antes de qualquer desenvolvimento</div><div class="qo" onclick="qz(this,'q2',false)"><div class="qi">D</div>Agenda mais uma reunião de revisão</div></div><div class="qfb" id="q2f"></div></div>
-</div>
-<div class="mf"><button class="btn btn-s" disabled>← Anterior</button><div class="mf-info">Módulo 1 de 6</div><button class="btn btn-p" onclick="nx(0)">Próximo módulo →</button></div>
-</div>
-
-<!-- M2 KICK OFF -->
-<div class="mod" id="m1">
-<div class="hero"><div class="h-big">02</div><div class="h-tag">🚀 Módulo 2</div><div class="h-title">Kick Off — <span>Preparar e Conduzir</span></div><div class="h-sub">Como se preparar antes da reunião zero, classificar o projeto e conduzir o kick off com o cliente.</div><div class="h-meta"><div class="h-pill">⏱ 25 min</div><div class="h-pill">🎯 Preparação + Condução</div></div></div>
-<div class="ct">
-  <div class="sl">Antes da reunião</div>
-  <h2>Classificar o projeto antes de chegar no cliente</h2>
-  <div class="clg">
-    <div class="clc"><div class="clh r">Complexidade do processo</div><div class="clb"><div class="clr"><span class="bdg bl">Simples</span>1–3 fases, 1–2 atores, sem integrações, 1 pipe</div><div class="clr"><span class="bdg bm">Médio</span>4–7 fases, 3–5 atores, 1–2 integrações, condicionais simples</div><div class="clr"><span class="bdg bh">Complexo</span>8+ fases, 6+ atores, múltiplas integrações, condicionais aninhadas</div></div></div>
-    <div class="clc"><div class="clh g">Maturidade do processo</div><div class="clb"><div class="clr"><span class="bdg bl">Padronizado</span>Documentado, executado com consistência, métricas existentes</div><div class="clr"><span class="bdg bm">Documentado</span>Existe e é executado, mas documentação parcial ou desatualizada</div><div class="clr"><span class="bdg bh">Informal</span>Só na cabeça das pessoas. Precisaremos definir o processo juntos</div></div></div>
-    <div class="clc"><div class="clh a">Conhecimento do Pipefy</div><div class="clb"><div class="clr"><span class="bdg bl">Avançado</span>Já usou Pipefy. Confirme pedindo para descrever como usava</div><div class="clr"><span class="bdg bm">Básico</span>Conhece superficialmente. Reforçar conceitos-chave no kick off</div><div class="clr"><span class="bdg bh">Iniciante</span>Nunca usou. Enviar material introdutório antes do kick off</div></div></div>
-  </div>
-  <div class="al al-i"><div class="al-ic">📹</div><div class="al-b"><div class="al-t">Quando o cliente é iniciante no Pipefy</div><div class="al-tx">Envie material antes do kick off cobrindo: Kanban e fases, automações, condicionais, integrações, e-mail automático, formulário compartilhado, interfaces, portal, tarefas e solicitações, e possibilidades com agentes de IA.</div></div></div>
-  <div class="sps"></div>
-  <div class="sl">Documentos a solicitar antes do kick off</div>
-  <ul class="cklist" id="docs-cl">
-    <li onclick="ck(this)"><div class="cb"></div>Fluxogramas, mapas ou procedimentos do processo (qualquer formato)</li>
-    <li onclick="ck(this)"><div class="cb"></div>Planilhas de controle usadas hoje</li>
-    <li onclick="ck(this)"><div class="cb"></div>Formulários físicos ou digitais do processo</li>
-    <li onclick="ck(this)"><div class="cb"></div>Políticas, regras ou manuais operacionais</li>
-    <li onclick="ck(this)"><div class="cb"></div>Modelos de e-mail ou comunicados padrão</li>
-    <li onclick="ck(this)"><div class="cb"></div>Relatórios ou dashboards de acompanhamento</li>
-    <li onclick="ck(this)"><div class="cb"></div>Prints ou acesso aos sistemas que interagem com o processo</li>
-    <li onclick="ck(this)"><div class="cb"></div>Lista de todas as pessoas envolvidas (nome, cargo, área)</li>
-  </ul>
-  <div class="sps"></div>
-  <div class="sl">Conduzindo o Kick Off</div>
-  <div class="steps">
-    <div class="step"><div class="s-num">1</div><div class="s-b"><div class="s-t">Apresentação da Profixlab e metodologia</div><div class="s-d">Como as reuniões vão funcionar, qual a sequência e o que é esperado do cliente em cada etapa.</div></div></div>
-    <div class="step"><div class="s-num">2</div><div class="s-b"><div class="s-t">Objetivo, maturidade e stakeholders</div><div class="s-d">Para que existe esse processo? Quem é o dono? Todos os envolvidos estão presentes? O processo já está estruturado?</div></div></div>
-    <div class="step"><div class="s-num">3</div><div class="s-b"><div class="s-t">Classificação interna da complexidade</div><div class="s-d">Com base nas respostas, classificar o projeto para definir quantas reuniões serão necessárias.</div></div></div>
-    <div class="step"><div class="s-num">4</div><div class="s-b"><div class="s-t">Coleta e confirmação de documentos</div><div class="s-d">Confirmar o recebimento dos documentos. O que falta — definir prazo. Analisar antes da próxima reunião.</div></div></div>
-    <div class="step"><div class="s-num">5</div><div class="s-b"><div class="s-t">Comunicar restrições estruturais pós-desenvolvimento</div><div class="s-d">Após o To-Be validado, alterações estruturais geram retrabalho. O cliente precisa confirmar explicitamente.</div></div></div>
-    <div class="step"><div class="s-num">6</div><div class="s-b"><div class="s-t">Agenda e constância das reuniões</div><div class="s-d">Reforçar a importância da constância e presença das pessoas certas. Definir frequência e próximos passos.</div></div></div>
-  </div>
-  <div class="al al-d"><div class="al-ic">🔴</div><div class="al-b"><div class="al-t">O que NÃO pode mudar após o To-Be validado</div><div class="al-tx">Inclusão ou exclusão de fases · integração com outros sistemas · mudança de rota de fluxos · alçadas de aprovação · campos do formulário inicial.</div></div></div>
-  <div class="sps"></div>
-  <div class="sl">Perguntas do Kick Off</div>
-  <div class="cp-hint">💡 Clique para revelar · Duplo clique para copiar</div>
-  <div class="qg">
-    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">Kick Off 01</div><div class="qt">"Para que existe esse processo? Qual o objetivo? O que é sucesso para vocês?"</div><div class="qw">🎯 Define o norte do projeto. Os outputs esperados e a definição de sucesso guiam todas as decisões do To-Be.</div></div>
-    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">Kick Off 02</div><div class="qt">"Quem é o dono do processo — quem executa e é responsável no dia a dia?"</div><div class="qw">🎯 O dono do processo é quem executa, não quem gerencia. Define quem precisa estar nas reuniões de mapeamento.</div></div>
-    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">Kick Off 03</div><div class="qt">"Todos os envolvidos no processo estão aqui? Quem está faltando?"</div><div class="qw">🎯 Garantir que todos os stakeholders validem o processo antes do desenvolvimento.</div></div>
-    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">Kick Off 04</div><div class="qt">"Vocês já rodam esse processo hoje? Como? Tem algo documentado?"</div><div class="qw">🎯 Define a maturidade. Se não existe nada estruturado, o mapeamento vai precisar definir o processo junto com o cliente.</div></div>
-    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">Pipefy 01</div><div class="qt">"Você já usou o Pipefy antes — nessa empresa ou em outras?"</div><div class="qw">🎯 Abre o diagnóstico de conhecimento. Se sim, peça para descrever como usava.</div></div>
-    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">Pipefy 02</div><div class="qt">"Me conta um exemplo do que você configurava ou acompanhava no Pipefy."</div><div class="qw">🎯 Valida o nível declarado. Quem conhece descreve automações e condicionais. Quem não conhece fala só em "cards".</div></div>
-  </div>
-  <div class="sps"></div>
-
-  <!-- AÇÃO KICK OFF -->
   <div class="sl">Ação — Kick Off</div>
   <div class="abox">
     <div class="abox-title"><span class="abadge">Ação</span> Registro do Kick Off</div>
-    <div class="abox-desc">Preencha os dados do projeto e as informações coletadas nesta etapa. Ao final, gere o documento Word desta fase.</div>
-    <div class="afield"><label>Empresa / Cliente <span>*obrigatório para gerar o documento</span></label><textarea class="aa aa-sm" id="ko-empresa" placeholder="Nome da empresa do cliente..." oninput="sv('ko-empresa')"></textarea><div class="sv-ok" id="sv-ko-empresa">✓ Salvo</div></div>
-    <div class="afield"><label>Nome do Processo <span>*obrigatório para gerar o documento</span></label><textarea class="aa aa-sm" id="ko-processo" placeholder="Ex: Processo de Aprovação de Compras, Onboarding de Clientes..." oninput="sv('ko-processo')"></textarea><div class="sv-ok" id="sv-ko-processo">✓ Salvo</div></div>
+    <div class="abox-desc">Preencha os dados do projeto coletados nesta etapa. Empresa e Processo são obrigatórios para gerar o documento.</div>
+    <div class="afield"><label>Empresa / Cliente <span>*obrigatório</span></label><textarea class="aa aa-sm" id="ko-empresa" placeholder="Nome da empresa do cliente..." oninput="sv('ko-empresa')"></textarea><div class="sv-ok" id="sv-ko-empresa">✓ Salvo</div></div>
+    <div class="afield"><label>Nome do Processo <span>*obrigatório</span></label><textarea class="aa aa-sm" id="ko-processo" placeholder="Ex: Processo de Aprovação de Compras..." oninput="sv('ko-processo')"></textarea><div class="sv-ok" id="sv-ko-processo">✓ Salvo</div></div>
     <div class="afield"><label>Consultor Responsável</label><textarea class="aa aa-sm" id="ko-consultor" placeholder="Seu nome..." oninput="sv('ko-consultor')"></textarea><div class="sv-ok" id="sv-ko-consultor">✓ Salvo</div></div>
-    <div class="afield"><label>Objetivo do processo e definição de sucesso</label><textarea class="aa" id="ko-objetivo" placeholder="Para que existe esse processo? O que é sucesso para o cliente?..." oninput="sv('ko-objetivo')"></textarea><div class="sv-ok" id="sv-ko-objetivo">✓ Salvo</div></div>
-    <div class="afield"><label>Dono do processo e stakeholders identificados</label><textarea class="aa" id="ko-stake" placeholder="Dono: ... | Executores: ... | Aprovadores: ... | Quem faltou na reunião: ..." oninput="sv('ko-stake')"></textarea><div class="sv-ok" id="sv-ko-stake">✓ Salvo</div></div>
-    <div class="afield"><label>Classificação do projeto</label><textarea class="aa" id="ko-class" placeholder="Complexidade: Simples/Médio/Complexo | Maturidade: Informal/Documentado/Padronizado | Pipefy: Iniciante/Básico/Avançado..." oninput="sv('ko-class')"></textarea><div class="sv-ok" id="sv-ko-class">✓ Salvo</div></div>
-    <div class="afield"><label>Documentos recebidos / pendentes</label><textarea class="aa" id="ko-docs" placeholder="Recebidos: ... | Pendentes: ... | Prazo para envio: ..." oninput="sv('ko-docs')"></textarea><div class="sv-ok" id="sv-ko-docs">✓ Salvo</div></div>
-    <div class="afield"><label>Restrições estruturais comunicadas ao cliente</label><textarea class="aa" id="ko-restrict" placeholder="Liste o que foi explicado e confirmado pelo cliente..." oninput="sv('ko-restrict')"></textarea><div class="sv-ok" id="sv-ko-restrict">✓ Salvo</div></div>
-    <div class="afield"><label>Próximos passos e agenda definida</label><textarea class="aa" id="ko-next" placeholder="Data da próxima reunião, quem deve participar, o que preparar..." oninput="sv('ko-next')"></textarea><div class="sv-ok" id="sv-ko-next">✓ Salvo</div></div>
+    <div class="afield"><label>Objetivo do processo e definição de sucesso</label><textarea class="aa" id="ko-objetivo" placeholder="Para que existe esse processo? O que é sucesso para o cliente?" oninput="sv('ko-objetivo')"></textarea><div class="sv-ok" id="sv-ko-objetivo">✓ Salvo</div></div>
+    <div class="afield"><label>Dono do processo e stakeholders identificados</label><textarea class="aa" id="ko-stake" placeholder="Dono: ... | Executores: ... | Aprovadores: ... | Quem faltou: ..." oninput="sv('ko-stake')"></textarea><div class="sv-ok" id="sv-ko-stake">✓ Salvo</div></div>
+    <div class="afield"><label>Classificação do projeto</label><textarea class="aa" id="ko-class" placeholder="Complexidade: ... | Maturidade: ... | Conhecimento Pipefy: ..." oninput="sv('ko-class')"></textarea><div class="sv-ok" id="sv-ko-class">✓ Salvo</div></div>
+    <div class="afield"><label>Documentos recebidos / pendentes</label><textarea class="aa" id="ko-docs" placeholder="Recebidos: ... | Pendentes: ... | Prazo: ..." oninput="sv('ko-docs')"></textarea><div class="sv-ok" id="sv-ko-docs">✓ Salvo</div></div>
+    <div class="afield"><label>Restrições estruturais comunicadas ao cliente</label><textarea class="aa" id="ko-restrict" placeholder="O que foi explicado e confirmado pelo cliente..." oninput="sv('ko-restrict')"></textarea><div class="sv-ok" id="sv-ko-restrict">✓ Salvo</div></div>
+    <div class="afield"><label>Próximos passos e agenda</label><textarea class="aa" id="ko-next" placeholder="Data da próxima reunião, quem deve participar, o que preparar..." oninput="sv('ko-next')"></textarea><div class="sv-ok" id="sv-ko-next">✓ Salvo</div></div>
     <div class="afield"><label>Observações gerais</label><textarea class="aa" id="ko-obs" placeholder="Qualquer informação relevante coletada no kick off..." oninput="sv('ko-obs')"></textarea><div class="sv-ok" id="sv-ko-obs">✓ Salvo</div></div>
   </div>
   <div class="doc-section">
     <div class="doc-section-title">📄 Documento do Kick Off</div>
-    <div class="doc-section-desc">Gera um arquivo Word com todas as informações desta etapa, identificado com Empresa e Processo.</div>
-    <button class="doc-btn" onclick="gerarDoc('kickoff')">⬇ Gerar Doc — Kick Off</button>
+    <div class="doc-section-desc">Gera um arquivo Word com todas as informações desta etapa.</div>
+    <button class="doc-btn" id="btn-kickoff" onclick="gerarDoc('kickoff')">⬇ Gerar Doc — Kick Off</button>
   </div>
 </div>
-<div class="mf"><button class="btn btn-s" onclick="go(0)">← Anterior</button><div class="mf-info">Módulo 2 de 6</div><button class="btn btn-p" onclick="nx(1)">Próximo módulo →</button></div>
+
+  <div class="sps"></div>
+  
+  
+  <div class="sps"></div>
+  <div class="sl">Quiz de Fixacao</div>
+
+  <div style="font-size:12px;font-weight:700;color:#6600ff;margin:18px 0 8px;text-transform:uppercase;letter-spacing:1px;padding:8px 0;border-bottom:1px solid #e2e8f0;">Modulo 1 - Fundamentos</div>
+  <div class="quiz"><div class="qq">Um cliente te explica um processo com detalhes. Qual o proximo passo antes de desenhar o To-Be?</div><div class="qopts" id="q1a"><div class="qo" onclick="qz(this,'q1a',false)"><div class="qi">A</div>Desenhar o To-Be com base no que foi explicado</div><div class="qo" onclick="qz(this,'q1a',false)"><div class="qi">B</div>Pedir os documentos e montar a planilha</div><div class="qo" onclick="qz(this,'q1a',true)"><div class="qi">C</div>Verificar se quem estava na reuniao executa o processo no dia a dia e conhece todos os detalhes</div><div class="qo" onclick="qz(this,'q1a',false)"><div class="qi">D</div>Apresentar uma proposta de solucao</div></div><div class="qfb" id="q1af"></div></div>
+  <div class="quiz"><div class="qq">O cliente confirma o To-Be verbalmente. O que voce faz antes de iniciar qualquer desenvolvimento?</div><div class="qopts" id="q1b"><div class="qo" onclick="qz(this,'q1b',false)"><div class="qi">A</div>Comeca - aprovacao verbal e suficiente</div><div class="qo" onclick="qz(this,'q1b',false)"><div class="qi">B</div>Envia o BPMN por e-mail e comeca enquanto aguarda resposta</div><div class="qo" onclick="qz(this,'q1b',true)"><div class="qi">C</div>Garante aprovacao formal documentada de todos os stakeholders</div><div class="qo" onclick="qz(this,'q1b',false)"><div class="qi">D</div>Agenda mais uma reuniao de revisao</div></div><div class="qfb" id="q1bf"></div></div>
+
+  <div style="font-size:12px;font-weight:700;color:#6600ff;margin:18px 0 8px;text-transform:uppercase;letter-spacing:1px;padding:8px 0;border-bottom:1px solid #e2e8f0;">Modulo 2 - Kick Off</div>
+  <div class="quiz"><div class="qq">No kick off, o cliente diz que o processo as vezes passa por uma aprovacao extra. O que voce faz?</div><div class="qopts" id="q2a"><div class="qo" onclick="qz(this,'q2a',false)"><div class="qi">A</div>Mapeia os dois caminhos sem definir a regra</div><div class="qo" onclick="qz(this,'q2a',true)"><div class="qi">B</div>Pergunta qual e a condicao que define quando passa pela aprovacao extra</div><div class="qo" onclick="qz(this,'q2a',false)"><div class="qi">C</div>Assume que sempre vai ter aprovacao e segue em frente</div><div class="qo" onclick="qz(this,'q2a',false)"><div class="qi">D</div>Deixa para resolver depois, no detalhamento</div></div><div class="qfb" id="q2af"></div></div>
+  <div class="quiz"><div class="qq">O dono do processo nao pode participar das reunioes de mapeamento. O que voce faz?</div><div class="qopts" id="q2b"><div class="qo" onclick="qz(this,'q2b',false)"><div class="qi">A</div>Continua com quem esta disponivel e entrega o mapeamento assim mesmo</div><div class="qo" onclick="qz(this,'q2b',false)"><div class="qi">B</div>Pede para o gestor responder no lugar do dono</div><div class="qo" onclick="qz(this,'q2b',true)"><div class="qi">C</div>Reagenda e explica que o mapeamento sem quem executa garante retrabalho</div><div class="qo" onclick="qz(this,'q2b',false)"><div class="qi">D</div>Mapeia o que for possivel e valida so com o gestor no final</div></div><div class="qfb" id="q2bf"></div></div>
+
+  <div style="font-size:12px;font-weight:700;color:#6600ff;margin:18px 0 8px;text-transform:uppercase;letter-spacing:1px;padding:8px 0;border-bottom:1px solid #e2e8f0;">Modulo 3 - As-Is</div>
+  <div class="quiz"><div class="qq">O cliente diz: o analista verifica os documentos e aprova ou reprova. O que voce pergunta primeiro?</div><div class="qopts" id="q3a"><div class="qo" onclick="qz(this,'q3a',false)"><div class="qi">A</div>Qual e o SLA dessa fase?</div><div class="qo" onclick="qz(this,'q3a',true)"><div class="qi">B</div>Como esses documentos chegam ate o analista? Me mostra o formato.</div><div class="qo" onclick="qz(this,'q3a',false)"><div class="qi">C</div>Quais campos o analista precisa preencher?</div><div class="qo" onclick="qz(this,'q3a',false)"><div class="qi">D</div>Quem e o responsavel por essa fase?</div></div><div class="qfb" id="q3af"></div></div>
+  <div class="quiz"><div class="qq">Voce percebe que o gestor nao sabe os detalhes operacionais do processo. O que fazer?</div><div class="qopts" id="q3b"><div class="qo" onclick="qz(this,'q3b',false)"><div class="qi">A</div>Mapear com base no que ele falou e seguir em frente</div><div class="qo" onclick="qz(this,'q3b',false)"><div class="qi">B</div>Perguntar mais vezes ate ele lembrar dos detalhes</div><div class="qo" onclick="qz(this,'q3b',true)"><div class="qi">C</div>Extrair o maximo possivel e pedir para incluir quem realmente executa na proxima reuniao</div><div class="qo" onclick="qz(this,'q3b',false)"><div class="qi">D</div>Encerrar a reuniao e remarcar para quando tiver a pessoa certa</div></div><div class="qfb" id="q3bf"></div></div>
+
+  <div style="font-size:12px;font-weight:700;color:#6600ff;margin:18px 0 8px;text-transform:uppercase;letter-spacing:1px;padding:8px 0;border-bottom:1px solid #e2e8f0;">Modulo 4 - Gaps</div>
+  <div class="quiz"><div class="qq">Durante o mapeamento, o cliente diz: depende da situacao. O que voce faz?</div><div class="qopts" id="q4a"><div class="qo" onclick="qz(this,'q4a',false)"><div class="qi">A</div>Anota condicional e segue para a proxima pergunta</div><div class="qo" onclick="qz(this,'q4a',true)"><div class="qi">B</div>Pergunta: me da um exemplo de quando e X e quando e Y, qual e a regra?</div><div class="qo" onclick="qz(this,'q4a',false)"><div class="qi">C</div>Mapeia os dois caminhos e deixa o dev decidir depois</div><div class="qo" onclick="qz(this,'q4a',false)"><div class="qi">D</div>Assume o caminho mais comum e segue</div></div><div class="qfb" id="q4af"></div></div>
+  <div class="quiz"><div class="qq">O cliente nunca mencionou integracao com outros sistemas. Voce deve:</div><div class="qopts" id="q4b"><div class="qo" onclick="qz(this,'q4b',false)"><div class="qi">A</div>Assumir que nao tem integracao e finalizar o mapeamento</div><div class="qo" onclick="qz(this,'q4b',false)"><div class="qi">B</div>Esperar o dev perguntar durante o desenvolvimento</div><div class="qo" onclick="qz(this,'q4b',true)"><div class="qi">C</div>Perguntar explicitamente se existe algum sistema externo que precisa trocar dados com o processo</div><div class="qo" onclick="qz(this,'q4b',false)"><div class="qi">D</div>Verificar depois com o responsavel de TI</div></div><div class="qfb" id="q4bf"></div></div>
+
+  <div style="font-size:12px;font-weight:700;color:#6600ff;margin:18px 0 8px;text-transform:uppercase;letter-spacing:1px;padding:8px 0;border-bottom:1px solid #e2e8f0;">Modulo 5 - To-Be</div>
+  <div class="quiz"><div class="qq">Na validacao do To-Be, o cliente lembra de uma aprovacao extra para valores acima de R$50k. O que voce faz?</div><div class="qopts" id="q5a"><div class="qo" onclick="qz(this,'q5a',false)"><div class="qi">A</div>Informa que isso e mudanca estrutural e nao pode ser incorporado</div><div class="qo" onclick="qz(this,'q5a',true)"><div class="qi">B</div>Incorpora no BPMN e redesenha antes de validar formalmente</div><div class="qo" onclick="qz(this,'q5a',false)"><div class="qi">C</div>Anota como observacao e deixa o dev resolver</div><div class="qo" onclick="qz(this,'q5a',false)"><div class="qi">D</div>Considera como escopo adicional e cobra separado</div></div><div class="qfb" id="q5af"></div></div>
+  <div class="quiz"><div class="qq">Voce esta pronto para desenhar o To-Be quando:</div><div class="qopts" id="q5b"><div class="qo" onclick="qz(this,'q5b',false)"><div class="qi">A</div>O cliente explicou todas as fases pelo menos uma vez</div><div class="qo" onclick="qz(this,'q5b',false)"><div class="qi">B</div>Voce preencheu todas as abas da planilha de mapeamento</div><div class="qo" onclick="qz(this,'q5b',true)"><div class="qi">C</div>Voce consegue descrever o processo de ponta a ponta sem consultar notas e o cliente concorda</div><div class="qo" onclick="qz(this,'q5b',false)"><div class="qi">D</div>Voce teve pelo menos 3 reunioes com o cliente</div></div><div class="qfb" id="q5bf"></div></div>
+
+  <div style="font-size:12px;font-weight:700;color:#6600ff;margin:18px 0 8px;text-transform:uppercase;letter-spacing:1px;padding:8px 0;border-bottom:1px solid #e2e8f0;">Modulo 6 - Documentacao</div>
+  <div class="quiz"><div class="qq">Voce entregou o mapeamento e o dev pergunta o tipo do campo Valor do Contrato. Isso indica:</div><div class="qopts" id="q6a"><div class="qo" onclick="qz(this,'q6a',false)"><div class="qi">A</div>O desenvolvedor nao leu a documentacao direito</div><div class="qo" onclick="qz(this,'q6a',true)"><div class="qi">B</div>O mapeamento esta incompleto - o tipo do campo nao foi especificado</div><div class="qo" onclick="qz(this,'q6a',false)"><div class="qi">C</div>E normal o dev tirar duvidas durante o desenvolvimento</div><div class="qo" onclick="qz(this,'q6a',false)"><div class="qi">D</div>O dev deveria decidir o tipo do campo por conta propria</div></div><div class="qfb" id="q6af"></div></div>
+  <div class="quiz"><div class="qq">Qual a ordem correta para organizar os campos na documentacao?</div><div class="qopts" id="q6b"><div class="qo" onclick="qz(this,'q6b',false)"><div class="qi">A</div>Por tipo de campo (todos os textos juntos, todos os dropdowns juntos)</div><div class="qo" onclick="qz(this,'q6b',true)"><div class="qi">B</div>Por fase (todos os campos da Fase 1, depois Fase 2, e assim por diante)</div><div class="qo" onclick="qz(this,'q6b',false)"><div class="qi">C</div>Por obrigatoriedade (obrigatorios primeiro, opcionais depois)</div><div class="qo" onclick="qz(this,'q6b',false)"><div class="qi">D</div>Por ordem alfabetica</div></div><div class="qfb" id="q6bf"></div></div>
+
+  <div class="mf"><button class="btn btn-s" onclick="go(0)">← Anterior</button><div class="mf-info">Módulo 2 de 6</div><button class="btn btn-p" onclick="nx(1)">Próximo módulo →</button></div>
 </div>
 
 <!-- M3 AS-IS -->
 <div class="mod" id="m2">
-<div class="hero"><div class="h-big">03</div><div class="h-tag">🔍 Módulo 3</div><div class="h-title">As-Is — <span>O processo real</span></div><div class="h-sub">Capture o processo como realmente acontece, faça o SIPOC e detalhe cada fase.</div><div class="h-meta"><div class="h-pill">⏱ 25 min</div><div class="h-pill">🎯 Prático</div></div></div>
+<div class="hero"><div class="h-big">03</div><div class="h-tag">🔍 Módulo 3</div><div class="h-title">As-Is — <span>O processo real</span></div><div class="h-sub">Capture o processo como realmente acontece, faça o SIPOC e detalhe cada fase.</div><div class="h-meta"><div class="h-pill">⏱ 25 min</div></div></div>
 <div class="ct">
-  <div class="sl">Gravação de tela</div>
-  <h2>Ver é melhor que ouvir</h2>
-  <div class="al al-i"><div class="al-ic">🎥</div><div class="al-b"><div class="al-t">Como pedir</div><div class="al-tx">"Sem problema — me mostra passo a passo que eu vou gravar. Pode abrir o sistema que você usa hoje." Quando não for possível ao vivo, peça prints ou uma demo antes da próxima reunião.</div></div></div>
-  <div class="sps"></div>
+  <div class="al al-i"><div class="al-ic">🎥</div><div class="al-b"><div class="al-t">Ver é melhor que ouvir</div><div class="al-tx">"Me mostra passo a passo que eu vou gravar. Pode abrir o sistema que você usa hoje."</div></div></div>
   <div class="sl">Perguntas do As-Is</div>
   <div class="cp-hint">💡 Clique para revelar · Duplo clique para copiar</div>
   <div class="qg qg1">
-    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">SIPOC 01 — Processo</div><div class="qt">"Me mostra como você faz esse processo?"</div><div class="qw">🎯 Tira o cliente da teoria. Grave neste momento.</div></div>
-    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">SIPOC 02 — Entradas</div><div class="qt">"Quais os insumos que você recebe nessa etapa? Quem envia? Como envia? Onde você coloca e como coloca?"</div><div class="qw">🎯 Mapeia Fornecedores e Entradas. "Como coloca" revela o sistema atual de registro.</div></div>
-    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">SIPOC 03 — Saídas</div><div class="qt">"O que sai dessa etapa e para quem vai?"</div><div class="qw">🎯 Mapeia Saídas e Clientes. Revela comunicações que precisarão existir na solução.</div></div>
-    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">Abertura 01</div><div class="qt">"Como chegam as solicitações para esse processo? Quem faz essas solicitações?"</div><div class="qw">🎯 Define se a abertura é manual ou via integração.</div></div>
-    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">Abertura 02</div><div class="qt">"O que você precisa receber de informação para iniciar? Quais documentos ou dados são obrigatórios?"</div><div class="qw">🎯 Define os campos do formulário inicial.</div></div>
+    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">SIPOC 01</div><div class="qt">"Me mostra como você faz esse processo?"</div><div class="qw">🎯 Tira o cliente da teoria. Grave neste momento.</div></div>
+    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">SIPOC 02 — Entradas</div><div class="qt">"Quais os insumos que você recebe? Quem envia? Como envia? Onde você coloca e como coloca?"</div><div class="qw">🎯 Mapeia Fornecedores e Entradas. "Como coloca" revela o sistema atual de registro.</div></div>
+    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">SIPOC 03 — Saídas</div><div class="qt">"O que sai dessa etapa e para quem vai?"</div><div class="qw">🎯 Mapeia Saídas e Clientes. Revela comunicações que precisarão existir.</div></div>
   </div>
-  <div class="sps"></div>
-  <div class="sl">Perguntas por fase</div>
   <div class="qg">
-    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">Fase 01 — RACI</div><div class="qt">"Quem é o responsável por essa fase? Quem precisa ser informado ou consultado?"</div><div class="qw">🎯 Define R, C e I da fase. Cada pessoa informada = notificação ou e-mail automático.</div></div>
-    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">Fase 02 — Aprovação</div><div class="qt">"Essa fase requer aprovação? Quem aprova? O aprovador acessa o sistema ou precisa de formulário externo?"</div><div class="qw">🎯 Define se é fase de aprovação e como o aprovador interage.</div></div>
-    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">Fase 03 — SLA</div><div class="qt">"Tem prazo para essa fase? O que acontece quando vence? O processo tem data de vencimento total?"</div><div class="qw">🎯 Define SLA da fase, ação ao vencer e campo de data de vencimento geral.</div></div>
-    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">Fase 04 — Campos</div><div class="qt">"Quais informações você registra ou precisa nessa fase? Quais são obrigatórias para avançar? Tem algum cálculo?"</div><div class="qw">🎯 Mapeia campos, obrigatoriedade e campos calculados.</div></div>
-    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">Fase 05 — Condicionais</div><div class="qt">"Tem alguma regra do tipo: se eu preencher X, aparece Y ou o processo vai para Z? Quais as ações e reações?"</div><div class="qw">🎯 Mapeia condicionais de campo e de fluxo. As regras mais críticas.</div></div>
-    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">Fase 06 — Pendência</div><div class="qt">"Essa fase pode ficar aguardando algo externo? Tem fluxo de pendência? O processo pode voltar para uma fase anterior?"</div><div class="qw">🎯 Identifica fluxos de pendência e os "vai e volta" do processo.</div></div>
-    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">Fase 07 — Documentos e IA</div><div class="qt">"Essa fase gera ou valida algum documento? É feito por pessoa ou poderia ser por IA?"</div><div class="qw">🎯 Mapeia emissão e validação de documentos. Define se é tarefa humana ou IA.</div></div>
-    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">Fase 08 — Comunicações</div><div class="qt">"Quem precisa ser notificado quando essa fase começa, termina ou trava? Qual é a régua de comunicação?"</div><div class="qw">🎯 Define templates de e-mail, gatilhos e destinatários.</div></div>
-    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">Fase 09 — Etiquetas</div><div class="qt">"Precisa de algum marcador visual nessa fase? O que indica que um card é urgente, pendente ou especial? Quando a etiqueta entra e sai?"</div><div class="qw">🎯 Define etiquetas: quando entram, quando saem e o que sinalizam.</div></div>
-    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">Fase 10 — Formulário / Interfaces / Portal</div><div class="qt">"Existe formulário para alguém de fora preencher nessa fase? Precisa de página no Interfaces ou acesso via Portal?"</div><div class="qw">🎯 Identifica formulários de fase, páginas de Interfaces e uso de Portal.</div></div>
-    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">Fase 11 — Atividades paralelas</div><div class="qt">"Essa fase gera alguma atividade em outra área ao mesmo tempo? Tem tarefas e solicitações dentro do card?"</div><div class="qw">🎯 Identifica atividades paralelas, cards filhos ou tarefas dentro do card.</div></div>
-    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">Fase 12 — Integração</div><div class="qt">"Essa fase precisa enviar ou receber dados de algum sistema externo? O que trafega e em qual direção?"</div><div class="qw">🎯 Mapeia integrações por fase.</div></div>
-    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">Fase 13 — Renovação</div><div class="qt">"Esse processo tem vencimento? Ele precisa se repetir automaticamente após um período?"</div><div class="qw">🎯 Define fluxos de renovação automática — o processo se recria após um ciclo.</div></div>
+    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">Fase 01 — RACI</div><div class="qt">"Quem é o responsável? Quem precisa ser informado ou consultado?"</div><div class="qw">🎯 Define R, C e I. Cada pessoa informada = notificação automática.</div></div>
+    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">Fase 02 — Aprovação</div><div class="qt">"Requer aprovação? Quem aprova? Acessa o sistema ou precisa de formulário externo?"</div><div class="qw">🎯 Define fase de aprovação e como o aprovador interage.</div></div>
+    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">Fase 03 — SLA</div><div class="qt">"Tem prazo? O que acontece quando vence? O processo tem data de vencimento total?"</div><div class="qw">🎯 Define SLA, ação ao vencer e campo de data de vencimento.</div></div>
+    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">Fase 04 — Campos</div><div class="qt">"Quais informações registra nessa fase? Quais são obrigatórias para avançar? Tem cálculo?"</div><div class="qw">🎯 Mapeia campos, obrigatoriedade e campos calculados.</div></div>
+    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">Fase 05 — Condicionais</div><div class="qt">"Tem regra do tipo: se preencher X, aparece Y ou o processo vai para Z?"</div><div class="qw">🎯 Mapeia condicionais de campo e de fluxo. As regras mais críticas.</div></div>
+    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">Fase 06 — Pendência</div><div class="qt">"Essa fase pode aguardar algo externo? Tem fluxo de pendência? Pode voltar para fase anterior?"</div><div class="qw">🎯 Identifica fluxos de pendência e os "vai e volta".</div></div>
+    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">Fase 07 — Documentos e IA</div><div class="qt">"Gera ou valida algum documento? É feito por pessoa ou poderia ser por IA?"</div><div class="qw">🎯 Define se é tarefa humana ou caso de uso para agente de IA.</div></div>
+    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">Fase 08 — Comunicações</div><div class="qt">"Quem precisa ser notificado quando começa, termina ou trava? Qual é a régua de comunicação?"</div><div class="qw">🎯 Define templates de e-mail, gatilhos e destinatários.</div></div>
+    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">Fase 09 — Etiquetas</div><div class="qt">"Precisa de marcador visual? O que indica urgência ou pendência? Quando entra e sai?"</div><div class="qw">🎯 Define etiquetas: quando entram, quando saem e o que sinalizam.</div></div>
+    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">Fase 10 — Portal / Interfaces</div><div class="qt">"Existe formulário para alguém de fora preencher? Precisa de página no Interfaces ou Portal?"</div><div class="qw">🎯 Identifica formulários de fase, Interfaces e Portal para não-usuários.</div></div>
+    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">Fase 11 — Atividades paralelas</div><div class="qt">"Gera alguma atividade em outra área ao mesmo tempo? Tem tarefas dentro do card?"</div><div class="qw">🎯 Identifica atividades paralelas, cards filhos ou tarefas e solicitações.</div></div>
+    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">Fase 12 — Integração</div><div class="qt">"Precisa enviar ou receber dados de algum sistema externo? O que trafega e em qual direção?"</div><div class="qw">🎯 Mapeia integrações por fase.</div></div>
+    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">Fase 13 — Renovação</div><div class="qt">"O processo tem vencimento? Precisa se repetir automaticamente após um período?"</div><div class="qw">🎯 Define fluxos de renovação automática — processo se recria após um ciclo.</div></div>
   </div>
   <div class="sps"></div>
-  <div class="sl">Quando a reunião trava</div>
-  <div class="steps">
-    <div class="step"><div class="s-num">1</div><div class="s-b"><div class="s-t">Verificar se o cliente conhece os detalhes</div><div class="s-d">"Você mesmo executa esse processo no dia a dia e conhece todos os detalhes operacionais?"</div></div></div>
-    <div class="step"><div class="s-num">2</div><div class="s-b"><div class="s-t">Extrair o máximo antes de redirecionar</div><div class="s-d">Visão geral, objetivo, sistemas usados, stakeholders. Cada informação aproveitada reduz o número de reuniões.</div></div></div>
-    <div class="step"><div class="s-num">3</div><div class="s-b"><div class="s-t">Incluir quem executa na próxima reunião</div><div class="s-d">"Para os detalhes operacionais, quem você indicaria para entrar numa próxima reunião de 30 minutos?"</div></div></div>
-    <div class="step"><div class="s-num">4</div><div class="s-b"><div class="s-t">Se trava na explicação — pedir para mostrar</div><div class="s-d">"Sem problema, me mostra passo a passo que eu vou gravar."</div></div></div>
-  </div>
-  <div class="sps"></div>
-
-  <!-- AÇÃO AS-IS -->
   <div class="sl">Ação — As-Is</div>
   <div class="abox">
     <div class="abox-title"><span class="abadge">Ação</span> Registro do As-Is</div>
     <div class="abox-desc">Documente o processo atual coletado nesta etapa.</div>
-    <div class="afield"><label>SIPOC — Fornecedores, Entradas, Processo, Saídas, Clientes</label>
-    <table class="raci-table" id="sipoc-table">
-      <thead><tr><th>Fornecedor</th><th>Entrada (o que chega)</th><th>Processo (etapa macro)</th><th>Saída (o que gera)</th><th>Cliente (para quem vai)</th></tr></thead>
+    <div class="afield"><label>SIPOC</label>
+    <table class="dyn-table" id="sipoc-table">
+      <thead><tr style="background:#141b2e;"><th>Fornecedor</th><th>Entrada (o que chega)</th><th>Processo (etapa macro)</th><th>Saída (o que gera)</th><th>Cliente (para quem vai)</th></tr></thead>
       <tbody id="sipoc-body">
-        <tr><td><input type="text" placeholder="Ex: RH"></td><td><input type="text" placeholder="Ex: Formulário de solicitação"></td><td><input type="text" placeholder="Ex: Análise de crédito"></td><td><input type="text" placeholder="Ex: Parecer aprovado"></td><td><input type="text" placeholder="Ex: Gestor da área"></td></tr>
-        <tr><td><input type="text" placeholder=""></td><td><input type="text" placeholder=""></td><td><input type="text" placeholder=""></td><td><input type="text" placeholder=""></td><td><input type="text" placeholder=""></td></tr>
-        <tr><td><input type="text" placeholder=""></td><td><input type="text" placeholder=""></td><td><input type="text" placeholder=""></td><td><input type="text" placeholder=""></td><td><input type="text" placeholder=""></td></tr>
+        <tr><td><input type="text" placeholder="Ex: RH"></td><td><input type="text" placeholder="Ex: Formulário"></td><td><input type="text" placeholder="Ex: Análise"></td><td><input type="text" placeholder="Ex: Parecer"></td><td><input type="text" placeholder="Ex: Gestor"></td></tr>
+        <tr><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+        <tr><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
       </tbody>
     </table>
-    <button onclick="addSipocRow()" style="font-size:11px;background:var(--roxo-xl);color:var(--roxo);border:1px solid rgba(102,0,255,0.2);padding:5px 12px;border-radius:5px;cursor:pointer;font-family:var(--font);font-weight:600;margin-bottom:14px;">+ Adicionar linha</button>
-    </div>
-    <div class="afield"><label>Como chegam as solicitações (abertura do processo)</label><textarea class="aa" id="asis-abertura" placeholder="Manual / Integração / Formulário externo — descreva o fluxo de entrada..." oninput="sv('asis-abertura')"></textarea><div class="sv-ok" id="sv-asis-abertura">✓ Salvo</div></div>
-
-    <div class="afield"><label>RACI das fases — exemplo de preenchimento</label>
-    <table class="raci-table" id="raci-table">
-      <thead><tr><th>Fase</th><th>Responsável (R)</th><th>Consultado (C)</th><th>Informado (I)</th><th>Aprovador</th></tr></thead>
+    <button class="btn-add" onclick="addRow('sipoc-body',5)">+ Adicionar linha</button></div>
+    <div class="afield"><label>Abertura do processo</label><textarea class="aa aa-sm" id="asis-abertura" placeholder="Como chegam as solicitações? Manual / Integração / Formulário externo..." oninput="sv('asis-abertura')"></textarea><div class="sv-ok" id="sv-asis-abertura">✓ Salvo</div></div>
+    <div class="afield"><label>RACI por fase</label>
+    <table class="dyn-table" id="raci-table">
+      <thead><tr style="background:#6600ff;"><th>Fase</th><th>Responsável (R)</th><th>Consultado (C)</th><th>Informado (I)</th><th>Aprovador</th></tr></thead>
       <tbody id="raci-body">
         <tr><td><input type="text" placeholder="Fase 1"></td><td><input type="text" placeholder="Quem executa"></td><td><input type="text" placeholder="Quem consultar"></td><td><input type="text" placeholder="Quem informar"></td><td><input type="text" placeholder="Quem aprova"></td></tr>
-        <tr><td><input type="text" placeholder="Fase 2"></td><td><input type="text" placeholder="Quem executa"></td><td><input type="text" placeholder="Quem consultar"></td><td><input type="text" placeholder="Quem informar"></td><td><input type="text" placeholder="Quem aprova"></td></tr>
-        <tr><td><input type="text" placeholder="Fase 3"></td><td><input type="text" placeholder="Quem executa"></td><td><input type="text" placeholder="Quem consultar"></td><td><input type="text" placeholder="Quem informar"></td><td><input type="text" placeholder="Quem aprova"></td></tr>
+        <tr><td><input type="text" placeholder="Fase 2"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+        <tr><td><input type="text" placeholder="Fase 3"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
       </tbody>
     </table>
-    <button onclick="addRaciRow()" style="font-size:11px;background:var(--roxo-xl);color:var(--roxo);border:1px solid rgba(102,0,255,0.2);padding:5px 12px;border-radius:5px;cursor:pointer;font-family:var(--font);font-weight:600;margin-bottom:14px;">+ Adicionar fase</button></div>
-
-    <div class="afield"><label>Detalhamento das fases (campos, SLA, condicionais, comunicações)</label><textarea class="aa" style="min-height:120px;" id="asis-fases" placeholder="Fase 1: | SLA: | Campos: | Condicionais: | E-mails: | Etiquetas:&#10;Fase 2: | SLA: | Campos: ..." oninput="sv('asis-fases')"></textarea><div class="sv-ok" id="sv-asis-fases">✓ Salvo</div></div>
-    <div class="afield"><label>Sistemas e integrações identificados</label><textarea class="aa" id="asis-int" placeholder="Sistema: ... | Direção: Pipefy → Sistema / Sistema → Pipefy | O que trafega: ..." oninput="sv('asis-int')"></textarea><div class="sv-ok" id="sv-asis-int">✓ Salvo</div></div>
-    <div class="afield"><label>Observações gerais do As-Is</label><textarea class="aa" id="asis-obs" placeholder="Informações relevantes, pontos de atenção, pendências identificadas..." oninput="sv('asis-obs')"></textarea><div class="sv-ok" id="sv-asis-obs">✓ Salvo</div></div>
+    <button class="btn-add" onclick="addRow('raci-body',5)">+ Adicionar fase</button></div>
+    <div class="afield"><label>Detalhamento das fases (campos, SLA, condicionais, comunicações)</label><textarea class="aa" style="min-height:120px;" id="asis-fases" placeholder="Fase 1: | SLA: | Campos: | Condicionais: | E-mails: | Etiquetas:&#10;Fase 2: ..." oninput="sv('asis-fases')"></textarea><div class="sv-ok" id="sv-asis-fases">✓ Salvo</div></div>
+    <div class="afield"><label>Sistemas e integrações identificados</label><textarea class="aa" id="asis-int" placeholder="Sistema: ... | Direção: ... | O que trafega: ..." oninput="sv('asis-int')"></textarea><div class="sv-ok" id="sv-asis-int">✓ Salvo</div></div>
+    <div class="afield"><label>Observações gerais</label><textarea class="aa" id="asis-obs" placeholder="Pontos de atenção, pendências identificadas..." oninput="sv('asis-obs')"></textarea><div class="sv-ok" id="sv-asis-obs">✓ Salvo</div></div>
   </div>
   <div class="doc-section">
     <div class="doc-section-title">📄 Documento do As-Is</div>
-    <div class="doc-section-desc">Gera um arquivo Word com o mapeamento do processo atual desta etapa.</div>
+    <div class="doc-section-desc">Gera um arquivo Word com o mapeamento do processo atual.</div>
     <button class="doc-btn" onclick="gerarDoc('asis')">⬇ Gerar Doc — As-Is</button>
   </div>
 </div>
-<div class="mf"><button class="btn btn-s" onclick="go(1)">← Anterior</button><div class="mf-info">Módulo 3 de 6</div><button class="btn btn-p" onclick="nx(2)">Próximo módulo →</button></div>
+
+  <div class="mf"><button class="btn btn-s" onclick="go(1)">← Anterior</button><div class="mf-info">Módulo 3 de 6</div><button class="btn btn-p" onclick="nx(2)">Próximo módulo →</button></div>
 </div>
 
 <!-- M4 GAPS -->
 <div class="mod" id="m3">
-<div class="hero"><div class="h-big">04</div><div class="h-tag">🔬 Módulo 4</div><div class="h-title">Investigação de <span>Gaps</span></div><div class="h-sub">As perguntas que evitam retrabalho. Como ir além do óbvio e descobrir o que o cliente não contou.</div><div class="h-meta"><div class="h-pill">⏱ 20 min</div><div class="h-pill">⚠️ Crítico</div></div></div>
+<div class="hero"><div class="h-big">04</div><div class="h-tag">🔬 Módulo 4</div><div class="h-title">Investigação de <span>Gaps</span></div><div class="h-sub">As perguntas que evitam retrabalho.</div><div class="h-meta"><div class="h-pill">⏱ 20 min</div></div></div>
 <div class="ct">
-  <div class="sl">O erro que mais gera retrabalho</div>
-  <h2>O cliente disse como deveria ser. Não como é.</h2>
-  <div class="case"><div class="case-hd"><span class="ctag ctag-r">Case Real — Profixlab</span><span class="case-ht">Retrabalho no processo de Parecer</span></div><div class="case-bd"><div class="cs"><div class="cs-l">O que o cliente disse</div><p class="cs-tx">"Na fase de Parecer, o analista verifica a data de contrato do fornecedor e registra o parecer."</p></div><div class="cs"><div class="cs-l">O que o cliente não disse</div><p class="cs-tx">O analista recebia uma planilha com dezenas de registros e o parecer era emitido para todos de uma só vez — não um a um.</p></div><div class="cs"><div class="cs-l">O que foi desenvolvido</div><p class="cs-tx">Um card por registro, analista parecendo um por um. Retrabalho crítico.</p></div><div class="hl">A pergunta que faltou: <strong>"Como esse dado chega até você hoje? Me mostra o arquivo ou o sistema."</strong></div></div></div>
+  <div class="case"><div class="case-hd"><span class="ctag ctag-r">Case Real</span><span class="case-ht">Retrabalho no processo de Parecer</span></div><div class="case-bd"><div class="cs"><div class="cs-l">O que o cliente disse</div><p class="cs-tx">"O analista verifica a data de contrato e registra o parecer."</p></div><div class="cs"><div class="cs-l">O que não foi dito</div><p class="cs-tx">O analista recebia uma planilha com dezenas de registros e pareceria todos de uma vez — não um a um.</p></div><div class="hl">A pergunta que faltou: <strong>"Como esse dado chega até você? Me mostra o arquivo."</strong></div></div></div>
   <div class="sps"></div>
-  <div class="sl">Perguntas de gap — use ao menos 3 por fase</div>
+  <div class="sl">Perguntas de gap</div>
   <div class="cp-hint">💡 Clique para revelar · Duplo clique para copiar</div>
   <div class="qg">
-    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">Gap 01</div><div class="qt">"Como esse dado chega até você hoje? Me mostra o arquivo ou o sistema."</div><div class="qw">🎯 Revela o formato real da entrada. Evita mapear unitário quando o processo é em lote.</div></div>
-    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">Gap 02</div><div class="qt">"Quantos registros você processa por vez nessa etapa?"</div><div class="qw">🎯 Define se é unitário ou em lote — diferença crítica para a arquitetura da solução.</div></div>
-    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">Gap 03</div><div class="qt">"O que pode dar errado nessa etapa? O que você faz quando dá errado?"</div><div class="qw">🎯 Revela exceções e fluxos alternativos que o cliente nunca menciona espontaneamente.</div></div>
-    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">Gap 04</div><div class="qt">"Tem alguma regra não escrita que todo mundo aqui sabe mas não está em nenhum documento?"</div><div class="qw">🎯 Tira à tona o conhecimento tácito — as regras mais críticas e mais esquecidas.</div></div>
-    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">Gap 05</div><div class="qt">"Quando uma solicitação fica parada, por que normalmente é? O que trava?"</div><div class="qw">🎯 Identifica gargalos reais que viram regras de SLA, alertas ou automações.</div></div>
-    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">Gap 06</div><div class="qt">"Se você pudesse mudar uma coisa nesse processo hoje, o que seria?"</div><div class="qw">🎯 Abre o canal para a dor principal — frequentemente revela a funcionalidade mais importante do projeto.</div></div>
-    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">Gap 07</div><div class="qt">"Quem mais precisa saber quando isso acontece? Alguém é informado hoje?"</div><div class="qw">🎯 Mapeia comunicações e notificações que precisam existir na solução.</div></div>
-    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">Gap 08</div><div class="qt">"Tem alguma etapa que depende de resposta de fora — outra área, fornecedor ou cliente?"</div><div class="qw">🎯 Identifica dependências externas que viram fases de espera ou formulários externos.</div></div>
+    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">Gap 01</div><div class="qt">"Como esse dado chega até você? Me mostra o arquivo ou o sistema."</div><div class="qw">🎯 Revela o formato real. Evita mapear unitário quando é em lote.</div></div>
+    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">Gap 02</div><div class="qt">"Quantos registros você processa por vez nessa etapa?"</div><div class="qw">🎯 Define se é unitário ou em lote — diferença crítica para a arquitetura.</div></div>
+    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">Gap 03</div><div class="qt">"O que pode dar errado nessa etapa? O que você faz quando dá errado?"</div><div class="qw">🎯 Revela exceções e fluxos alternativos que o cliente nunca menciona.</div></div>
+    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">Gap 04</div><div class="qt">"Tem alguma regra não escrita que todo mundo aqui sabe mas não está documentada?"</div><div class="qw">🎯 Tira o conhecimento tácito — as regras mais críticas e mais esquecidas.</div></div>
+    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">Gap 05</div><div class="qt">"Quando uma solicitação fica parada, por que normalmente é? O que trava?"</div><div class="qw">🎯 Identifica gargalos reais que viram SLAs, alertas ou automações.</div></div>
+    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">Gap 06</div><div class="qt">"Se você pudesse mudar uma coisa nesse processo hoje, o que seria?"</div><div class="qw">🎯 Abre o canal para a dor principal — frequentemente revela a funcionalidade mais importante.</div></div>
+    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">Gap 07</div><div class="qt">"Quem mais precisa saber quando isso acontece? Alguém é informado hoje?"</div><div class="qw">🎯 Mapeia comunicações que precisam existir na solução.</div></div>
+    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">Gap 08</div><div class="qt">"Tem alguma etapa que depende de resposta de fora — outra área, fornecedor ou cliente?"</div><div class="qw">🎯 Identifica dependências externas que viram fases de espera.</div></div>
   </div>
-  <div class="al al-d"><div class="al-ic">🔴</div><div class="al-b"><div class="al-t">Sempre aprofunde quando o cliente responder com "depende"</div><div class="al-tx">Pergunte: "Me dá um exemplo de quando é X e quando é Y. Qual é a regra?" Ambiguidade no mapeamento vira decisão no chute durante o desenvolvimento.</div></div></div>
+  <div class="al al-d"><div class="al-ic">🔴</div><div class="al-b"><div class="al-t">Sempre aprofunde quando o cliente responder com "depende"</div><div class="al-tx">"Me dá um exemplo de quando é X e quando é Y. Qual é a regra?" Ambiguidade no mapeamento vira chute no desenvolvimento.</div></div></div>
   <div class="sps"></div>
-  <div class="sl">Checklist anti-retrabalho — use antes de fechar cada reunião</div>
+  <div class="sl">Checklist anti-retrabalho</div>
   <ul class="cklist" id="ar-cl">
-    <li onclick="ck(this)"><div class="cb"></div>Quem estava na reunião executa o processo e conhece todos os detalhes?</li>
-    <li onclick="ck(this)"><div class="cb"></div>Entendi o formato real de todos os dados de entrada de cada fase?</li>
-    <li onclick="ck(this)"><div class="cb"></div>Todos os "depende" foram resolvidos com exemplos e regras concretas?</li>
+    <li onclick="ck(this)"><div class="cb"></div>Quem estava na reunião executa e conhece todos os detalhes?</li>
+    <li onclick="ck(this)"><div class="cb"></div>Entendi o formato real de todos os dados de entrada?</li>
+    <li onclick="ck(this)"><div class="cb"></div>Todos os "depende" foram resolvidos com regras concretas?</li>
     <li onclick="ck(this)"><div class="cb"></div>Mapeei todas as exceções e fluxos alternativos?</li>
     <li onclick="ck(this)"><div class="cb"></div>Identifiquei os gargalos e o que trava o processo?</li>
     <li onclick="ck(this)"><div class="cb"></div>Perguntei sobre integrações com sistemas externos?</li>
-    <li onclick="ck(this)"><div class="cb"></div>Perguntei sobre documentos gerados ou validados por IA?</li>
     <li onclick="ck(this)"><div class="cb"></div>Todas as decisões em aberto têm responsável e prazo?</li>
     <li onclick="ck(this)"><div class="cb"></div>O dono do processo vai aprovar formalmente antes do desenvolvimento?</li>
   </ul>
   <div class="sps"></div>
-
-  <!-- AÇÃO GAPS -->
   <div class="sl">Ação — Gaps</div>
   <div class="abox">
     <div class="abox-title"><span class="abadge">Ação</span> Registro dos Gaps</div>
-    <div class="abox-desc">Documente os gaps, exceções e pontos de dor identificados nesta etapa.</div>
-    <div class="afield"><label>Gargalos e pontos de dor identificados</label><textarea class="aa" id="gap-dor" placeholder="Onde o processo trava, o que dói, o que poderia ser melhor..." oninput="sv('gap-dor')"></textarea><div class="sv-ok" id="sv-gap-dor">✓ Salvo</div></div>
-    <div class="afield"><label>Exceções e fluxos alternativos</label><textarea class="aa" id="gap-exc" placeholder="Situações fora do fluxo principal, o que pode dar errado, casos especiais..." oninput="sv('gap-exc')"></textarea><div class="sv-ok" id="sv-gap-exc">✓ Salvo</div></div>
-    <div class="afield"><label>Regras não escritas identificadas</label><textarea class="aa" id="gap-regras" placeholder="Conhecimento tácito levantado — o que todo mundo sabe mas não está documentado..." oninput="sv('gap-regras')"></textarea><div class="sv-ok" id="sv-gap-regras">✓ Salvo</div></div>
-    <div class="afield"><label>Integrações com sistemas externos</label><textarea class="aa" id="gap-int" placeholder="Sistema: ... | Direção: ... | O que trafega: ... | Tecnologia: ..." oninput="sv('gap-int')"></textarea><div class="sv-ok" id="sv-gap-int">✓ Salvo</div></div>
-    <div class="afield"><label>Decisões em aberto (com responsável e prazo)</label><textarea class="aa" id="gap-dec" placeholder="Decisão: ... | Responsável: ... | Prazo: ... | Impacto se não resolvida: ..." oninput="sv('gap-dec')"></textarea><div class="sv-ok" id="sv-gap-dec">✓ Salvo</div></div>
-    <div class="afield"><label>Observações gerais dos Gaps</label><textarea class="aa" id="gap-obs" placeholder="Outros pontos relevantes identificados nesta etapa..." oninput="sv('gap-obs')"></textarea><div class="sv-ok" id="sv-gap-obs">✓ Salvo</div></div>
+    <div class="abox-desc">Documente os gaps, exceções e pontos de atenção identificados.</div>
+    <div class="afield"><label>Gargalos e pontos de dor</label><textarea class="aa" id="gap-dor" placeholder="Onde o processo trava, o que dói, o que poderia ser melhor..." oninput="sv('gap-dor')"></textarea><div class="sv-ok" id="sv-gap-dor">✓ Salvo</div></div>
+    <div class="afield"><label>Exceções e fluxos alternativos</label><textarea class="aa" id="gap-exc" placeholder="Situações fora do fluxo principal, casos especiais, o que pode dar errado..." oninput="sv('gap-exc')"></textarea><div class="sv-ok" id="sv-gap-exc">✓ Salvo</div></div>
+    <div class="afield"><label>Regras não escritas identificadas</label><textarea class="aa" id="gap-regras" placeholder="Conhecimento tácito — o que todo mundo sabe mas não está documentado..." oninput="sv('gap-regras')"></textarea><div class="sv-ok" id="sv-gap-regras">✓ Salvo</div></div>
+    <div class="afield"><label>Integrações com sistemas externos</label><textarea class="aa" id="gap-int" placeholder="Sistema: ... | Direção: ... | O que trafega: ..." oninput="sv('gap-int')"></textarea><div class="sv-ok" id="sv-gap-int">✓ Salvo</div></div>
+    <div class="afield"><label>Decisões em aberto (com responsável e prazo)</label><textarea class="aa" id="gap-dec" placeholder="Decisão: ... | Responsável: ... | Prazo: ... | Impacto: ..." oninput="sv('gap-dec')"></textarea><div class="sv-ok" id="sv-gap-dec">✓ Salvo</div></div>
+    <div class="afield"><label>Observações</label><textarea class="aa" id="gap-obs" placeholder="Outros pontos relevantes..." oninput="sv('gap-obs')"></textarea><div class="sv-ok" id="sv-gap-obs">✓ Salvo</div></div>
   </div>
   <div class="doc-section">
     <div class="doc-section-title">📄 Documento dos Gaps</div>
@@ -518,42 +443,31 @@ p{color:var(--text2);margin-bottom:13px;font-size:13px;}
 
 <!-- M5 TO-BE -->
 <div class="mod" id="m4">
-<div class="hero"><div class="h-big">05</div><div class="h-tag">✏️ Módulo 5</div><div class="h-title">To-Be com <span>BPMN</span></div><div class="h-sub">Transforme o As-Is em um desenho To-Be preciso, validado e pronto para desenvolver.</div><div class="h-meta"><div class="h-pill">⏱ 20 min</div><div class="h-pill">🎯 Prático</div></div></div>
+<div class="hero"><div class="h-big">05</div><div class="h-tag">✏️ Módulo 5</div><div class="h-title">To-Be com <span>BPMN</span></div><div class="h-sub">Transforme o As-Is em um desenho To-Be preciso e validado.</div><div class="h-meta"><div class="h-pill">⏱ 20 min</div></div></div>
 <div class="ct">
-  <div class="sl">Quando desenhar o To-Be</div>
-  <h2>Só depois de validar o As-Is</h2>
   <div class="concept"><p><strong>Regra de bolso:</strong> você está pronto para o To-Be quando consegue descrever o processo atual de ponta a ponta sem consultar notas — e o cliente concorda. Se o cliente corrigir, você ainda não terminou o As-Is.</p></div>
-  <div class="sps"></div>
-  <div class="sl">Loop de validação</div>
   <div class="steps">
-    <div class="step"><div class="s-num">1</div><div class="s-b"><div class="s-t">Construir o fluxograma na ferramenta Profixlab</div><div class="s-d">Monte o BPMN com todos os "vai e volta" do processo — fases de revisão, rejeição e reenvio precisam estar mapeados.</div></div></div>
-    <div class="step"><div class="s-num">2</div><div class="s-b"><div class="s-t">Apresentar em voz alta ao cliente</div><div class="s-d">"Desenhei com base no que entendi. Me acompanha — começa aqui, bifurca aqui, termina aqui. Está correto?" Não deixe o cliente só olhar.</div></div></div>
-    <div class="step"><div class="s-num">3</div><div class="s-b"><div class="s-t">Incorporar correções antes de validar</div><div class="s-d">Enquanto o To-Be não foi aprovado formalmente, incorpore todas as correções. Redesenhe até o cliente dizer: "É exatamente isso."</div></div></div>
-    <div class="step"><div class="s-num">4</div><div class="s-b"><div class="s-t">Validação formal com todos os stakeholders</div><div class="s-d">Aprovação documentada de TODOS os stakeholders. A partir daqui, alterações estruturais são proibidas.</div></div></div>
+    <div class="step"><div class="s-num">1</div><div class="s-b"><div class="s-t">Construir o fluxograma na ferramenta Profixlab</div><div class="s-d">Monte o BPMN com todos os "vai e volta" — fases de revisão, rejeição e reenvio precisam estar mapeados.</div></div></div>
+    <div class="step"><div class="s-num">2</div><div class="s-b"><div class="s-t">Apresentar em voz alta ao cliente</div><div class="s-d">"Desenhei com base no que entendi. Me acompanha — começa aqui, bifurca aqui. Está correto?"</div></div></div>
+    <div class="step"><div class="s-num">3</div><div class="s-b"><div class="s-t">Incorporar correções antes de validar</div><div class="s-d">Enquanto não foi aprovado formalmente, incorpore todas as correções. Redesenhe até o cliente dizer: "É exatamente isso."</div></div></div>
+    <div class="step"><div class="s-num">4</div><div class="s-b"><div class="s-t">Validação formal com todos os stakeholders</div><div class="s-d">Aprovação documentada de TODOS. A partir daqui, alterações estruturais são proibidas.</div></div></div>
   </div>
-  <div class="al al-w"><div class="al-ic">⚠️</div><div class="al-b"><div class="al-t">Mudanças estruturais vs. funcionais</div><div class="al-tx"><strong>Proibido após validação:</strong> novas fases · novas integrações · novas alçadas de aprovação · mudança de rota de fluxo · campos do formulário inicial.<br><br><strong>Permitido:</strong> texto de e-mail, reordenação de campos dentro de uma fase, SLA, nomenclatura.</div></div></div>
+  <div class="al al-w"><div class="al-ic">⚠️</div><div class="al-b"><div class="al-t">Após validação — proibido mudar</div><div class="al-tx">Novas fases · novas integrações · novas alçadas · mudança de rota · campos do formulário inicial.<br><strong>Permitido:</strong> texto de e-mail, SLA, nomenclatura de campos.</div></div></div>
   <div class="sps"></div>
-
-  <!-- AÇÃO TO-BE -->
   <div class="sl">Ação — To-Be</div>
   <div class="abox">
     <div class="abox-title"><span class="abadge">Ação</span> Registro do To-Be</div>
-    <div class="abox-desc">Anexe o BPMN, adicione o link se estiver em ferramenta externa e registre as observações desta etapa.</div>
-
-    <div class="afield"><label>BPMN — Anexar arquivo <span>(PNG, PDF, XML ou imagem do fluxograma)</span></label>
+    <div class="abox-desc">Anexe o BPMN e registre as observações desta validação.</div>
+    <div class="afield"><label>BPMN — Anexar arquivo <span>(PNG, PDF, XML)</span></label>
       <label class="file-lbl" for="tobe-file">📎 Clique para anexar o BPMN</label>
       <input type="file" id="tobe-file" class="file-input" accept=".png,.jpg,.jpeg,.pdf,.xml,.bpmn" onchange="handleFile(this,'tobe-file-name')">
       <div class="file-name" id="tobe-file-name">Nenhum arquivo selecionado</div>
     </div>
-
-    <div class="afield"><label>Link do BPMN <span>(caso esteja em ferramenta como Miro, Lucidchart, ferramenta Profixlab, etc.)</span></label>
+    <div class="afield"><label>Link do BPMN <span>(Miro, Lucidchart, ferramenta Profixlab, etc.)</span></label>
       <textarea class="aa aa-sm" id="tobe-link" placeholder="https://..." oninput="sv('tobe-link')"></textarea>
       <div class="sv-ok" id="sv-tobe-link">✓ Salvo</div>
     </div>
-
-    <div class="afield"><label>Fases do To-Be (em ordem)</label><textarea class="aa" id="tobe-fases" placeholder="Fase 1: ... | Fase 2: ... | Fase 3: ..." oninput="sv('tobe-fases')"></textarea><div class="sv-ok" id="sv-tobe-fases">✓ Salvo</div></div>
-
-    <div class="afield"><label>Checklist de validação — marque o que foi confirmado</label></div>
+    <div class="afield"><label>Checklist de validação</label></div>
     <ul class="cklist" id="tobe-cl" style="margin-bottom:14px;">
       <li onclick="ck(this)"><div class="cb"></div>Fluxograma apresentado ao cliente em voz alta</li>
       <li onclick="ck(this)"><div class="cb"></div>Todos os "vai e volta" do processo estão mapeados</li>
@@ -562,8 +476,7 @@ p{color:var(--text2);margin-bottom:13px;font-size:13px;}
       <li onclick="ck(this)"><div class="cb"></div>Aprovação formal documentada de todos os stakeholders</li>
       <li onclick="ck(this)"><div class="cb"></div>Cliente informado sobre restrições estruturais pós-desenvolvimento</li>
     </ul>
-
-    <div class="afield"><label>Observações e mudanças registradas durante a validação</label><textarea class="aa" id="tobe-obs" placeholder="Correções feitas, ajustes solicitados pelo cliente, pontos que geraram discussão, decisões tomadas..." oninput="sv('tobe-obs')"></textarea><div class="sv-ok" id="sv-tobe-obs">✓ Salvo</div></div>
+    <div class="afield"><label>Observações e mudanças registradas durante a validação</label><textarea class="aa" id="tobe-obs" placeholder="Correções feitas, ajustes solicitados, pontos que geraram discussão, decisões tomadas..." oninput="sv('tobe-obs')"></textarea><div class="sv-ok" id="sv-tobe-obs">✓ Salvo</div></div>
   </div>
   <div class="doc-section">
     <div class="doc-section-title">📄 Documento do To-Be</div>
@@ -576,51 +489,49 @@ p{color:var(--text2);margin-bottom:13px;font-size:13px;}
 
 <!-- M6 DOCUMENTAÇÃO -->
 <div class="mod" id="m5">
-<div class="hero"><div class="h-big">06</div><div class="h-tag">📦 Módulo 6</div><div class="h-title">Documentação para <span>Desenvolver</span></div><div class="h-sub">O que precisa estar documentado para que o desenvolvimento aconteça sem interrupções e sem ambiguidades.</div><div class="h-meta"><div class="h-pill">⏱ 20 min</div><div class="h-pill">📋 Entregáveis</div></div></div>
+<div class="hero"><div class="h-big">06</div><div class="h-tag">📦 Módulo 6</div><div class="h-title">Documentação para <span>Desenvolver</span></div><div class="h-sub">O que precisa estar documentado para que o desenvolvimento aconteça sem interrupções.</div><div class="h-meta"><div class="h-pill">⏱ 20 min</div></div></div>
 <div class="ct">
-  <div class="sl">O padrão</div>
-  <h2>Um bom mapeamento não gera interrupções no desenvolvimento</h2>
-  <p>Se alguém precisar fazer uma pergunta durante o desenvolvimento, o mapeamento está incompleto. Cada lacuna vira uma decisão tomada no chute ou um retrabalho.</p>
+  <p>Se alguém precisar fazer uma pergunta durante o desenvolvimento, o mapeamento está incompleto. Cada lacuna vira uma decisão tomada no chute.</p>
   <div class="sps"></div>
-  <div class="sl">Entregáveis obrigatórios do analista</div>
+  <div class="sl">Entregáveis obrigatórios</div>
   <table class="tbl"><thead><tr><th>Entregável</th><th>O que contém</th><th>Por que é obrigatório</th></tr></thead><tbody>
     <tr><td>SIPOC</td><td>Fornecedores, Entradas, Processo, Saídas, Clientes</td><td>Define os limites do processo e o contexto para o desenvolvimento</td></tr>
     <tr><td>Fluxograma (BPMN)</td><td>Fluxo completo validado — raias, gateways, tipos de tarefa</td><td>Mapa visual consultado durante todo o desenvolvimento</td></tr>
-    <tr><td>Planilha de mapeamento</td><td>Fases, campos, RACI, SLA, condicionais, automações, e-mails, integrações</td><td>Blueprint técnico completo — sem isso cada detalhe é interpretação</td></tr>
-    <tr><td>Pipe(s) documentados</td><td>Estrutura técnica de cada pipe: fases, campos, regras</td><td>Configuração feita diretamente a partir dessa documentação</td></tr>
+    <tr><td>Planilha de mapeamento</td><td>Fases, campos, RACI, SLA, condicionais, automações, integrações</td><td>Blueprint técnico — sem isso cada detalhe é interpretação</td></tr>
     <tr><td>Automações</td><td>Gatilho → Condição → Ação para cada regra</td><td>Sem especificação, cada automação vira interpretação</td></tr>
-    <tr><td>Documentação de transferência</td><td>O que foi desenvolvido, como usar, o que ficou fora do escopo</td><td>Registro formal da entrega — evita "não foi isso que pedi"</td></tr>
+    <tr><td>Documentação de transferência</td><td>O que foi desenvolvido, como usar, o que ficou fora do escopo</td><td>Registro formal da entrega</td></tr>
   </tbody></table>
   <div class="sps"></div>
-  <div class="sl">Checklist de documentação — para desenvolver</div>
-  <ul class="cklist" id="doc-cl">
-    <li onclick="ck(this)"><div class="cb"></div>SIPOC documentado e validado pelo cliente</li>
-    <li onclick="ck(this)"><div class="cb"></div>BPMN com aprovação formal de todos os stakeholders</li>
-    <li onclick="ck(this)"><div class="cb"></div>Todas as fases com nome, tipo, RACI e SLA</li>
-    <li onclick="ck(this)"><div class="cb"></div>Todos os campos de todas as fases com os 5 atributos</li>
-    <li onclick="ck(this)"><div class="cb"></div>Condicionais de campo especificadas (SE→ENTÃO)</li>
-    <li onclick="ck(this)"><div class="cb"></div>Automações com gatilho → condição → ação</li>
-    <li onclick="ck(this)"><div class="cb"></div>Templates de comunicação (quem recebe, quando, o quê)</li>
-    <li onclick="ck(this)"><div class="cb"></div>Integrações: sistema, direção e campos envolvidos</li>
-    <li onclick="ck(this)"><div class="cb"></div>Etiquetas: quando colocar, quando tirar, o que sinalizam</li>
-    <li onclick="ck(this)"><div class="cb"></div>Atividades paralelas, cards filhos e formulários de fase documentados</li>
-    <li onclick="ck(this)"><div class="cb"></div>Fluxo de renovação automática documentado (se houver)</li>
-    <li onclick="ck(this)"><div class="cb"></div>Interfaces e Portal mapeados (se houver)</li>
-    <li onclick="ck(this)"><div class="cb"></div>Zero decisões em aberto bloqueantes</li>
-    <li onclick="ck(this)"><div class="cb"></div>Cliente informado sobre restrições estruturais pós-desenvolvimento</li>
-  </ul>
-  <div class="sps"></div>
-
-  <!-- AÇÃO DOCUMENTAÇÃO -->
   <div class="sl">Ação — Documentação</div>
   <div class="abox">
     <div class="abox-title"><span class="abadge">Ação</span> Registro da Documentação Final</div>
-    <div class="abox-desc">Documente os entregáveis finais para o desenvolvimento.</div>
-    <div class="afield"><label>Fases e campos documentados (resumo)</label><textarea class="aa" style="min-height:100px;" id="doc-fases" placeholder="Fase 1: campos A, B, C | SLA: X dias | Condicionais: ...&#10;Fase 2: campos D, E | SLA: Y dias | ..." oninput="sv('doc-fases')"></textarea><div class="sv-ok" id="sv-doc-fases">✓ Salvo</div></div>
-    <div class="afield"><label>Automações mapeadas (Gatilho → Condição → Ação)</label><textarea class="aa" id="doc-auto" placeholder="1. Quando card entra na Fase X → Enviar e-mail para responsável&#10;2. Quando campo Y = Z → Mover card para fase W..." oninput="sv('doc-auto')"></textarea><div class="sv-ok" id="sv-doc-auto">✓ Salvo</div></div>
-    <div class="afield"><label>Integrações documentadas</label><textarea class="aa" id="doc-int" placeholder="Sistema: ... | Direção: ... | Campos: ... | Tecnologia: ..." oninput="sv('doc-int')"></textarea><div class="sv-ok" id="sv-doc-int">✓ Salvo</div></div>
-    <div class="afield"><label>E-mails / comunicações mapeadas</label><textarea class="aa" id="doc-emails" placeholder="E-mail 1: Gatilho: ... | Para: ... | Assunto: ... | Conteúdo: ...&#10;E-mail 2: ..." oninput="sv('doc-emails')"></textarea><div class="sv-ok" id="sv-doc-emails">✓ Salvo</div></div>
-    <div class="afield"><label>Observações finais / o que ficou fora do escopo</label><textarea class="aa" id="doc-obs" placeholder="Funcionalidades fora do escopo, pontos para próximas fases, observações para o desenvolvedor..." oninput="sv('doc-obs')"></textarea><div class="sv-ok" id="sv-doc-obs">✓ Salvo</div></div>
+    <div class="abox-desc">Documente fases, campos e automações para o desenvolvimento.</div>
+
+    <div class="afield"><label>Fases e Campos</label>
+    <table class="dyn-table" id="fases-table">
+      <thead><tr style="background:#141b2e;"><th style="min-width:130px;">Fase</th><th style="min-width:160px;">Campo</th><th style="min-width:140px;">Tipo de Campo</th></tr></thead>
+      <tbody id="fases-body">
+        <tr><td><input type="text" placeholder="Ex: Abertura"></td><td><input type="text" placeholder="Ex: CNPJ"></td><td><select><option value="">Selecione...</option><option>Texto curto</option><option>Texto longo</option><option>Número</option><option>Moeda</option><option>Data</option><option>Data e Hora</option><option>Dropdown</option><option>Múltipla escolha</option><option>Arquivo</option><option>E-mail</option><option>Telefone</option><option>Fórmula / Calculado</option><option>Conectado a outro pipe</option><option>Banco de dados</option></select></td></tr>
+        <tr><td><input type="text" placeholder="Ex: Abertura"></td><td><input type="text" placeholder="Ex: Razão Social"></td><td><select><option value="">Selecione...</option><option>Texto curto</option><option>Texto longo</option><option>Número</option><option>Moeda</option><option>Data</option><option>Data e Hora</option><option>Dropdown</option><option>Múltipla escolha</option><option>Arquivo</option><option>E-mail</option><option>Telefone</option><option>Fórmula / Calculado</option><option>Conectado a outro pipe</option><option>Banco de dados</option></select></td></tr>
+        <tr><td><input type="text" placeholder="Ex: Análise"></td><td><input type="text" placeholder="Ex: Valor Estimado"></td><td><select><option value="">Selecione...</option><option>Texto curto</option><option>Texto longo</option><option>Número</option><option>Moeda</option><option>Data</option><option>Data e Hora</option><option>Dropdown</option><option>Múltipla escolha</option><option>Arquivo</option><option>E-mail</option><option>Telefone</option><option>Fórmula / Calculado</option><option>Conectado a outro pipe</option><option>Banco de dados</option></select></td></tr>
+      </tbody>
+    </table>
+    <button class="btn-add" onclick="addFaseRow()">+ Adicionar fase / campo</button></div>
+
+    <div class="afield"><label>Automações mapeadas (Gatilho → Condição → Ação)</label>
+    <table class="dyn-table" id="auto-table">
+      <thead><tr style="background:#6600ff;"><th>Gatilho (QUANDO)</th><th>Condição (SE — opcional)</th><th>Ação (ENTÃO)</th></tr></thead>
+      <tbody id="auto-body">
+        <tr><td><input type="text" placeholder="Ex: Card entra na Fase X"></td><td><input type="text" placeholder="Ex: Campo Y = Z (deixe vazio se não houver)"></td><td><input type="text" placeholder="Ex: Enviar e-mail para responsável"></td></tr>
+        <tr><td><input type="text" placeholder=""></td><td><input type="text" placeholder=""></td><td><input type="text" placeholder=""></td></tr>
+        <tr><td><input type="text" placeholder=""></td><td><input type="text" placeholder=""></td><td><input type="text" placeholder=""></td></tr>
+      </tbody>
+    </table>
+    <button class="btn-add" onclick="addRow('auto-body',3)">+ Adicionar automação</button></div>
+
+    <div class="afield"><label>Integrações</label><textarea class="aa" id="doc-int" placeholder="Sistema: ... | Direção: ... | Campos: ... | Tecnologia: ..." oninput="sv('doc-int')"></textarea><div class="sv-ok" id="sv-doc-int">✓ Salvo</div></div>
+    <div class="afield"><label>E-mails e comunicações</label><textarea class="aa" id="doc-emails" placeholder="E-mail 1: Gatilho: ... | Para: ... | Assunto: ...&#10;E-mail 2: ..." oninput="sv('doc-emails')"></textarea><div class="sv-ok" id="sv-doc-emails">✓ Salvo</div></div>
+    <div class="afield"><label>Observações finais / o que ficou fora do escopo</label><textarea class="aa" id="doc-obs" placeholder="Funcionalidades fora do escopo, próximas fases, observações para o desenvolvedor..." oninput="sv('doc-obs')"></textarea><div class="sv-ok" id="sv-doc-obs">✓ Salvo</div></div>
   </div>
   <div class="doc-section">
     <div class="doc-section-title">📄 Documento da Documentação Final</div>
@@ -628,7 +539,62 @@ p{color:var(--text2);margin-bottom:13px;font-size:13px;}
     <button class="doc-btn" onclick="gerarDoc('doc')">⬇ Gerar Doc — Documentação</button>
   </div>
 </div>
-<div class="mf"><button class="btn btn-s" onclick="go(4)">← Anterior</button><div class="mf-info">Módulo 6 de 6</div><button class="btn btn-g" onclick="fin()">✓ Concluir Mapeamento</button></div>
+
+  <div class="sps"></div>
+  
+<div class="mod" id="m5">
+<div class="hero"><div class="h-big">06</div><div class="h-tag">📦 Módulo 6</div><div class="h-title">Documentação para <span>Desenvolver</span></div><div class="h-sub">O que precisa estar documentado para que o desenvolvimento aconteça sem interrupções.</div><div class="h-meta"><div class="h-pill">⏱ 20 min</div></div></div>
+<div class="ct">
+  <p>Se alguém precisar fazer uma pergunta durante o desenvolvimento, o mapeamento está incompleto. Cada lacuna vira uma decisão tomada no chute.</p>
+  <div class="sps"></div>
+  <div class="sl">Entregáveis obrigatórios</div>
+  <table class="tbl"><thead><tr><th>Entregável</th><th>O que contém</th><th>Por que é obrigatório</th></tr></thead><tbody>
+    <tr><td>SIPOC</td><td>Fornecedores, Entradas, Processo, Saídas, Clientes</td><td>Define os limites do processo e o contexto para o desenvolvimento</td></tr>
+    <tr><td>Fluxograma (BPMN)</td><td>Fluxo completo validado — raias, gateways, tipos de tarefa</td><td>Mapa visual consultado durante todo o desenvolvimento</td></tr>
+    <tr><td>Planilha de mapeamento</td><td>Fases, campos, RACI, SLA, condicionais, automações, integrações</td><td>Blueprint técnico — sem isso cada detalhe é interpretação</td></tr>
+    <tr><td>Automações</td><td>Gatilho → Condição → Ação para cada regra</td><td>Sem especificação, cada automação vira interpretação</td></tr>
+    <tr><td>Documentação de transferência</td><td>O que foi desenvolvido, como usar, o que ficou fora do escopo</td><td>Registro formal da entrega</td></tr>
+  </tbody></table>
+  <div class="sps"></div>
+  <div class="sl">Ação — Documentação</div>
+  <div class="abox">
+    <div class="abox-title"><span class="abadge">Ação</span> Registro da Documentação Final</div>
+    <div class="abox-desc">Documente fases, campos e automações para o desenvolvimento.</div>
+
+    <div class="afield"><label>Fases e Campos</label>
+    <table class="dyn-table" id="fases-table">
+      <thead><tr style="background:#141b2e;"><th style="min-width:130px;">Fase</th><th style="min-width:160px;">Campo</th><th style="min-width:140px;">Tipo de Campo</th></tr></thead>
+      <tbody id="fases-body">
+        <tr><td><input type="text" placeholder="Ex: Abertura"></td><td><input type="text" placeholder="Ex: CNPJ"></td><td><select><option value="">Selecione...</option><option>Texto curto</option><option>Texto longo</option><option>Número</option><option>Moeda</option><option>Data</option><option>Data e Hora</option><option>Dropdown</option><option>Múltipla escolha</option><option>Arquivo</option><option>E-mail</option><option>Telefone</option><option>Fórmula / Calculado</option><option>Conectado a outro pipe</option><option>Banco de dados</option></select></td></tr>
+        <tr><td><input type="text" placeholder="Ex: Abertura"></td><td><input type="text" placeholder="Ex: Razão Social"></td><td><select><option value="">Selecione...</option><option>Texto curto</option><option>Texto longo</option><option>Número</option><option>Moeda</option><option>Data</option><option>Data e Hora</option><option>Dropdown</option><option>Múltipla escolha</option><option>Arquivo</option><option>E-mail</option><option>Telefone</option><option>Fórmula / Calculado</option><option>Conectado a outro pipe</option><option>Banco de dados</option></select></td></tr>
+        <tr><td><input type="text" placeholder="Ex: Análise"></td><td><input type="text" placeholder="Ex: Valor Estimado"></td><td><select><option value="">Selecione...</option><option>Texto curto</option><option>Texto longo</option><option>Número</option><option>Moeda</option><option>Data</option><option>Data e Hora</option><option>Dropdown</option><option>Múltipla escolha</option><option>Arquivo</option><option>E-mail</option><option>Telefone</option><option>Fórmula / Calculado</option><option>Conectado a outro pipe</option><option>Banco de dados</option></select></td></tr>
+      </tbody>
+    </table>
+    <button class="btn-add" onclick="addFaseRow()">+ Adicionar fase / campo</button></div>
+
+    <div class="afield"><label>Automações mapeadas (Gatilho → Condição → Ação)</label>
+    <table class="dyn-table" id="auto-table">
+      <thead><tr style="background:#6600ff;"><th>Gatilho (QUANDO)</th><th>Condição (SE — opcional)</th><th>Ação (ENTÃO)</th></tr></thead>
+      <tbody id="auto-body">
+        <tr><td><input type="text" placeholder="Ex: Card entra na Fase X"></td><td><input type="text" placeholder="Ex: Campo Y = Z (deixe vazio se não houver)"></td><td><input type="text" placeholder="Ex: Enviar e-mail para responsável"></td></tr>
+        <tr><td><input type="text" placeholder=""></td><td><input type="text" placeholder=""></td><td><input type="text" placeholder=""></td></tr>
+        <tr><td><input type="text" placeholder=""></td><td><input type="text" placeholder=""></td><td><input type="text" placeholder=""></td></tr>
+      </tbody>
+    </table>
+    <button class="btn-add" onclick="addRow('auto-body',3)">+ Adicionar automação</button></div>
+
+    <div class="afield"><label>Integrações</label><textarea class="aa" id="doc-int" placeholder="Sistema: ... | Direção: ... | Campos: ... | Tecnologia: ..." oninput="sv('doc-int')"></textarea><div class="sv-ok" id="sv-doc-int">✓ Salvo</div></div>
+    <div class="afield"><label>E-mails e comunicações</label><textarea class="aa" id="doc-emails" placeholder="E-mail 1: Gatilho: ... | Para: ... | Assunto: ...&#10;E-mail 2: ..." oninput="sv('doc-emails')"></textarea><div class="sv-ok" id="sv-doc-emails">✓ Salvo</div></div>
+    <div class="afield"><label>Observações finais / o que ficou fora do escopo</label><textarea class="aa" id="doc-obs" placeholder="Funcionalidades fora do escopo, próximas fases, observações para o desenvolvedor..." oninput="sv('doc-obs')"></textarea><div class="sv-ok" id="sv-doc-obs">✓ Salvo</div></div>
+  </div>
+  <div class="doc-section">
+    <div class="doc-section-title">📄 Documento da Documentação Final</div>
+    <div class="doc-section-desc">Gera um arquivo Word com todos os entregáveis documentados para o desenvolvimento.</div>
+    <button class="doc-btn" onclick="gerarDoc('doc')">⬇ Gerar Doc — Documentação</button>
+  </div>
+</div>
+
+  <div class="mf"><button class="btn btn-s" onclick="go(4)">← Anterior</button><div class="mf-info">Módulo 6 de 6</div><button class="btn btn-g" onclick="fin()">✓ Concluir Mapeamento</button></div>
 </div>
 
 <!-- FINAL -->
@@ -639,201 +605,279 @@ p{color:var(--text2);margin-bottom:13px;font-size:13px;}
   <div class="fin-sts">
     <div class="fin-st"><div class="fin-sn">6</div><div class="fin-sl">Módulos</div></div>
     <div class="fin-st"><div class="fin-sn" id="fscore">0</div><div class="fin-sl">Quiz corretos</div></div>
-    <div class="fin-st"><div class="fin-sn">5</div><div class="fin-sl">Erros evitados</div></div>
+    <div class="fin-st"><div class="fin-sn">2</div><div class="fin-sl">Quiz por módulo</div></div>
   </div>
-  <button class="btn btn-p" onclick="rst()" style="font-size:13px;padding:12px 26px;">↩ Rever o treinamento</button>
+  <button class="btn btn-p" onclick="rst()" style="font-size:13px;padding:12px 26px;">&#8617; Rever o treinamento</button>
 </div>
 </main>
 <div id="toast"></div>
 
 <script>
-const T=6;let dn=new Set(),sc=0;
-const QA={
-  q1:{c:'C',fb:'Correto. O cliente descreve o processo como acha que é. Quem executa no dia a dia conhece as exceções e detalhes reais que fazem a diferença no desenvolvimento.'},
-  q2:{c:'C',fb:'Correto. Aprovação verbal não tem valor documental. Sem registro formal, qualquer mudança futura vira discussão sem respaldo.'}
+var T=6,dn=[],sc=0;
+var QA={
+q1a:{c:"C",fb:"Correto. O cliente descreve como acha que e. Quem executa conhece as excecoes e detalhes reais."},
+q1b:{c:"C",fb:"Correto. Aprovacao verbal nao tem valor documental. Sem registro formal qualquer mudanca vira discussao."},
+q2a:{c:"B",fb:"Correto. As vezes e depende sao sinais de alerta - voce precisa da regra concreta antes de avancar."},
+q2b:{c:"C",fb:"Correto. Mapear sem o dono do processo garante retrabalho. E melhor reagendar do que refazer."},
+q3a:{c:"B",fb:"Correto. Entender o formato real da entrada e a pergunta que mais evita retrabalho - como mostrou o case do Parecer."},
+q3b:{c:"C",fb:"Correto. Extraia o maximo disponivel e traga quem executa na proxima reuniao. Nao encerre nem continue sem os detalhes certos."},
+q4a:{c:"B",fb:"Correto. Ambiguidade no mapeamento vira chute no desenvolvimento. Sempre resolva com exemplos concretos."},
+q4b:{c:"C",fb:"Correto. Integracoes nunca aparecem espontaneamente - voce precisa perguntar explicitamente."},
+q5a:{c:"B",fb:"Correto. Enquanto o To-Be nao foi validado formalmente, ainda e hora de incorporar correcoes - nao recusar."},
+q5b:{c:"C",fb:"Correto. A regra de bolso e clara: voce esta pronto quando consegue narrar o processo sem consultar notas."},
+q6a:{c:"B",fb:"Correto. Se o dev precisou perguntar, a informacao nao estava no mapeamento. Tipo de campo e atributo obrigatorio."},
+q6b:{c:"B",fb:"Correto. O desenvolvimento acontece fase a fase. Organizar assim elimina a duvida de qual campo vai em qual fase."}
 };
-function go(i){document.querySelectorAll('.mod').forEach(m=>m.classList.remove('on'));document.getElementById('final').classList.remove('on');const m=document.getElementById('m'+i);if(m){m.classList.add('on');window.scrollTo(0,0);}document.querySelectorAll('.ni').forEach((n,j)=>n.classList.toggle('active',j===i));}
-function nx(i){dn.add(i);document.querySelectorAll('.ni')[i].classList.add('done');upd();go(i+1);}
-function upd(){const p=Math.round(dn.size/T*100);document.getElementById('pf').style.width=p+'%';document.getElementById('pt').textContent=dn.size+' de '+T+' módulos';}
-function qz(el,id,ok){const c=document.getElementById(id);if(c.dataset.d)return;c.dataset.d='1';const d=QA[id];c.querySelectorAll('.qo').forEach((o,i)=>{const l=['A','B','C','D'][i];if(l===d.c){o.classList.add('ok');o.querySelector('.qi').textContent='✓';}else if(o===el&&!ok){o.classList.add('no');o.querySelector('.qi').textContent='✗';}o.style.pointerEvents='none';});const fb=document.getElementById(id+'f');fb.className='qfb on '+(ok?'ok-f':'no-f');fb.textContent=(ok?'✓ ':'✗ Não é essa. ')+d.fb;if(ok)sc++;}
-function rv(el){el.classList.toggle('rv');}
-function cp(el){navigator.clipboard.writeText(el.querySelector('.qt').textContent).then(()=>tst('✓ Pergunta copiada'));}
-function ck(el){el.classList.toggle('ck');}
-const ans={};
-function sv(id){const el=document.getElementById(id);if(!el)return;ans[id]=el.value;const s=document.getElementById('sv-'+id);if(s){s.classList.add('on');setTimeout(()=>s.classList.remove('on'),1400);}}
-function handleFile(input,nameId){const f=input.files[0];if(f){document.getElementById(nameId).textContent='📎 '+f.name+' ('+Math.round(f.size/1024)+'KB)';}}
-function addRaciRow(){const tb=document.getElementById('raci-body');const tr=document.createElement('tr');tr.innerHTML='<td><input type="text" placeholder="Nova fase"></td><td><input type="text" placeholder="Quem executa"></td><td><input type="text" placeholder="Quem consultar"></td><td><input type="text" placeholder="Quem informar"></td><td><input type="text" placeholder="Quem aprova"></td>';tb.appendChild(tr);}
-function fin(){dn.add(5);document.querySelectorAll('.ni').forEach(n=>n.classList.add('done'));upd();document.querySelectorAll('.mod').forEach(m=>m.classList.remove('on'));document.getElementById('fscore').textContent=sc;document.getElementById('final').classList.add('on');window.scrollTo(0,0);}
-function rst(){dn.clear();sc=0;document.querySelectorAll('.ni').forEach(n=>n.classList.remove('done','active'));document.getElementById('final').classList.remove('on');upd();go(0);}
-function tst(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('on');setTimeout(()=>t.classList.remove('on'),2200);}
 
-// GERAR DOCUMENTO WORD (HTML format — opens perfectly in Word)
-function gerarDoc(tipo){
-  const emp=document.getElementById('ko-empresa')?.value?.trim()||'Empresa não informada';
-  const proc=document.getElementById('ko-processo')?.value?.trim()||'Processo não informado';
-  const cons=document.getElementById('ko-consultor')?.value?.trim()||'';
-  const data=new Date().toLocaleDateString('pt-BR');
+function go(i){
+  var mods=document.querySelectorAll(".mod");
+  for(var k=0;k<mods.length;k++) mods[k].classList.remove("on");
+  document.getElementById("final").classList.remove("on");
+  var m=document.getElementById("m"+i);
+  if(m){m.classList.add("on");window.scrollTo(0,0);}
+  var nis=document.querySelectorAll(".ni");
+  for(var j=0;j<nis.length;j++) nis[j].classList.toggle("active",j===i);
+}
 
-  let titulo='', sections=[];
+function nx(i){
+  if(dn.indexOf(i)<0) dn.push(i);
+  document.querySelectorAll(".ni")[i].classList.add("done");
+  upd();
+  go(i+1);
+}
 
-  if(tipo==='kickoff'){
-    titulo='Kick Off';
-    sections=[
-      {t:'Dados do Projeto', rows:[['Empresa / Cliente',emp],['Processo',proc],['Consultor',cons],['Data',data]]},
-      {t:'Objetivo e Definição de Sucesso', rows:[['',gv('ko-objetivo')]]},
-      {t:'Dono do Processo e Stakeholders', rows:[['',gv('ko-stake')]]},
-      {t:'Classificação do Projeto', rows:[['',gv('ko-class')]]},
-      {t:'Documentos Recebidos / Pendentes', rows:[['',gv('ko-docs')]]},
-      {t:'Restrições Estruturais Comunicadas', rows:[['',gv('ko-restrict')]]},
-      {t:'Próximos Passos e Agenda', rows:[['',gv('ko-next')]]},
-      {t:'Observações Gerais', rows:[['',gv('ko-obs')]]}
-    ];
-  } else if(tipo==='asis'){
-    titulo='As-Is — Processo Atual';
-    // SIPOC table
-    let sipocHTML='<table border="1" cellpadding="6" cellspacing="0" style="width:100%;border-collapse:collapse;font-size:12px;">';
-    sipocHTML+='<tr style="background:#141b2e;color:#fff;"><th>Fornecedor</th><th>Entrada</th><th>Processo</th><th>Saída</th><th>Cliente</th></tr>';
-    document.querySelectorAll('#sipoc-body tr').forEach(tr=>{
-      const cells=[...tr.querySelectorAll('input')].map(i=>i.value||'');
-      if(cells.some(c=>c!==''))sipocHTML+=`<tr>${cells.map(c=>`<td>${c||'—'}</td>`).join('')}</tr>`;
-    });
-    sipocHTML+='</table>';
-    // RACI table
-    let raciHTML='<table border="1" cellpadding="6" cellspacing="0" style="width:100%;border-collapse:collapse;font-size:12px;">';
-    raciHTML+='<tr style="background:#6600ff;color:#fff;"><th>Fase</th><th>Responsável (R)</th><th>Consultado (C)</th><th>Informado (I)</th><th>Aprovador</th></tr>';
-    document.querySelectorAll('#raci-body tr').forEach(tr=>{
-      const cells=[...tr.querySelectorAll('input')].map(i=>i.value||'');
-      if(cells.some(c=>c!==''))raciHTML+=`<tr>${cells.map(c=>`<td>${c||'—'}</td>`).join('')}</tr>`;
-    });
-    raciHTML+='</table>';
-    sections=[
-      {t:'Identificação', rows:[['Empresa',emp],['Processo',proc],['Consultor',cons],['Data',data]]},
-      {t:'SIPOC', html:sipocHTML},
-      {t:'Abertura do Processo', rows:[['',gv('asis-abertura')]]},
-      {t:'RACI por Fase', html:raciHTML},
-      {t:'Detalhamento das Fases (Campos, SLA, Condicionais, Comunicações)', rows:[['',gv('asis-fases')]]},
-      {t:'Sistemas e Integrações Identificados', rows:[['',gv('asis-int')]]},
-      {t:'Observações', rows:[['',gv('asis-obs')]]}
-    ];
-  } else if(tipo==='gaps'){
-    titulo='Investigação de Gaps';
-    sections=[
-      {t:'Identificação', rows:[['Empresa',emp],['Processo',proc],['Consultor',cons],['Data',data]]},
-      {t:'Gargalos e Pontos de Dor', rows:[['',gv('gap-dor')]]},
-      {t:'Exceções e Fluxos Alternativos', rows:[['',gv('gap-exc')]]},
-      {t:'Regras Não Escritas Identificadas', rows:[['',gv('gap-regras')]]},
-      {t:'Integrações com Sistemas Externos', rows:[['',gv('gap-int')]]},
-      {t:'Decisões em Aberto', rows:[['',gv('gap-dec')]]},
-      {t:'Observações', rows:[['',gv('gap-obs')]]}
-    ];
-  } else if(tipo==='tobe'){
-    titulo='To-Be — Processo Futuro';
-    const link=gv('tobe-link');
-    const fname=document.getElementById('tobe-file-name')?.textContent||'Nenhum arquivo';
-    const checks=[...document.querySelectorAll('#tobe-cl li')].map(li=>(li.classList.contains('ck')?'✓ ':'☐ ')+li.textContent.replace('✓','').trim()).join('\n');
-    sections=[
-      {t:'Identificação', rows:[['Empresa',emp],['Processo',proc],['Consultor',cons],['Data',data]]},
-      {t:'BPMN', rows:[['Arquivo anexado',fname],['Link',link]]},
-      {t:'Fases do To-Be', rows:[['',gv('tobe-fases')]]},
-      {t:'Checklist de Validação', rows:[['',checks]]},
-      {t:'Observações e Mudanças Registradas na Validação', rows:[['',gv('tobe-obs')]]}
-    ];
-  } else if(tipo==='doc'){
-    titulo='Documentação para Desenvolver';
-    sections=[
-      {t:'Identificação', rows:[['Empresa',emp],['Processo',proc],['Consultor',cons],['Data',data]]},
-      {t:'Fases e Campos', rows:[['',gv('doc-fases')]]},
-      {t:'Automações (Gatilho → Condição → Ação)', rows:[['',gv('doc-auto')]]},
-      {t:'Integrações', rows:[['',gv('doc-int')]]},
-      {t:'E-mails e Comunicações', rows:[['',gv('doc-emails')]]},
-      {t:'Observações Finais / Fora do Escopo', rows:[['',gv('doc-obs')]]}
-    ];
+function upd(){
+  var p=Math.round(dn.length/T*100);
+  document.getElementById("pf").style.width=p+"%";
+  document.getElementById("pt").textContent=dn.length+" de "+T+" modulos";
+}
+
+function qz(el,id,ok){
+  var c=document.getElementById(id);
+  if(c.dataset.d) return;
+  c.dataset.d="1";
+  var d=QA[id];
+  var opts=c.querySelectorAll(".qo");
+  var letters=["A","B","C","D"];
+  for(var i=0;i<opts.length;i++){
+    if(letters[i]===d.c){opts[i].classList.add("ok");opts[i].querySelector(".qi").textContent="OK";}
+    else if(opts[i]===el&&!ok){opts[i].classList.add("no");opts[i].querySelector(".qi").textContent="X";}
+    opts[i].style.pointerEvents="none";
   }
-
-  const docHTML = buildWordHTML(empresa, processo, titulo, sections, data);
-  const blob = new Blob(['\ufeff'+docHTML], {type:'application/msword'});
-  const a = document.createElement('a');
-  a.href = URL.createObjectURL(blob);
-  a.download = `Profixlab_${tipo}_${emp.replace(/[^a-zA-Z0-9]/g,'_')}_${proc.replace(/[^a-zA-Z0-9]/g,'_')}.doc`;
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
-  URL.revokeObjectURL(a.href);
-  tst('✓ Documento gerado com sucesso!');
+  var fb=document.getElementById(id+"f");
+  fb.className="qfb on "+(ok?"ok-f":"no-f");
+  fb.textContent=(ok?"Correto! ":"Incorreto. ")+d.fb;
+  if(ok) sc++;
 }
 
-function gv(id){
-  const el=document.getElementById(id);
-  return el?.value?.trim()||'Não preenchido';
-}
+function rv(el){el.classList.toggle("rv");}
 
-function buildWordHTML(empresa, processo, modulo, sections, data){
-  let body=`<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40">
-<head><meta charset="UTF-8">
-<style>
-  body{font-family:Arial,sans-serif;font-size:11pt;color:#141b2e;margin:40px;}
-  .header{background:#141b2e;padding:16px 20px;margin-bottom:0;}
-  .header-title{color:#6600ff;font-size:22pt;font-weight:bold;font-family:Arial;}
-  .header-sub{color:#ededed;font-size:10pt;}
-  .meta-bar{background:#1e2a45;padding:10px 20px;margin-bottom:24px;}
-  .meta-bar span{color:#ededed;font-size:10pt;}
-  .meta-emp{color:#55cc99;font-weight:bold;}
-  h1{font-size:20pt;color:#141b2e;border-bottom:3px solid #6600ff;padding-bottom:6px;margin-top:28px;}
-  h2{font-size:13pt;color:#6600ff;margin-top:20px;margin-bottom:6px;text-transform:uppercase;letter-spacing:1px;}
-  .row-lbl{font-weight:bold;color:#141b2e;min-width:160px;display:inline-block;vertical-align:top;}
-  .row-val{color:#4a5568;}
-  .row{margin-bottom:8px;border-bottom:1px solid #e2e8f0;padding-bottom:8px;}
-  .text-val{color:#4a5568;white-space:pre-wrap;line-height:1.6;}
-  table{border-collapse:collapse;width:100%;margin-top:8px;margin-bottom:8px;}
-  th{background:#141b2e;color:#fff;padding:8px 10px;text-align:left;font-size:10pt;}
-  td{padding:7px 10px;border:1px solid #e2e8f0;font-size:10pt;color:#4a5568;}
-  tr:nth-child(even) td{background:#f8f9fa;}
-  .footer{margin-top:40px;border-top:1px solid #e2e8f0;padding-top:12px;color:#888;font-size:9pt;text-align:center;}
-  @page{margin:2cm;}
-</style></head><body>
-<div class="header">
-  <div class="header-title">PROFIXLAB</div>
-  <div class="header-sub">Transformando Processos em Eficiência</div>
-</div>
-<div class="meta-bar">
-  <span>Empresa: <span class="meta-emp">${empresa}</span> &nbsp;|&nbsp; Processo: <span class="meta-emp">${processo}</span> &nbsp;|&nbsp; Data: ${data}</span>
-</div>
-<h1>${modulo}</h1>`;
-
-  for(const sec of sections){
-    body+=`<h2>${sec.t}</h2>`;
-    if(sec.html){
-      body+=sec.html;
-    } else {
-      for(const [lbl,val] of sec.rows){
-        if(lbl){
-          body+=`<div class="row"><span class="row-lbl">${lbl}:</span> <span class="row-val">${(val||'Não preenchido').replace(/\n/g,'<br>')}</span></div>`;
-        } else {
-          body+=`<div class="text-val">${(val||'Não preenchido').replace(/\n/g,'<br>')}</div>`;
-        }
-      }
-    }
+function cp(el){
+  var t=el.querySelector(".qt").textContent;
+  if(navigator.clipboard){
+    navigator.clipboard.writeText(t).then(function(){tst("Pergunta copiada!");});
   }
-
-  body+=`<div class="footer">Documento gerado automaticamente pela Metodologia Profixlab &bull; ${data}</div>
-</body></html>`;
-  return body;
 }
 
-function addSipocRow(){
-  const tb=document.getElementById('sipoc-body');
-  const tr=document.createElement('tr');
-  tr.innerHTML='<td><input type="text" placeholder=""></td><td><input type="text" placeholder=""></td><td><input type="text" placeholder=""></td><td><input type="text" placeholder=""></td><td><input type="text" placeholder=""></td>';
+function ck(el){el.classList.toggle("ck");}
+
+var ans={};
+function sv(id){
+  var el=document.getElementById(id);
+  if(!el) return;
+  ans[id]=el.value;
+  var s=document.getElementById("sv-"+id);
+  if(s){s.classList.add("on");setTimeout(function(){s.classList.remove("on");},1400);}
+}
+
+function handleFile(input,nameId){
+  var f=input.files[0];
+  if(f) document.getElementById(nameId).textContent="Arquivo: "+f.name+" ("+Math.round(f.size/1024)+"KB)";
+}
+
+function addRow(tbodyId,cols){
+  var tb=document.getElementById(tbodyId);
+  if(!tb) return;
+  var tr=document.createElement("tr");
+  var cells="";
+  for(var i=0;i<cols;i++) cells+="<td><input type=\"text\" placeholder=\"\"></td>";
+  tr.innerHTML=cells;
   tb.appendChild(tr);
 }
 
-function downloadFile(name,content,mime){
-  const blob=new Blob([content],{type:mime});
-  const a=document.createElement('a');
-  a.href=URL.createObjectURL(blob);
-  a.download=name;
+function addFaseRow(){
+  var tb=document.getElementById("fases-body");
+  if(!tb) return;
+  var tr=document.createElement("tr");
+  var sel="<select><option value=\"\">Selecione...</option><option>Texto curto</option><option>Texto longo</option><option>Numero</option><option>Moeda</option><option>Data</option><option>Data e Hora</option><option>Dropdown</option><option>Multipla escolha</option><option>Arquivo</option><option>E-mail</option><option>Telefone</option><option>Formula / Calculado</option><option>Conectado a outro pipe</option><option>Banco de dados</option></select>";
+  tr.innerHTML="<td><input type=\"text\" placeholder=\"Ex: Fase\"></td><td><input type=\"text\" placeholder=\"Ex: Campo\"></td><td>"+sel+"</td>";
+  tb.appendChild(tr);
+}
+
+function tableToHTML(tableId,headerColor){
+  var tbl=document.getElementById(tableId);
+  if(!tbl) return "";
+  var html="<table border=\"1\" cellpadding=\"6\" cellspacing=\"0\" style=\"width:100%;border-collapse:collapse;font-size:11pt;margin-bottom:12px;\">";
+  var ths=tbl.querySelectorAll("th");
+  html+="<tr style=\"background:"+headerColor+";color:#fff;\">";
+  for(var i=0;i<ths.length;i++) html+="<th style=\"padding:8px;text-align:left;\">"+ths[i].textContent+"</th>";
+  html+="</tr>";
+  var rows=tbl.querySelectorAll("tbody tr");
+  var alt=false;
+  for(var r=0;r<rows.length;r++){
+    var cells=rows[r].querySelectorAll("td");
+    var hasData=false;
+    var vals=[];
+    for(var c=0;c<cells.length;c++){
+      var inp=cells[c].querySelector("input");
+      var sel=cells[c].querySelector("select");
+      var v=inp?inp.value:(sel?sel.value:"");
+      vals.push(v);
+      if(v) hasData=true;
+    }
+    if(!hasData) continue;
+    html+="<tr style=\"background:"+(alt?"#f8f9fa":"#fff")+"\">";
+    for(var vi=0;vi<vals.length;vi++) html+="<td style=\"padding:7px 10px;\">"+vals[vi]+"</td>";
+    html+="</tr>";
+    alt=!alt;
+  }
+  html+="</table>";
+  return html;
+}
+
+function gv(id){
+  var el=document.getElementById(id);
+  return (el&&el.value&&el.value.trim())?el.value.trim():"Nao preenchido";
+}
+
+function buildWordDoc(empresa,processo,modulo,sections,data){
+  var html="<html xmlns:o=\"urn:schemas-microsoft-com:office:office\" xmlns:w=\"urn:schemas-microsoft-com:office:word\"><head><meta charset=\"UTF-8\"><style>body{font-family:Arial,sans-serif;font-size:11pt;color:#141b2e;margin:2cm;}.hdr{background:#141b2e;padding:14px 18px;}.hdr-t{color:#6600ff;font-size:20pt;font-weight:bold;}.hdr-s{color:#ededed;font-size:9pt;}.meta{background:#1e2a45;padding:8px 18px;margin-bottom:20px;color:#ededed;font-size:10pt;}.meta b{color:#55cc99;}h1{font-size:18pt;color:#141b2e;border-bottom:3px solid #6600ff;padding-bottom:5px;margin-top:24px;}h2{font-size:12pt;color:#6600ff;margin-top:18px;margin-bottom:6px;text-transform:uppercase;}.lbl{font-weight:bold;color:#141b2e;display:block;margin-bottom:3px;}.val{color:#4a5568;margin-bottom:10px;}.footer{margin-top:40px;border-top:1px solid #e2e8f0;padding-top:10px;color:#888;font-size:9pt;text-align:center;}table{border-collapse:collapse;width:100%;margin:8px 0;}th{background:#141b2e;color:#fff;padding:7px 10px;text-align:left;}td{padding:6px 10px;border:1px solid #e2e8f0;}tr:nth-child(even) td{background:#f8f9fa;}@page{margin:2cm;}</style></head><body>";
+  html+="<div class=\"hdr\"><div class=\"hdr-t\">PROFIXLAB</div><div class=\"hdr-s\">Transformando Processos em Eficiencia</div></div>";
+  html+="<div class=\"meta\">Empresa: <b>"+empresa+"</b> &nbsp;|&nbsp; Processo: <b>"+processo+"</b> &nbsp;|&nbsp; Data: "+data+"</div>";
+  html+="<h1>"+modulo+"</h1>";
+  for(var si=0;si<sections.length;si++){
+    var s=sections[si];
+    html+="<h2>"+s.t+"</h2>";
+    if(s.html){
+      html+=s.html;
+    } else if(s.rows){
+      for(var ri=0;ri<s.rows.length;ri++){
+        var row=s.rows[ri];
+        var val=(row[1]||"Nao preenchido").split("\n").join("<br>");
+        if(row[0]){html+="<div><span class=\"lbl\">"+row[0]+":</span><div class=\"val\">"+val+"</div></div>";}
+        else{html+="<div class=\"val\">"+val+"</div>";}
+      }
+    }
+  }
+  html+="<div class=\"footer\">Documento gerado pela Metodologia Profixlab - "+data+"</div></body></html>";
+  return html;
+}
+
+function gerarDoc(tipo){
+  var emp=gv("ko-empresa");
+  var proc=gv("ko-processo");
+  var cons=gv("ko-consultor");
+  var data=new Date().toLocaleDateString("pt-BR");
+  var titulo="";
+  var sections=[];
+
+  if(tipo==="kickoff"){
+    titulo="Kick Off";
+    sections=[
+      {t:"Dados do Projeto",rows:[["Empresa",emp],["Processo",proc],["Consultor",cons],["Data",data]]},
+      {t:"Objetivo e Definicao de Sucesso",rows:[["",gv("ko-objetivo")]]},
+      {t:"Dono do Processo e Stakeholders",rows:[["",gv("ko-stake")]]},
+      {t:"Classificacao do Projeto",rows:[["",gv("ko-class")]]},
+      {t:"Documentos Recebidos e Pendentes",rows:[["",gv("ko-docs")]]},
+      {t:"Restricoes Estruturais Comunicadas",rows:[["",gv("ko-restrict")]]},
+      {t:"Proximos Passos e Agenda",rows:[["",gv("ko-next")]]},
+      {t:"Observacoes Gerais",rows:[["",gv("ko-obs")]]}
+    ];
+  } else if(tipo==="asis"){
+    titulo="As-Is - Processo Atual";
+    sections=[
+      {t:"Identificacao",rows:[["Empresa",emp],["Processo",proc],["Consultor",cons],["Data",data]]},
+      {t:"SIPOC",html:tableToHTML("sipoc-table","#141b2e")},
+      {t:"Abertura do Processo",rows:[["",gv("asis-abertura")]]},
+      {t:"RACI por Fase",html:tableToHTML("raci-table","#6600ff")},
+      {t:"Detalhamento das Fases",rows:[["",gv("asis-fases")]]},
+      {t:"Sistemas e Integracoes",rows:[["",gv("asis-int")]]},
+      {t:"Observacoes",rows:[["",gv("asis-obs")]]}
+    ];
+  } else if(tipo==="gaps"){
+    titulo="Investigacao de Gaps";
+    sections=[
+      {t:"Identificacao",rows:[["Empresa",emp],["Processo",proc],["Consultor",cons],["Data",data]]},
+      {t:"Gargalos e Pontos de Dor",rows:[["",gv("gap-dor")]]},
+      {t:"Excecoes e Fluxos Alternativos",rows:[["",gv("gap-exc")]]},
+      {t:"Regras Nao Escritas",rows:[["",gv("gap-regras")]]},
+      {t:"Integracoes com Sistemas Externos",rows:[["",gv("gap-int")]]},
+      {t:"Decisoes em Aberto",rows:[["",gv("gap-dec")]]},
+      {t:"Observacoes",rows:[["",gv("gap-obs")]]}
+    ];
+  } else if(tipo==="tobe"){
+    titulo="To-Be - Processo Futuro";
+    var fname=document.getElementById("tobe-file-name")?document.getElementById("tobe-file-name").textContent:"Nenhum arquivo";
+    var chks=[];
+    var cls=document.querySelectorAll("#tobe-cl li");
+    for(var ci=0;ci<cls.length;ci++){
+      chks.push((cls[ci].classList.contains("ck")?"[X] ":"[ ] ")+cls[ci].textContent.trim());
+    }
+    sections=[
+      {t:"Identificacao",rows:[["Empresa",emp],["Processo",proc],["Consultor",cons],["Data",data]]},
+      {t:"BPMN",rows:[["Arquivo",fname],["Link",gv("tobe-link")]]},
+      {t:"Checklist de Validacao",rows:[["",chks.join("\n")]]},
+      {t:"Observacoes e Mudancas Registradas",rows:[["",gv("tobe-obs")]]}
+    ];
+  } else if(tipo==="doc"){
+    titulo="Documentacao para Desenvolver";
+    sections=[
+      {t:"Identificacao",rows:[["Empresa",emp],["Processo",proc],["Consultor",cons],["Data",data]]},
+      {t:"Fases e Campos",html:tableToHTML("fases-table","#141b2e")},
+      {t:"Automacoes (Gatilho - Condicao - Acao)",html:tableToHTML("auto-table","#6600ff")},
+      {t:"Integracoes",rows:[["",gv("doc-int")]]},
+      {t:"E-mails e Comunicacoes",rows:[["",gv("doc-emails")]]},
+      {t:"Observacoes Finais e Fora do Escopo",rows:[["",gv("doc-obs")]]}
+    ];
+  }
+
+  var docContent=buildWordDoc(emp,proc,titulo,sections,data);
+  var blob=new Blob([docContent],{type:"application/msword"});
+  var url=URL.createObjectURL(blob);
+  var a=document.createElement("a");
+  a.href=url;
+  a.download="Profixlab_"+tipo+"_"+emp.replace(/[^a-z0-9]/gi,"_")+"_"+proc.replace(/[^a-z0-9]/gi,"_")+".doc";
+  document.body.appendChild(a);
   a.click();
-  URL.revokeObjectURL(a.href);
+  setTimeout(function(){document.body.removeChild(a);URL.revokeObjectURL(url);},1000);
+  tst("Documento gerado com sucesso!");
+}
+
+function fin(){
+  if(dn.indexOf(5)<0) dn.push(5);
+  var nis=document.querySelectorAll(".ni");
+  for(var i=0;i<nis.length;i++) nis[i].classList.add("done");
+  upd();
+  var mods=document.querySelectorAll(".mod");
+  for(var i=0;i<mods.length;i++) mods[i].classList.remove("on");
+  document.getElementById("fscore").textContent=sc;
+  document.getElementById("final").classList.add("on");
+  window.scrollTo(0,0);
+}
+
+function rst(){
+  dn=[];sc=0;
+  var nis=document.querySelectorAll(".ni");
+  for(var i=0;i<nis.length;i++) nis[i].classList.remove("done","active");
+  document.getElementById("final").classList.remove("on");
+  upd();go(0);
+}
+
+function tst(msg){
+  var t=document.getElementById("toast");
+  t.textContent=msg;
+  t.classList.add("on");
+  setTimeout(function(){t.classList.remove("on");},3000);
 }
 </script>
 </body>
