@@ -422,7 +422,17 @@ p{color:var(--text2);margin-bottom:13px;font-size:13px;}
   <div class="abox">
     <div class="abox-title"><span class="abadge">Ação</span> Registro do As-Is</div>
     <div class="abox-desc">Documente o processo atual coletado nesta etapa.</div>
-    <div class="afield"><label>SIPOC — Fornecedores, Entradas, Processo, Saídas, Clientes</label><textarea class="aa" id="asis-sipoc" placeholder="Fornecedores: ... | Entradas: ... | Processo (macro): ... | Saídas: ... | Clientes: ..." oninput="sv('asis-sipoc')"></textarea><div class="sv-ok" id="sv-asis-sipoc">✓ Salvo</div></div>
+    <div class="afield"><label>SIPOC — Fornecedores, Entradas, Processo, Saídas, Clientes</label>
+    <table class="raci-table" id="sipoc-table">
+      <thead><tr><th>Fornecedor</th><th>Entrada (o que chega)</th><th>Processo (etapa macro)</th><th>Saída (o que gera)</th><th>Cliente (para quem vai)</th></tr></thead>
+      <tbody id="sipoc-body">
+        <tr><td><input type="text" placeholder="Ex: RH"></td><td><input type="text" placeholder="Ex: Formulário de solicitação"></td><td><input type="text" placeholder="Ex: Análise de crédito"></td><td><input type="text" placeholder="Ex: Parecer aprovado"></td><td><input type="text" placeholder="Ex: Gestor da área"></td></tr>
+        <tr><td><input type="text" placeholder=""></td><td><input type="text" placeholder=""></td><td><input type="text" placeholder=""></td><td><input type="text" placeholder=""></td><td><input type="text" placeholder=""></td></tr>
+        <tr><td><input type="text" placeholder=""></td><td><input type="text" placeholder=""></td><td><input type="text" placeholder=""></td><td><input type="text" placeholder=""></td><td><input type="text" placeholder=""></td></tr>
+      </tbody>
+    </table>
+    <button onclick="addSipocRow()" style="font-size:11px;background:var(--roxo-xl);color:var(--roxo);border:1px solid rgba(102,0,255,0.2);padding:5px 12px;border-radius:5px;cursor:pointer;font-family:var(--font);font-weight:600;margin-bottom:14px;">+ Adicionar linha</button>
+    </div>
     <div class="afield"><label>Como chegam as solicitações (abertura do processo)</label><textarea class="aa" id="asis-abertura" placeholder="Manual / Integração / Formulário externo — descreva o fluxo de entrada..." oninput="sv('asis-abertura')"></textarea><div class="sv-ok" id="sv-asis-abertura">✓ Salvo</div></div>
 
     <div class="afield"><label>RACI das fases — exemplo de preenchimento</label>
@@ -657,110 +667,165 @@ function fin(){dn.add(5);document.querySelectorAll('.ni').forEach(n=>n.classList
 function rst(){dn.clear();sc=0;document.querySelectorAll('.ni').forEach(n=>n.classList.remove('done','active'));document.getElementById('final').classList.remove('on');upd();go(0);}
 function tst(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('on');setTimeout(()=>t.classList.remove('on'),2200);}
 
-// GERAR DOCUMENTO WORD (RTF format — opens in Word)
+// GERAR DOCUMENTO WORD (HTML format — opens perfectly in Word)
 function gerarDoc(tipo){
-  const emp=document.getElementById('ko-empresa')?.value||'Empresa não informada';
-  const proc=document.getElementById('ko-processo')?.value||'Processo não informado';
-  const cons=document.getElementById('ko-consultor')?.value||'';
+  const emp=document.getElementById('ko-empresa')?.value?.trim()||'Empresa não informada';
+  const proc=document.getElementById('ko-processo')?.value?.trim()||'Processo não informado';
+  const cons=document.getElementById('ko-consultor')?.value?.trim()||'';
   const data=new Date().toLocaleDateString('pt-BR');
 
-  let titulo='', conteudo='';
+  let titulo='', sections=[];
 
   if(tipo==='kickoff'){
     titulo='Kick Off';
-    conteudo=buildSection('Dados do Projeto',[
-      ['Empresa / Cliente',emp],['Processo',proc],['Consultor',cons],['Data',data]
-    ])+buildSection('Objetivo e Definição de Sucesso',[['',gv('ko-objetivo')]])+
-    buildSection('Dono do Processo e Stakeholders',[['',gv('ko-stake')]])+
-    buildSection('Classificação do Projeto',[['',gv('ko-class')]])+
-    buildSection('Documentos',[['Recebidos / Pendentes',gv('ko-docs')]])+
-    buildSection('Restrições Estruturais Comunicadas',[['',gv('ko-restrict')]])+
-    buildSection('Próximos Passos e Agenda',[['',gv('ko-next')]])+
-    buildSection('Observações Gerais',[['',gv('ko-obs')]]);
+    sections=[
+      {t:'Dados do Projeto', rows:[['Empresa / Cliente',emp],['Processo',proc],['Consultor',cons],['Data',data]]},
+      {t:'Objetivo e Definição de Sucesso', rows:[['',gv('ko-objetivo')]]},
+      {t:'Dono do Processo e Stakeholders', rows:[['',gv('ko-stake')]]},
+      {t:'Classificação do Projeto', rows:[['',gv('ko-class')]]},
+      {t:'Documentos Recebidos / Pendentes', rows:[['',gv('ko-docs')]]},
+      {t:'Restrições Estruturais Comunicadas', rows:[['',gv('ko-restrict')]]},
+      {t:'Próximos Passos e Agenda', rows:[['',gv('ko-next')]]},
+      {t:'Observações Gerais', rows:[['',gv('ko-obs')]]}
+    ];
   } else if(tipo==='asis'){
     titulo='As-Is — Processo Atual';
-    // RACI
-    let raciText='';
-    document.querySelectorAll('#raci-body tr').forEach(tr=>{
-      const cells=[...tr.querySelectorAll('input')].map(i=>i.value||'—');
-      if(cells.some(c=>c!=='—'))raciText+=cells.join(' | ')+'\n';
+    // SIPOC table
+    let sipocHTML='<table border="1" cellpadding="6" cellspacing="0" style="width:100%;border-collapse:collapse;font-size:12px;">';
+    sipocHTML+='<tr style="background:#141b2e;color:#fff;"><th>Fornecedor</th><th>Entrada</th><th>Processo</th><th>Saída</th><th>Cliente</th></tr>';
+    document.querySelectorAll('#sipoc-body tr').forEach(tr=>{
+      const cells=[...tr.querySelectorAll('input')].map(i=>i.value||'');
+      if(cells.some(c=>c!==''))sipocHTML+=`<tr>${cells.map(c=>`<td>${c||'—'}</td>`).join('')}</tr>`;
     });
-    conteudo=buildSection('Identificação',[['Empresa',emp],['Processo',proc],['Consultor',cons],['Data',data]])+
-    buildSection('SIPOC',[['',gv('asis-sipoc')]])+
-    buildSection('Abertura do Processo',[['',gv('asis-abertura')]])+
-    buildSection('RACI por Fase',[['',raciText||'Não preenchido']])+
-    buildSection('Detalhamento das Fases',[['',gv('asis-fases')]])+
-    buildSection('Sistemas e Integrações',[['',gv('asis-int')]])+
-    buildSection('Observações',[['',gv('asis-obs')]]);
+    sipocHTML+='</table>';
+    // RACI table
+    let raciHTML='<table border="1" cellpadding="6" cellspacing="0" style="width:100%;border-collapse:collapse;font-size:12px;">';
+    raciHTML+='<tr style="background:#6600ff;color:#fff;"><th>Fase</th><th>Responsável (R)</th><th>Consultado (C)</th><th>Informado (I)</th><th>Aprovador</th></tr>';
+    document.querySelectorAll('#raci-body tr').forEach(tr=>{
+      const cells=[...tr.querySelectorAll('input')].map(i=>i.value||'');
+      if(cells.some(c=>c!==''))raciHTML+=`<tr>${cells.map(c=>`<td>${c||'—'}</td>`).join('')}</tr>`;
+    });
+    raciHTML+='</table>';
+    sections=[
+      {t:'Identificação', rows:[['Empresa',emp],['Processo',proc],['Consultor',cons],['Data',data]]},
+      {t:'SIPOC', html:sipocHTML},
+      {t:'Abertura do Processo', rows:[['',gv('asis-abertura')]]},
+      {t:'RACI por Fase', html:raciHTML},
+      {t:'Detalhamento das Fases (Campos, SLA, Condicionais, Comunicações)', rows:[['',gv('asis-fases')]]},
+      {t:'Sistemas e Integrações Identificados', rows:[['',gv('asis-int')]]},
+      {t:'Observações', rows:[['',gv('asis-obs')]]}
+    ];
   } else if(tipo==='gaps'){
     titulo='Investigação de Gaps';
-    conteudo=buildSection('Identificação',[['Empresa',emp],['Processo',proc],['Consultor',cons],['Data',data]])+
-    buildSection('Gargalos e Pontos de Dor',[['',gv('gap-dor')]])+
-    buildSection('Exceções e Fluxos Alternativos',[['',gv('gap-exc')]])+
-    buildSection('Regras Não Escritas',[['',gv('gap-regras')]])+
-    buildSection('Integrações com Sistemas Externos',[['',gv('gap-int')]])+
-    buildSection('Decisões em Aberto',[['',gv('gap-dec')]])+
-    buildSection('Observações',[['',gv('gap-obs')]]);
+    sections=[
+      {t:'Identificação', rows:[['Empresa',emp],['Processo',proc],['Consultor',cons],['Data',data]]},
+      {t:'Gargalos e Pontos de Dor', rows:[['',gv('gap-dor')]]},
+      {t:'Exceções e Fluxos Alternativos', rows:[['',gv('gap-exc')]]},
+      {t:'Regras Não Escritas Identificadas', rows:[['',gv('gap-regras')]]},
+      {t:'Integrações com Sistemas Externos', rows:[['',gv('gap-int')]]},
+      {t:'Decisões em Aberto', rows:[['',gv('gap-dec')]]},
+      {t:'Observações', rows:[['',gv('gap-obs')]]}
+    ];
   } else if(tipo==='tobe'){
     titulo='To-Be — Processo Futuro';
     const link=gv('tobe-link');
     const fname=document.getElementById('tobe-file-name')?.textContent||'Nenhum arquivo';
-    const checks=[...document.querySelectorAll('#tobe-cl li')].map(li=>(li.classList.contains('ck')?'[X] ':'[ ] ')+li.textContent.replace('✓','').trim()).join('\n');
-    conteudo=buildSection('Identificação',[['Empresa',emp],['Processo',proc],['Consultor',cons],['Data',data]])+
-    buildSection('BPMN',[['Arquivo anexado',fname],['Link',link||'Não informado']])+
-    buildSection('Fases do To-Be',[['',gv('tobe-fases')]])+
-    buildSection('Checklist de Validação',[['',checks]])+
-    buildSection('Observações e Mudanças Registradas',[['',gv('tobe-obs')]]);
+    const checks=[...document.querySelectorAll('#tobe-cl li')].map(li=>(li.classList.contains('ck')?'✓ ':'☐ ')+li.textContent.replace('✓','').trim()).join('\n');
+    sections=[
+      {t:'Identificação', rows:[['Empresa',emp],['Processo',proc],['Consultor',cons],['Data',data]]},
+      {t:'BPMN', rows:[['Arquivo anexado',fname],['Link',link]]},
+      {t:'Fases do To-Be', rows:[['',gv('tobe-fases')]]},
+      {t:'Checklist de Validação', rows:[['',checks]]},
+      {t:'Observações e Mudanças Registradas na Validação', rows:[['',gv('tobe-obs')]]}
+    ];
   } else if(tipo==='doc'){
     titulo='Documentação para Desenvolver';
-    conteudo=buildSection('Identificação',[['Empresa',emp],['Processo',proc],['Consultor',cons],['Data',data]])+
-    buildSection('Fases e Campos',[['',gv('doc-fases')]])+
-    buildSection('Automações',[['',gv('doc-auto')]])+
-    buildSection('Integrações',[['',gv('doc-int')]])+
-    buildSection('E-mails e Comunicações',[['',gv('doc-emails')]])+
-    buildSection('Observações Finais / Fora do Escopo',[['',gv('doc-obs')]]);
+    sections=[
+      {t:'Identificação', rows:[['Empresa',emp],['Processo',proc],['Consultor',cons],['Data',data]]},
+      {t:'Fases e Campos', rows:[['',gv('doc-fases')]]},
+      {t:'Automações (Gatilho → Condição → Ação)', rows:[['',gv('doc-auto')]]},
+      {t:'Integrações', rows:[['',gv('doc-int')]]},
+      {t:'E-mails e Comunicações', rows:[['',gv('doc-emails')]]},
+      {t:'Observações Finais / Fora do Escopo', rows:[['',gv('doc-obs')]]}
+    ];
   }
 
-  const rtf=gerarRTF(emp, proc, titulo, conteudo, data);
-  downloadFile(`Profixlab_${tipo}_${emp.replace(/\s+/g,'_')}_${proc.replace(/\s+/g,'_')}.doc`, rtf, 'application/msword');
+  const docHTML = buildWordHTML(empresa, processo, titulo, sections, data);
+  const blob = new Blob(['\ufeff'+docHTML], {type:'application/msword'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = `Profixlab_${tipo}_${emp.replace(/[^a-zA-Z0-9]/g,'_')}_${proc.replace(/[^a-zA-Z0-9]/g,'_')}.doc`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(a.href);
   tst('✓ Documento gerado com sucesso!');
 }
 
-function gv(id){return document.getElementById(id)?.value?.trim()||'Não preenchido';}
-
-function buildSection(titulo,campos){
-  return {titulo,campos};
+function gv(id){
+  const el=document.getElementById(id);
+  return el?.value?.trim()||'Não preenchido';
 }
 
-function gerarRTF(empresa, processo, modulo, secoes, data){
-  let body=`{\\rtf1\\ansi\\deff0
-{\\fonttbl{\\f0 Arial;}{\\f1 Arial;}}
-{\\colortbl;\\red20\\green27\\blue46;\\red102\\green0\\blue255;\\red85\\green204\\blue153;\\red74\\green85\\blue104;}
+function buildWordHTML(empresa, processo, modulo, sections, data){
+  let body=`<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40">
+<head><meta charset="UTF-8">
+<style>
+  body{font-family:Arial,sans-serif;font-size:11pt;color:#141b2e;margin:40px;}
+  .header{background:#141b2e;padding:16px 20px;margin-bottom:0;}
+  .header-title{color:#6600ff;font-size:22pt;font-weight:bold;font-family:Arial;}
+  .header-sub{color:#ededed;font-size:10pt;}
+  .meta-bar{background:#1e2a45;padding:10px 20px;margin-bottom:24px;}
+  .meta-bar span{color:#ededed;font-size:10pt;}
+  .meta-emp{color:#55cc99;font-weight:bold;}
+  h1{font-size:20pt;color:#141b2e;border-bottom:3px solid #6600ff;padding-bottom:6px;margin-top:28px;}
+  h2{font-size:13pt;color:#6600ff;margin-top:20px;margin-bottom:6px;text-transform:uppercase;letter-spacing:1px;}
+  .row-lbl{font-weight:bold;color:#141b2e;min-width:160px;display:inline-block;vertical-align:top;}
+  .row-val{color:#4a5568;}
+  .row{margin-bottom:8px;border-bottom:1px solid #e2e8f0;padding-bottom:8px;}
+  .text-val{color:#4a5568;white-space:pre-wrap;line-height:1.6;}
+  table{border-collapse:collapse;width:100%;margin-top:8px;margin-bottom:8px;}
+  th{background:#141b2e;color:#fff;padding:8px 10px;text-align:left;font-size:10pt;}
+  td{padding:7px 10px;border:1px solid #e2e8f0;font-size:10pt;color:#4a5568;}
+  tr:nth-child(even) td{background:#f8f9fa;}
+  .footer{margin-top:40px;border-top:1px solid #e2e8f0;padding-top:12px;color:#888;font-size:9pt;text-align:center;}
+  @page{margin:2cm;}
+</style></head><body>
+<div class="header">
+  <div class="header-title">PROFIXLAB</div>
+  <div class="header-sub">Transformando Processos em Eficiência</div>
+</div>
+<div class="meta-bar">
+  <span>Empresa: <span class="meta-emp">${empresa}</span> &nbsp;|&nbsp; Processo: <span class="meta-emp">${processo}</span> &nbsp;|&nbsp; Data: ${data}</span>
+</div>
+<h1>${modulo}</h1>`;
 
-\\paperw12240\\paperh15840\\margl1440\\margr1440\\margt1440\\margb1440
-
-{\\f0\\fs28\\b\\cf2 PROFIXLAB}{\\f0\\fs20\\cf4  |  Transformando Processos em Eficiência}\\par
-\\sb120
-{\\f0\\fs32\\b\\cf1 ${esc(modulo)}}\\par
-\\sb60
-{\\f0\\fs20\\cf4 Empresa: }{\\f0\\fs20\\b\\cf1 ${esc(empresa)}}{\\f0\\fs20\\cf4   |   Processo: }{\\f0\\fs20\\b\\cf1 ${esc(processo)}}{\\f0\\fs20\\cf4   |   Data: ${data}}\\par
-\\sb60\\brdrb\\brdrs\\brdrw10\\brsp20\\par\\sb120\n`;
-
-  for(const sec of secoes){
-    body+=`\\sb200{\\f0\\fs22\\b\\cf2 ${esc(sec.titulo)}}\\par\\sb60\n`;
-    for(const [lbl,val] of sec.campos){
-      if(lbl&&lbl!==''){
-        body+=`{\\f0\\fs19\\b\\cf1 ${esc(lbl)}:} `;
+  for(const sec of sections){
+    body+=`<h2>${sec.t}</h2>`;
+    if(sec.html){
+      body+=sec.html;
+    } else {
+      for(const [lbl,val] of sec.rows){
+        if(lbl){
+          body+=`<div class="row"><span class="row-lbl">${lbl}:</span> <span class="row-val">${(val||'Não preenchido').replace(/\n/g,'<br>')}</span></div>`;
+        } else {
+          body+=`<div class="text-val">${(val||'Não preenchido').replace(/\n/g,'<br>')}</div>`;
+        }
       }
-      const lines=(val||'Não preenchido').split('\n');
-      body+=lines.map((l,i)=>i===0?`{\\f0\\fs19\\cf4 ${esc(l)}}`:(`\\par{\\f0\\fs19\\cf4 ${esc(l)}}`)).join('')+'\\par\\sb40\n';
     }
   }
-  body+='}';
+
+  body+=`<div class="footer">Documento gerado automaticamente pela Metodologia Profixlab &bull; ${data}</div>
+</body></html>`;
   return body;
 }
 
-function esc(s){return(s||'').replace(/\\/g,'\\\\').replace(/\{/g,'\\{').replace(/\}/g,'\\}');}
+function addSipocRow(){
+  const tb=document.getElementById('sipoc-body');
+  const tr=document.createElement('tr');
+  tr.innerHTML='<td><input type="text" placeholder=""></td><td><input type="text" placeholder=""></td><td><input type="text" placeholder=""></td><td><input type="text" placeholder=""></td><td><input type="text" placeholder=""></td>';
+  tb.appendChild(tr);
+}
 
 function downloadFile(name,content,mime){
   const blob=new Blob([content],{type:mime});
