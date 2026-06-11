@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Profixlab — Metodologia de Mapeamento</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
   --roxo:#6600ff;--roxo-d:#4d00cc;--roxo-l:#f0e6ff;--roxo-xl:#f8f2ff;
@@ -18,10 +18,9 @@
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:var(--font);color:var(--text);background:#f4f5f8;display:flex;min-height:100vh;font-size:14px;line-height:1.6;}
 
-/* SIDEBAR */
 #sb{width:var(--sw);min-height:100vh;background:var(--azul);position:fixed;top:0;left:0;display:flex;flex-direction:column;z-index:100;overflow-y:auto;}
 .sb-brand{padding:20px 18px 16px;border-bottom:1px solid rgba(255,255,255,0.07);}
-.sb-brand img{max-height:32px;width:auto;display:block;}
+.sb-brand img{max-height:40px;width:auto;display:block;}
 .sb-tag{font-size:9px;color:rgba(255,255,255,0.3);text-transform:uppercase;letter-spacing:1.5px;margin-top:6px;}
 .sb-prog{padding:14px 18px;border-bottom:1px solid rgba(255,255,255,0.07);}
 .prog-lbl{font-size:9px;color:rgba(255,255,255,0.3);text-transform:uppercase;letter-spacing:1px;margin-bottom:7px;}
@@ -42,12 +41,10 @@ body{font-family:var(--font);color:var(--text);background:#f4f5f8;display:flex;m
 .nck{margin-left:auto;color:var(--verde);font-size:12px;display:none;}
 .ni.done .nck{display:block;}
 
-/* MAIN */
 #main{margin-left:var(--sw);flex:1;display:flex;flex-direction:column;min-height:100vh;}
 .mod{display:none;flex-direction:column;min-height:100vh;}
 .mod.on{display:flex;}
 
-/* HERO */
 .hero{background:var(--azul);padding:40px 48px 32px;position:relative;overflow:hidden;}
 .hero::after{content:'';position:absolute;right:-50px;top:-50px;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(102,0,255,0.15) 0%,transparent 70%);pointer-events:none;}
 .h-big{position:absolute;right:44px;bottom:-10px;font-size:130px;font-weight:800;color:rgba(255,255,255,0.03);line-height:1;pointer-events:none;}
@@ -58,7 +55,6 @@ body{font-family:var(--font);color:var(--text);background:#f4f5f8;display:flex;m
 .h-meta{display:flex;gap:18px;margin-top:18px;}
 .h-pill{display:flex;align-items:center;gap:5px;font-size:11px;color:rgba(255,255,255,0.32);}
 
-/* CONTENT */
 .ct{padding:40px 48px;flex:1;max-width:900px;}
 .sl{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:2.5px;color:var(--roxo);margin-bottom:12px;display:flex;align-items:center;gap:8px;}
 .sl::after{content:'';flex:1;height:1px;background:var(--border);}
@@ -67,11 +63,9 @@ h3{font-size:14px;font-weight:600;color:var(--azul);margin-bottom:7px;}
 p{color:var(--text2);margin-bottom:13px;font-size:13px;}
 .sp{height:32px;}.sps{height:18px;}
 
-/* CONCEPT */
 .concept{background:var(--roxo-xl);border:1px solid rgba(102,0,255,0.13);border-left:4px solid var(--roxo);border-radius:8px;padding:16px 20px;margin-bottom:20px;}
 .concept p{margin:0;color:var(--azul);font-size:13px;line-height:1.7;}
 
-/* ALERTS */
 .al{border-radius:8px;padding:13px 17px;margin-bottom:17px;display:flex;gap:11px;align-items:flex-start;}
 .al-ic{font-size:16px;flex-shrink:0;margin-top:1px;}
 .al-b{flex:1;}
@@ -86,7 +80,6 @@ p{color:var(--text2);margin-bottom:13px;font-size:13px;}
 .al-i{background:var(--roxo-xl);border:1px solid rgba(102,0,255,0.13);}
 .al-i .al-t,.al-i .al-tx{color:var(--azul);}
 
-/* GRIDS */
 .g2{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-bottom:20px;}
 .g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:13px;margin-bottom:20px;}
 .card{background:#fff;border:1px solid var(--border);border-radius:10px;padding:16px;transition:all .2s;}
@@ -95,7 +88,6 @@ p{color:var(--text2);margin-bottom:13px;font-size:13px;}
 .c-t{font-size:13px;font-weight:700;color:var(--azul);margin-bottom:4px;}
 .c-tx{font-size:12px;color:var(--text2);line-height:1.5;margin:0;}
 
-/* CLASSIFY */
 .clg{display:grid;grid-template-columns:repeat(3,1fr);gap:11px;margin-bottom:20px;}
 .clc{background:#fff;border:1px solid var(--border);border-radius:10px;overflow:hidden;}
 .clh{padding:11px 13px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;}
@@ -110,7 +102,6 @@ p{color:var(--text2);margin-bottom:13px;font-size:13px;}
 .bm{background:var(--amber-l);color:#7a5200;}
 .bh{background:var(--red-l);color:#822a2a;}
 
-/* STEPS */
 .steps{display:flex;flex-direction:column;margin-bottom:20px;}
 .step{display:flex;gap:16px;padding-bottom:22px;position:relative;}
 .step::before{content:'';position:absolute;left:15px;top:32px;width:2px;height:calc(100% - 32px);background:var(--border);}
@@ -120,7 +111,6 @@ p{color:var(--text2);margin-bottom:13px;font-size:13px;}
 .s-t{font-size:13px;font-weight:700;color:var(--azul);margin-bottom:3px;}
 .s-d{font-size:12px;color:var(--text2);line-height:1.6;margin:0;}
 
-/* QUESTION CARDS */
 .qg{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:20px;}
 .qg1{grid-template-columns:1fr;}
 .qc{background:#fff;border:1px solid var(--border);border-radius:9px;padding:13px 15px;cursor:pointer;transition:all .2s;}
@@ -133,21 +123,17 @@ p{color:var(--text2);margin-bottom:13px;font-size:13px;}
 .qc.rv .qt{color:var(--azul);}
 .cp-hint{font-size:10px;color:var(--text2);text-align:center;margin-bottom:12px;}
 
-/* CASE */
 .case{background:#fff;border:1px solid var(--border);border-radius:11px;overflow:hidden;margin-bottom:20px;}
 .case-hd{background:var(--azul);padding:13px 20px;display:flex;align-items:center;gap:9px;}
 .ctag{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;padding:3px 9px;border-radius:4px;}
 .ctag-r{background:var(--red);color:#fff;}
-.ctag-g{background:var(--verde);color:var(--azul);}
 .case-ht{color:#fff;font-size:12px;font-weight:600;}
 .case-bd{padding:16px 20px;}
 .cs{margin-bottom:13px;}
 .cs-l{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text2);margin-bottom:4px;}
 .cs-tx{font-size:12px;color:var(--text2);line-height:1.6;margin:0;}
 .hl{background:var(--red-l);border-left:3px solid var(--red);padding:9px 13px;border-radius:0 6px 6px 0;font-size:12px;color:#822a2a;}
-.hl-ok{background:var(--verde-l);border-left:3px solid var(--verde);padding:9px 13px;border-radius:0 6px 6px 0;font-size:12px;color:#1a5c40;}
 
-/* CHECKLIST */
 .cklist{list-style:none;display:flex;flex-direction:column;gap:6px;margin-bottom:20px;}
 .cklist li{display:flex;align-items:flex-start;gap:9px;padding:10px 13px;background:#fff;border:1px solid var(--border);border-radius:7px;font-size:12px;color:var(--text2);cursor:pointer;transition:all .2s;}
 .cklist li:hover{border-color:var(--roxo);}
@@ -156,7 +142,6 @@ p{color:var(--text2);margin-bottom:13px;font-size:13px;}
 .cklist li.ck .cb{background:var(--verde);border-color:var(--verde);color:#fff;}
 .cklist li.ck .cb::after{content:'✓';}
 
-/* QUIZ */
 .quiz{background:#fff;border:1px solid var(--border);border-radius:11px;padding:20px;margin-bottom:13px;}
 .qq{font-size:14px;font-weight:700;color:var(--azul);margin-bottom:13px;}
 .qopts{display:flex;flex-direction:column;gap:6px;}
@@ -172,7 +157,6 @@ p{color:var(--text2);margin-bottom:13px;font-size:13px;}
 .qfb.ok-f{background:var(--verde-l);color:#1a5c40;border:1px solid rgba(85,204,153,0.28);}
 .qfb.no-f{background:var(--red-l);color:#822a2a;border:1px solid rgba(229,62,62,0.18);}
 
-/* TABLE */
 .tbl{width:100%;border-collapse:collapse;background:#fff;border-radius:9px;overflow:hidden;border:1px solid var(--border);margin-bottom:20px;font-size:12px;}
 .tbl th{background:var(--azul);color:#fff;padding:10px 13px;text-align:left;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:1px;}
 .tbl td{padding:10px 13px;border-bottom:1px solid var(--border);color:var(--text2);vertical-align:top;}
@@ -180,34 +164,46 @@ p{color:var(--text2);margin-bottom:13px;font-size:13px;}
 .tbl tr:nth-child(even) td{background:#fafafa;}
 .tbl td:first-child{font-weight:600;color:var(--azul);}
 
-/* BPMN */
-.bpg{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-bottom:20px;}
-.bpi{background:#fff;border:1px solid var(--border);border-radius:7px;padding:12px;text-align:center;}
-.bps{font-size:24px;margin-bottom:4px;}
-.bpn{font-size:11px;font-weight:700;color:var(--azul);margin-bottom:3px;}
-.bpd{font-size:10px;color:var(--text2);line-height:1.35;}
-.bptg{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:20px;}
-.bpt{border-radius:7px;padding:12px;display:flex;align-items:center;gap:11px;border:2px solid;}
-.bpt-ic{font-size:18px;flex-shrink:0;}
-.bpt-n{font-size:11px;font-weight:700;margin-bottom:2px;}
-.bpt-d{font-size:10px;color:var(--text2);line-height:1.35;}
-.bt-h{border-color:#888;background:#f9f9f9;}.bt-h .bpt-n{color:#333;}
-.bt-a{border-color:#222;background:#f0f0f0;}.bt-a .bpt-n{color:#111;}
-.bt-i{border-color:var(--red);background:var(--red-l);}.bt-i .bpt-n{color:var(--red);}
-.bt-ia{border-color:var(--roxo);background:var(--roxo-xl);}.bt-ia .bpt-n{color:var(--roxo);}
-
-/* ANSWER */
-.aa{width:100%;min-height:72px;border:1px solid var(--border);border-radius:7px;padding:10px 12px;font-family:var(--font);font-size:12px;color:var(--text);resize:vertical;transition:border .2s;background:#fff;margin-top:6px;}
+/* ACTION BOX */
+.abox{background:#fff;border:1px solid var(--border);border-radius:10px;padding:20px;margin-bottom:20px;}
+.abox-title{font-size:13px;font-weight:700;color:var(--azul);margin-bottom:4px;display:flex;align-items:center;gap:8px;}
+.abox-title .abadge{font-size:9px;background:var(--roxo);color:#fff;padding:2px 8px;border-radius:10px;font-weight:600;text-transform:uppercase;letter-spacing:1px;}
+.abox-desc{font-size:11px;color:var(--text2);margin-bottom:14px;}
+.afield{margin-bottom:14px;}
+.afield:last-child{margin-bottom:0;}
+.afield label{font-size:11px;font-weight:600;color:var(--azul);display:block;margin-bottom:5px;}
+.afield label span{font-weight:400;color:var(--text2);}
+.aa{width:100%;min-height:72px;border:1.5px solid var(--border);border-radius:7px;padding:10px 12px;font-family:var(--font);font-size:12px;color:var(--text);resize:vertical;transition:border .2s;background:#fff;}
 .aa:focus{outline:none;border-color:var(--roxo);box-shadow:0 0 0 3px rgba(102,0,255,0.07);}
+.aa-sm{min-height:44px;}
 .sv-ok{font-size:10px;color:var(--verde-d);margin-top:3px;display:none;}
 .sv-ok.on{display:block;}
-.pbox{background:#fff;border:1px solid var(--border);border-radius:9px;padding:16px;margin-bottom:20px;}
-.pbox h3{margin-bottom:13px;font-size:13px;}
-.pf{margin-bottom:13px;}
-.pf:last-child{margin-bottom:0;}
-.pf label{font-size:11px;font-weight:600;color:var(--azul);}
 
-/* FOOTER */
+/* RACI TABLE */
+.raci-table{width:100%;border-collapse:collapse;background:#fff;border-radius:9px;overflow:hidden;border:1px solid var(--border);margin-bottom:8px;font-size:12px;}
+.raci-table th{background:var(--roxo);color:#fff;padding:9px 12px;text-align:left;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;}
+.raci-table td{padding:9px 12px;border-bottom:1px solid var(--border);vertical-align:top;}
+.raci-table tr:last-child td{border-bottom:none;}
+.raci-table td:first-child{font-weight:600;color:var(--azul);font-size:11px;white-space:nowrap;}
+.raci-table td input[type=text]{width:100%;border:1px solid var(--border);border-radius:5px;padding:5px 8px;font-family:var(--font);font-size:12px;color:var(--text);}
+.raci-table td input[type=text]:focus{outline:none;border-color:var(--roxo);}
+
+/* LINK/FILE FIELD */
+.attach-row{display:flex;gap:10px;margin-bottom:10px;}
+.attach-row .aa{min-height:40px;}
+.file-lbl{display:inline-flex;align-items:center;gap:6px;padding:9px 16px;background:var(--roxo-xl);border:1.5px dashed rgba(102,0,255,0.3);border-radius:7px;cursor:pointer;font-size:12px;font-weight:600;color:var(--roxo);transition:all .2s;white-space:nowrap;}
+.file-lbl:hover{background:var(--roxo-l);}
+.file-input{display:none;}
+.file-name{font-size:11px;color:var(--text2);margin-top:4px;}
+
+/* DOC BUTTON */
+.doc-btn{display:inline-flex;align-items:center;gap:8px;padding:11px 22px;background:var(--verde);color:var(--azul);border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;transition:all .2s;font-family:var(--font);}
+.doc-btn:hover{background:var(--verde-d);transform:translateY(-1px);box-shadow:0 4px 12px rgba(85,204,153,0.3);}
+.doc-btn:disabled{opacity:.4;cursor:not-allowed;transform:none;}
+.doc-section{background:var(--verde-l);border:1px solid rgba(85,204,153,0.3);border-radius:10px;padding:18px 20px;margin-top:28px;}
+.doc-section-title{font-size:12px;font-weight:700;color:#1a5c40;margin-bottom:4px;}
+.doc-section-desc{font-size:11px;color:#2d7a55;margin-bottom:14px;}
+
 .mf{padding:24px 48px;background:#fff;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;gap:14px;}
 .btn{display:inline-flex;align-items:center;gap:6px;padding:10px 20px;border-radius:7px;font-size:12px;font-weight:700;cursor:pointer;border:none;transition:all .2s;font-family:var(--font);}
 .btn-p{background:var(--roxo);color:#fff;}
@@ -219,7 +215,6 @@ p{color:var(--text2);margin-bottom:13px;font-size:13px;}
 .btn:disabled{opacity:.3;cursor:not-allowed;transform:none!important;}
 .mf-info{font-size:11px;color:var(--text2);text-align:center;}
 
-/* FINAL */
 .fin{display:none;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;padding:60px;text-align:center;background:var(--azul);}
 .fin.on{display:flex;}
 .fin-ic{font-size:56px;margin-bottom:18px;}
@@ -234,7 +229,7 @@ p{color:var(--text2);margin-bottom:13px;font-size:13px;}
 #toast.on{transform:translateY(0);opacity:1;}
 ::-webkit-scrollbar{width:5px;}
 ::-webkit-scrollbar-thumb{background:rgba(0,0,0,0.11);border-radius:3px;}
-@media(max-width:768px){:root{--sw:0px;}#sb{transform:translateX(-290px);}#main{margin-left:0;}.hero,.ct,.mf{padding-left:20px;padding-right:20px;}.qg,.g2,.g3,.clg,.bpg,.bptg{grid-template-columns:1fr;}.h-big{display:none;}}
+@media(max-width:768px){:root{--sw:0px;}#sb{transform:translateX(-290px);}#main{margin-left:0;}.hero,.ct,.mf{padding-left:20px;padding-right:20px;}.qg,.g2,.g3,.clg{grid-template-columns:1fr;}.h-big{display:none;}}
 </style>
 </head>
 <body>
@@ -293,7 +288,7 @@ p{color:var(--text2);margin-bottom:13px;font-size:13px;}
   <div class="sl">Erros que geram retrabalho</div>
   <h2>Os 5 erros mais comuns — conheça antes de começar</h2>
   <div class="case"><div class="case-hd"><span class="ctag ctag-r">Erro 01</span><span class="case-ht">Mapear com quem não executa o processo</span></div><div class="case-bd"><div class="cs"><div class="cs-l">O que acontece</div><p class="cs-tx">O cliente descreve o processo como acha que deveria ser. Exceções e detalhes operacionais ficam de fora. A solução é desenvolvida para um processo ideal que não existe.</p></div><div class="hl">Pergunta que evita: <strong>"Você mesmo executa esse processo no dia a dia? Conhece todos os detalhes?"</strong></div></div></div>
-  <div class="case"><div class="case-hd"><span class="ctag ctag-r">Erro 02</span><span class="case-ht">Não entender como os dados chegam (formato de entrada)</span></div><div class="case-bd"><div class="cs"><div class="cs-l">O que acontece</div><p class="cs-tx">O consultor assume que os dados chegam um a um. Na prática, o cliente opera em lote — planilhas, listas, arquivos. A solução é desenvolvida para unitário quando deveria ser em massa.</p></div><div class="hl">Pergunta que evita: <strong>"Como esse dado chega até você hoje? Me mostra o arquivo ou o sistema."</strong></div></div></div>
+  <div class="case"><div class="case-hd"><span class="ctag ctag-r">Erro 02</span><span class="case-ht">Não entender como os dados chegam</span></div><div class="case-bd"><div class="cs"><div class="cs-l">O que acontece</div><p class="cs-tx">O consultor assume que os dados chegam um a um. Na prática, o cliente opera em lote. A solução é desenvolvida para unitário quando deveria ser em massa.</p></div><div class="hl">Pergunta que evita: <strong>"Como esse dado chega até você hoje? Me mostra o arquivo ou o sistema."</strong></div></div></div>
   <div class="case"><div class="case-hd"><span class="ctag ctag-r">Erro 03</span><span class="case-ht">Deixar "depende" sem resolver</span></div><div class="case-bd"><div class="cs"><div class="cs-l">O que acontece</div><p class="cs-tx">O cliente diz "depende da situação". No desenvolvimento, não há como saber qual caminho implementar. Resultado: chute ou retrabalho.</p></div><div class="hl">Pergunta que evita: <strong>"Me dá um exemplo de quando é X e quando é Y. Qual é a regra?"</strong></div></div></div>
   <div class="case"><div class="case-hd"><span class="ctag ctag-r">Erro 04</span><span class="case-ht">Não mapear integrações antes de desenvolver</span></div><div class="case-bd"><div class="cs"><div class="cs-l">O que acontece</div><p class="cs-tx">O cliente menciona no final que precisa sincronizar com outro sistema. A integração não foi especificada. Quem desenvolve descobre no meio da construção.</p></div><div class="hl">Pergunta que evita: <strong>"Existe algum sistema externo que precisa receber ou enviar dados nesse processo?"</strong></div></div></div>
   <div class="case"><div class="case-hd"><span class="ctag ctag-r">Erro 05</span><span class="case-ht">Desenvolver sem aprovação formal do To-Be</span></div><div class="case-bd"><div class="cs"><div class="cs-l">O que acontece</div><p class="cs-tx">O desenvolvimento começa com um "ok verbal". O dono do processo vê a solução pela primeira vez e pede mudanças estruturais.</p></div><div class="hl">O que evita: <strong>Aprovação formal documentada de todos os stakeholders antes de qualquer desenvolvimento.</strong></div></div></div>
@@ -311,20 +306,12 @@ p{color:var(--text2);margin-bottom:13px;font-size:13px;}
 <div class="ct">
   <div class="sl">Antes da reunião</div>
   <h2>Classificar o projeto antes de chegar no cliente</h2>
-  <p>Classifique o cliente em 3 dimensões antes do kick off. Isso define a abordagem, linguagem e número de reuniões necessárias.</p>
   <div class="clg">
     <div class="clc"><div class="clh r">Complexidade do processo</div><div class="clb"><div class="clr"><span class="bdg bl">Simples</span>1–3 fases, 1–2 atores, sem integrações, 1 pipe</div><div class="clr"><span class="bdg bm">Médio</span>4–7 fases, 3–5 atores, 1–2 integrações, condicionais simples</div><div class="clr"><span class="bdg bh">Complexo</span>8+ fases, 6+ atores, múltiplas integrações, condicionais aninhadas</div></div></div>
     <div class="clc"><div class="clh g">Maturidade do processo</div><div class="clb"><div class="clr"><span class="bdg bl">Padronizado</span>Documentado, executado com consistência, métricas existentes</div><div class="clr"><span class="bdg bm">Documentado</span>Existe e é executado, mas documentação parcial ou desatualizada</div><div class="clr"><span class="bdg bh">Informal</span>Só na cabeça das pessoas. Precisaremos definir o processo juntos</div></div></div>
     <div class="clc"><div class="clh a">Conhecimento do Pipefy</div><div class="clb"><div class="clr"><span class="bdg bl">Avançado</span>Já usou Pipefy. Confirme pedindo para descrever como usava</div><div class="clr"><span class="bdg bm">Básico</span>Conhece superficialmente. Reforçar conceitos-chave no kick off</div><div class="clr"><span class="bdg bh">Iniciante</span>Nunca usou. Enviar material introdutório antes do kick off</div></div></div>
   </div>
-  <div class="al al-i"><div class="al-ic">📹</div><div class="al-b"><div class="al-t">Quando o cliente é iniciante no Pipefy</div><div class="al-tx">Envie material antes do kick off cobrindo: Kanban e fases, automações, condicionais, integrações, e-mail automático (régua de comunicação), formulário compartilhado, interfaces, portal, tarefas e solicitações, e possibilidades com agentes de IA. No kick off, abra espaço para dúvidas antes de entrar no processo.</div></div></div>
-  <div class="sps"></div>
-  <div class="sl">Avaliando o conhecimento do Pipefy</div>
-  <div class="cp-hint">💡 Clique para revelar · Duplo clique para copiar</div>
-  <div class="qg qg1">
-    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">Pipefy 01</div><div class="qt">"Você já usou o Pipefy antes — nessa empresa ou em outras?"</div><div class="qw">🎯 Abre o diagnóstico. Se sim, peça para descrever como usava. A resposta revela se o conhecimento é real ou superficial.</div></div>
-    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">Pipefy 02</div><div class="qt">"Me conta um exemplo do que você configurava ou acompanhava no Pipefy."</div><div class="qw">🎯 Valida o nível declarado. Quem conhece de verdade descreve automações, condicionais ou integrações. Quem conhece superficialmente fala só em "cards" e "colunas".</div></div>
-  </div>
+  <div class="al al-i"><div class="al-ic">📹</div><div class="al-b"><div class="al-t">Quando o cliente é iniciante no Pipefy</div><div class="al-tx">Envie material antes do kick off cobrindo: Kanban e fases, automações, condicionais, integrações, e-mail automático, formulário compartilhado, interfaces, portal, tarefas e solicitações, e possibilidades com agentes de IA.</div></div></div>
   <div class="sps"></div>
   <div class="sl">Documentos a solicitar antes do kick off</div>
   <ul class="cklist" id="docs-cl">
@@ -332,37 +319,55 @@ p{color:var(--text2);margin-bottom:13px;font-size:13px;}
     <li onclick="ck(this)"><div class="cb"></div>Planilhas de controle usadas hoje</li>
     <li onclick="ck(this)"><div class="cb"></div>Formulários físicos ou digitais do processo</li>
     <li onclick="ck(this)"><div class="cb"></div>Políticas, regras ou manuais operacionais</li>
-    <li onclick="ck(this)"><div class="cb"></div>Modelos de e-mail ou comunicados padrão utilizados</li>
-    <li onclick="ck(this)"><div class="cb"></div>Relatórios ou dashboards de acompanhamento do processo</li>
+    <li onclick="ck(this)"><div class="cb"></div>Modelos de e-mail ou comunicados padrão</li>
+    <li onclick="ck(this)"><div class="cb"></div>Relatórios ou dashboards de acompanhamento</li>
     <li onclick="ck(this)"><div class="cb"></div>Prints ou acesso aos sistemas que interagem com o processo</li>
     <li onclick="ck(this)"><div class="cb"></div>Lista de todas as pessoas envolvidas (nome, cargo, área)</li>
   </ul>
   <div class="sps"></div>
-  <div class="sl">Conduzindo o Kick Off — pauta padrão</div>
+  <div class="sl">Conduzindo o Kick Off</div>
   <div class="steps">
-    <div class="step"><div class="s-num">1</div><div class="s-b"><div class="s-t">Apresentação da Profixlab e metodologia</div><div class="s-d">Como as reuniões vão funcionar, qual a sequência (Kick Off → As-Is → To-Be → Validação → Desenvolvimento) e o que é esperado do cliente em cada etapa.</div></div></div>
-    <div class="step"><div class="s-num">2</div><div class="s-b"><div class="s-t">Objetivo, maturidade e stakeholders do processo</div><div class="s-d">Para que existe esse processo? Quem é o dono? Todos os envolvidos estão presentes? O processo já está estruturado ou vamos defini-lo juntos nas reuniões?</div></div></div>
-    <div class="step"><div class="s-num">3</div><div class="s-b"><div class="s-t">Classificação interna da complexidade</div><div class="s-d">Com base nas respostas, classificar o projeto internamente para definir quantas reuniões serão necessárias e qual o nível de detalhe esperado.</div></div></div>
-    <div class="step"><div class="s-num">4</div><div class="s-b"><div class="s-t">Coleta e confirmação de documentos</div><div class="s-d">Confirmar o recebimento dos documentos solicitados. O que ainda não foi enviado — definir prazo. Analisar antes da próxima reunião.</div></div></div>
-    <div class="step"><div class="s-num">5</div><div class="s-b"><div class="s-t">Comunicar restrições estruturais pós-desenvolvimento</div><div class="s-d">Deixar claro que após o To-Be validado, alterações estruturais geram retrabalho e impactam prazo e custo. O cliente precisa confirmar explicitamente.</div></div></div>
-    <div class="step"><div class="s-num">6</div><div class="s-b"><div class="s-t">Agenda e constância das reuniões</div><div class="s-d">Reforçar a importância da constância e da presença das pessoas certas. Definir frequência, formato e próximos passos antes de encerrar o kick off.</div></div></div>
+    <div class="step"><div class="s-num">1</div><div class="s-b"><div class="s-t">Apresentação da Profixlab e metodologia</div><div class="s-d">Como as reuniões vão funcionar, qual a sequência e o que é esperado do cliente em cada etapa.</div></div></div>
+    <div class="step"><div class="s-num">2</div><div class="s-b"><div class="s-t">Objetivo, maturidade e stakeholders</div><div class="s-d">Para que existe esse processo? Quem é o dono? Todos os envolvidos estão presentes? O processo já está estruturado?</div></div></div>
+    <div class="step"><div class="s-num">3</div><div class="s-b"><div class="s-t">Classificação interna da complexidade</div><div class="s-d">Com base nas respostas, classificar o projeto para definir quantas reuniões serão necessárias.</div></div></div>
+    <div class="step"><div class="s-num">4</div><div class="s-b"><div class="s-t">Coleta e confirmação de documentos</div><div class="s-d">Confirmar o recebimento dos documentos. O que falta — definir prazo. Analisar antes da próxima reunião.</div></div></div>
+    <div class="step"><div class="s-num">5</div><div class="s-b"><div class="s-t">Comunicar restrições estruturais pós-desenvolvimento</div><div class="s-d">Após o To-Be validado, alterações estruturais geram retrabalho. O cliente precisa confirmar explicitamente.</div></div></div>
+    <div class="step"><div class="s-num">6</div><div class="s-b"><div class="s-t">Agenda e constância das reuniões</div><div class="s-d">Reforçar a importância da constância e presença das pessoas certas. Definir frequência e próximos passos.</div></div></div>
   </div>
-  <div class="al al-d"><div class="al-ic">🔴</div><div class="al-b"><div class="al-t">O que NÃO pode mudar após o To-Be validado — comunique no Kick Off</div><div class="al-tx">Inclusão ou exclusão de fases · integração com outros sistemas · mudança de rota de fluxos · alçadas de aprovação · campos do formulário inicial.<br><br><strong>Permitido após validação:</strong> texto de e-mail, ajuste de SLA, renomear campos. Documente tudo.</div></div></div>
+  <div class="al al-d"><div class="al-ic">🔴</div><div class="al-b"><div class="al-t">O que NÃO pode mudar após o To-Be validado</div><div class="al-tx">Inclusão ou exclusão de fases · integração com outros sistemas · mudança de rota de fluxos · alçadas de aprovação · campos do formulário inicial.</div></div></div>
   <div class="sps"></div>
-  <div class="sl">Perguntas de maturidade e stakeholders</div>
+  <div class="sl">Perguntas do Kick Off</div>
   <div class="cp-hint">💡 Clique para revelar · Duplo clique para copiar</div>
   <div class="qg">
     <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">Kick Off 01</div><div class="qt">"Para que existe esse processo? Qual o objetivo? O que é sucesso para vocês?"</div><div class="qw">🎯 Define o norte do projeto. Os outputs esperados e a definição de sucesso guiam todas as decisões do To-Be.</div></div>
     <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">Kick Off 02</div><div class="qt">"Quem é o dono do processo — quem executa e é responsável no dia a dia?"</div><div class="qw">🎯 O dono do processo é quem executa, não quem gerencia. Define quem precisa estar nas reuniões de mapeamento.</div></div>
-    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">Kick Off 03</div><div class="qt">"Todos os envolvidos no processo estão aqui? Quem está faltando?"</div><div class="qw">🎯 Garantir que todos os stakeholders validem o processo antes do desenvolvimento. Faltando alguém = risco de alteração estrutural depois.</div></div>
+    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">Kick Off 03</div><div class="qt">"Todos os envolvidos no processo estão aqui? Quem está faltando?"</div><div class="qw">🎯 Garantir que todos os stakeholders validem o processo antes do desenvolvimento.</div></div>
     <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">Kick Off 04</div><div class="qt">"Vocês já rodam esse processo hoje? Como? Tem algo documentado?"</div><div class="qw">🎯 Define a maturidade. Se não existe nada estruturado, o mapeamento vai precisar definir o processo junto com o cliente.</div></div>
+    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">Pipefy 01</div><div class="qt">"Você já usou o Pipefy antes — nessa empresa ou em outras?"</div><div class="qw">🎯 Abre o diagnóstico de conhecimento. Se sim, peça para descrever como usava.</div></div>
+    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">Pipefy 02</div><div class="qt">"Me conta um exemplo do que você configurava ou acompanhava no Pipefy."</div><div class="qw">🎯 Valida o nível declarado. Quem conhece descreve automações e condicionais. Quem não conhece fala só em "cards".</div></div>
   </div>
   <div class="sps"></div>
-  <div class="sl">Praticando</div>
-  <div class="pbox"><h3>Simule o Kick Off de um projeto</h3>
-    <div class="pf"><label>Como você classificaria este projeto? (complexidade, maturidade e conhecimento de Pipefy)</label><textarea class="aa" id="ko1" placeholder="Ex: Complexidade Média — processo documentado parcialmente — cliente básico em Pipefy..." oninput="sv('ko1')"></textarea><div class="sv-ok" id="sv-ko1">✓ Salvo</div></div>
-    <div class="pf"><label>Quem precisa estar na primeira reunião de mapeamento?</label><textarea class="aa" id="ko2" placeholder="Dono do processo, executores, aprovadores..." oninput="sv('ko2')"></textarea><div class="sv-ok" id="sv-ko2">✓ Salvo</div></div>
-    <div class="pf"><label>Quais restrições estruturais você comunicaria ao cliente?</label><textarea class="aa" id="ko3" placeholder="Liste o que não pode mudar após a validação neste contexto específico..." oninput="sv('ko3')"></textarea><div class="sv-ok" id="sv-ko3">✓ Salvo</div></div>
+
+  <!-- AÇÃO KICK OFF -->
+  <div class="sl">Ação — Kick Off</div>
+  <div class="abox">
+    <div class="abox-title"><span class="abadge">Ação</span> Registro do Kick Off</div>
+    <div class="abox-desc">Preencha os dados do projeto e as informações coletadas nesta etapa. Ao final, gere o documento Word desta fase.</div>
+    <div class="afield"><label>Empresa / Cliente <span>*obrigatório para gerar o documento</span></label><textarea class="aa aa-sm" id="ko-empresa" placeholder="Nome da empresa do cliente..." oninput="sv('ko-empresa')"></textarea><div class="sv-ok" id="sv-ko-empresa">✓ Salvo</div></div>
+    <div class="afield"><label>Nome do Processo <span>*obrigatório para gerar o documento</span></label><textarea class="aa aa-sm" id="ko-processo" placeholder="Ex: Processo de Aprovação de Compras, Onboarding de Clientes..." oninput="sv('ko-processo')"></textarea><div class="sv-ok" id="sv-ko-processo">✓ Salvo</div></div>
+    <div class="afield"><label>Consultor Responsável</label><textarea class="aa aa-sm" id="ko-consultor" placeholder="Seu nome..." oninput="sv('ko-consultor')"></textarea><div class="sv-ok" id="sv-ko-consultor">✓ Salvo</div></div>
+    <div class="afield"><label>Objetivo do processo e definição de sucesso</label><textarea class="aa" id="ko-objetivo" placeholder="Para que existe esse processo? O que é sucesso para o cliente?..." oninput="sv('ko-objetivo')"></textarea><div class="sv-ok" id="sv-ko-objetivo">✓ Salvo</div></div>
+    <div class="afield"><label>Dono do processo e stakeholders identificados</label><textarea class="aa" id="ko-stake" placeholder="Dono: ... | Executores: ... | Aprovadores: ... | Quem faltou na reunião: ..." oninput="sv('ko-stake')"></textarea><div class="sv-ok" id="sv-ko-stake">✓ Salvo</div></div>
+    <div class="afield"><label>Classificação do projeto</label><textarea class="aa" id="ko-class" placeholder="Complexidade: Simples/Médio/Complexo | Maturidade: Informal/Documentado/Padronizado | Pipefy: Iniciante/Básico/Avançado..." oninput="sv('ko-class')"></textarea><div class="sv-ok" id="sv-ko-class">✓ Salvo</div></div>
+    <div class="afield"><label>Documentos recebidos / pendentes</label><textarea class="aa" id="ko-docs" placeholder="Recebidos: ... | Pendentes: ... | Prazo para envio: ..." oninput="sv('ko-docs')"></textarea><div class="sv-ok" id="sv-ko-docs">✓ Salvo</div></div>
+    <div class="afield"><label>Restrições estruturais comunicadas ao cliente</label><textarea class="aa" id="ko-restrict" placeholder="Liste o que foi explicado e confirmado pelo cliente..." oninput="sv('ko-restrict')"></textarea><div class="sv-ok" id="sv-ko-restrict">✓ Salvo</div></div>
+    <div class="afield"><label>Próximos passos e agenda definida</label><textarea class="aa" id="ko-next" placeholder="Data da próxima reunião, quem deve participar, o que preparar..." oninput="sv('ko-next')"></textarea><div class="sv-ok" id="sv-ko-next">✓ Salvo</div></div>
+    <div class="afield"><label>Observações gerais</label><textarea class="aa" id="ko-obs" placeholder="Qualquer informação relevante coletada no kick off..." oninput="sv('ko-obs')"></textarea><div class="sv-ok" id="sv-ko-obs">✓ Salvo</div></div>
+  </div>
+  <div class="doc-section">
+    <div class="doc-section-title">📄 Documento do Kick Off</div>
+    <div class="doc-section-desc">Gera um arquivo Word com todas as informações desta etapa, identificado com Empresa e Processo.</div>
+    <button class="doc-btn" onclick="gerarDoc('kickoff')">⬇ Gerar Doc — Kick Off</button>
   </div>
 </div>
 <div class="mf"><button class="btn btn-s" onclick="go(0)">← Anterior</button><div class="mf-info">Módulo 2 de 6</div><button class="btn btn-p" onclick="nx(1)">Próximo módulo →</button></div>
@@ -370,58 +375,75 @@ p{color:var(--text2);margin-bottom:13px;font-size:13px;}
 
 <!-- M3 AS-IS -->
 <div class="mod" id="m2">
-<div class="hero"><div class="h-big">03</div><div class="h-tag">🔍 Módulo 3</div><div class="h-title">As-Is — <span>O processo real</span></div><div class="h-sub">Como capturar o processo como realmente acontece, fazer o SIPOC e detalhar cada fase.</div><div class="h-meta"><div class="h-pill">⏱ 25 min</div><div class="h-pill">🎯 Prático</div></div></div>
+<div class="hero"><div class="h-big">03</div><div class="h-tag">🔍 Módulo 3</div><div class="h-title">As-Is — <span>O processo real</span></div><div class="h-sub">Capture o processo como realmente acontece, faça o SIPOC e detalhe cada fase.</div><div class="h-meta"><div class="h-pill">⏱ 25 min</div><div class="h-pill">🎯 Prático</div></div></div>
 <div class="ct">
   <div class="sl">Gravação de tela</div>
   <h2>Ver é melhor que ouvir</h2>
-  <p>Peça para o cliente mostrar o processo passo a passo enquanto você grava. Isso captura sistemas, formatos e etapas informais que nunca seriam verbalizadas.</p>
   <div class="al al-i"><div class="al-ic">🎥</div><div class="al-b"><div class="al-t">Como pedir</div><div class="al-tx">"Sem problema — me mostra passo a passo que eu vou gravar. Pode abrir o sistema que você usa hoje." Quando não for possível ao vivo, peça prints ou uma demo antes da próxima reunião.</div></div></div>
   <div class="sps"></div>
-  <div class="sl">SIPOC — as 3 perguntas que abrem o mapeamento</div>
+  <div class="sl">Perguntas do As-Is</div>
   <div class="cp-hint">💡 Clique para revelar · Duplo clique para copiar</div>
   <div class="qg qg1">
-    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">SIPOC 01 — Processo</div><div class="qt">"Me mostra como você faz esse processo?"</div><div class="qw">🎯 Tira o cliente da teoria. Quando alguém mostra em vez de explicar, revelam-se detalhes que nunca seriam verbalizados. Grave neste momento.</div></div>
-    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">SIPOC 02 — Entradas</div><div class="qt">"Quais os insumos que você recebe nessa etapa? Quem envia? Como envia? Onde você coloca e como coloca?"</div><div class="qw">🎯 Mapeia Fornecedores e Entradas. "Como coloca" revela o sistema atual de registro — planilha, e-mail, pasta, sistema — que será substituído pela solução.</div></div>
+    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">SIPOC 01 — Processo</div><div class="qt">"Me mostra como você faz esse processo?"</div><div class="qw">🎯 Tira o cliente da teoria. Grave neste momento.</div></div>
+    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">SIPOC 02 — Entradas</div><div class="qt">"Quais os insumos que você recebe nessa etapa? Quem envia? Como envia? Onde você coloca e como coloca?"</div><div class="qw">🎯 Mapeia Fornecedores e Entradas. "Como coloca" revela o sistema atual de registro.</div></div>
     <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">SIPOC 03 — Saídas</div><div class="qt">"O que sai dessa etapa e para quem vai?"</div><div class="qw">🎯 Mapeia Saídas e Clientes. Revela comunicações que precisarão existir na solução.</div></div>
+    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">Abertura 01</div><div class="qt">"Como chegam as solicitações para esse processo? Quem faz essas solicitações?"</div><div class="qw">🎯 Define se a abertura é manual ou via integração.</div></div>
+    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">Abertura 02</div><div class="qt">"O que você precisa receber de informação para iniciar? Quais documentos ou dados são obrigatórios?"</div><div class="qw">🎯 Define os campos do formulário inicial.</div></div>
   </div>
   <div class="sps"></div>
-  <div class="sl">Abertura do processo</div>
+  <div class="sl">Perguntas por fase</div>
   <div class="qg">
-    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">Abertura 01</div><div class="qt">"Como chegam as solicitações para esse processo? Quem faz essas solicitações?"</div><div class="qw">🎯 Define se a abertura é manual (formulário, e-mail) ou via integração. Impacta diretamente a estrutura da solução e os campos do formulário inicial.</div></div>
-    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">Abertura 02</div><div class="qt">"O que você precisa receber de informação para iniciar? Quais documentos ou dados são obrigatórios?"</div><div class="qw">🎯 Define os campos e condicionais do formulário inicial — o ponto de entrada da solução.</div></div>
-  </div>
-  <div class="sps"></div>
-  <div class="sl">Detalhamento por fase — use estas perguntas para cada fase</div>
-  <div class="cp-hint">💡 Clique para revelar · Duplo clique para copiar</div>
-  <div class="qg">
-    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">Fase 01 — RACI</div><div class="qt">"Quem é o responsável por essa fase? Quem precisa ser informado ou consultado?"</div><div class="qw">🎯 Define Responsável (R), Consultado (C) e Informado (I). Cada pessoa informada = uma notificação ou e-mail automático.</div></div>
-    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">Fase 02 — Aprovação</div><div class="qt">"Essa fase requer aprovação? Quem aprova? O aprovador acessa o sistema ou precisa de formulário externo?"</div><div class="qw">🎯 Define se é fase de aprovação e como o aprovador interage. Aprovador externo = formulário de fase compartilhado.</div></div>
-    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">Fase 03 — SLA</div><div class="qt">"Tem prazo para essa fase? O que acontece quando vence — alerta, escalada ou move automaticamente? O processo tem data de vencimento total?"</div><div class="qw">🎯 Define SLA da fase, ação ao vencer e se o card precisa de campo de data de vencimento geral.</div></div>
-    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">Fase 04 — Campos</div><div class="qt">"Quais informações você registra ou precisa nessa fase? Quais são obrigatórias para avançar? Tem algum cálculo nesses campos?"</div><div class="qw">🎯 Mapeia campos, obrigatoriedade e campos calculados (fórmulas). "Obrigatórias para avançar" define as regras de bloqueio.</div></div>
-    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">Fase 05 — Condicionais</div><div class="qt">"Tem alguma regra do tipo: se eu preencher X, aparece Y ou o processo vai para Z? Quais são as ações e reações dessa fase?"</div><div class="qw">🎯 Mapeia condicionais de campo (SE→ENTÃO) e condicionais de fluxo (bifurcações). São as regras mais críticas e que mais geram retrabalho.</div></div>
-    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">Fase 06 — Pendência e fluxo</div><div class="qt">"Essa fase pode ficar aguardando algo externo? Tem fluxo de pendência? O processo pode voltar para uma fase anterior?"</div><div class="qw">🎯 Identifica fluxos de pendência e os "vai e volta" do processo — fases de revisão, rejeição e reenvio que precisam estar no BPMN.</div></div>
-    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">Fase 07 — Documentos e IA</div><div class="qt">"Essa fase gera ou valida algum documento? É feito por pessoa ou poderia ser por IA?"</div><div class="qw">🎯 Mapeia emissão e validação de documentos. Define se é tarefa humana ou caso de uso para agente de IA.</div></div>
-    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">Fase 08 — Comunicações</div><div class="qt">"Quem precisa ser notificado quando essa fase começa, termina ou trava? Qual é a régua de comunicação?"</div><div class="qw">🎯 Define templates de e-mail, gatilhos e destinatários. "Régua" inclui 1ª, 2ª e 3ª comunicações com tons diferentes.</div></div>
-    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">Fase 09 — Etiquetas</div><div class="qt">"Precisa de algum marcador visual nessa fase? O que indica que um card é urgente, pendente ou especial? Quando a etiqueta é colocada e quando é retirada?"</div><div class="qw">🎯 Define etiquetas (labels): quando entram, quando saem e o que sinalizam — urgência, tipo, status especial.</div></div>
-    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">Fase 10 — Formulário de fase</div><div class="qt">"Existe algum formulário que precisa ser preenchido por alguém de fora nessa fase? Precisa de página no Interfaces ou acesso via Portal?"</div><div class="qw">🎯 Identifica formulários de fase compartilhados, páginas de Interfaces e uso de Portal para não-usuários do sistema.</div></div>
-    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">Fase 11 — Atividades paralelas</div><div class="qt">"Essa fase gera alguma atividade em outra área que ocorre ao mesmo tempo? Tem tarefas e solicitações dentro do card?"</div><div class="qw">🎯 Identifica atividades paralelas que viram cards filhos, pipes vinculados ou tarefas e solicitações dentro do card.</div></div>
-    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">Fase 12 — Integração por fase</div><div class="qt">"Essa fase precisa enviar ou receber dados de algum sistema externo? O que trafega e em qual direção?"</div><div class="qw">🎯 Mapeia integrações por fase — qual sistema, qual dado e em qual direção. Essencial para dimensionar a complexidade técnica.</div></div>
-    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">Fase 13 — Renovação automática</div><div class="qt">"Esse processo tem vencimento? Ele precisa se repetir automaticamente após um período? A atividade tem vencimento único ou precisa retornar?"</div><div class="qw">🎯 Define fluxos de renovação automática — o card se recria ou retorna ao início após um ciclo, como contratos, licenças ou revisões periódicas.</div></div>
+    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">Fase 01 — RACI</div><div class="qt">"Quem é o responsável por essa fase? Quem precisa ser informado ou consultado?"</div><div class="qw">🎯 Define R, C e I da fase. Cada pessoa informada = notificação ou e-mail automático.</div></div>
+    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">Fase 02 — Aprovação</div><div class="qt">"Essa fase requer aprovação? Quem aprova? O aprovador acessa o sistema ou precisa de formulário externo?"</div><div class="qw">🎯 Define se é fase de aprovação e como o aprovador interage.</div></div>
+    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">Fase 03 — SLA</div><div class="qt">"Tem prazo para essa fase? O que acontece quando vence? O processo tem data de vencimento total?"</div><div class="qw">🎯 Define SLA da fase, ação ao vencer e campo de data de vencimento geral.</div></div>
+    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">Fase 04 — Campos</div><div class="qt">"Quais informações você registra ou precisa nessa fase? Quais são obrigatórias para avançar? Tem algum cálculo?"</div><div class="qw">🎯 Mapeia campos, obrigatoriedade e campos calculados.</div></div>
+    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">Fase 05 — Condicionais</div><div class="qt">"Tem alguma regra do tipo: se eu preencher X, aparece Y ou o processo vai para Z? Quais as ações e reações?"</div><div class="qw">🎯 Mapeia condicionais de campo e de fluxo. As regras mais críticas.</div></div>
+    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">Fase 06 — Pendência</div><div class="qt">"Essa fase pode ficar aguardando algo externo? Tem fluxo de pendência? O processo pode voltar para uma fase anterior?"</div><div class="qw">🎯 Identifica fluxos de pendência e os "vai e volta" do processo.</div></div>
+    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">Fase 07 — Documentos e IA</div><div class="qt">"Essa fase gera ou valida algum documento? É feito por pessoa ou poderia ser por IA?"</div><div class="qw">🎯 Mapeia emissão e validação de documentos. Define se é tarefa humana ou IA.</div></div>
+    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">Fase 08 — Comunicações</div><div class="qt">"Quem precisa ser notificado quando essa fase começa, termina ou trava? Qual é a régua de comunicação?"</div><div class="qw">🎯 Define templates de e-mail, gatilhos e destinatários.</div></div>
+    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">Fase 09 — Etiquetas</div><div class="qt">"Precisa de algum marcador visual nessa fase? O que indica que um card é urgente, pendente ou especial? Quando a etiqueta entra e sai?"</div><div class="qw">🎯 Define etiquetas: quando entram, quando saem e o que sinalizam.</div></div>
+    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">Fase 10 — Formulário / Interfaces / Portal</div><div class="qt">"Existe formulário para alguém de fora preencher nessa fase? Precisa de página no Interfaces ou acesso via Portal?"</div><div class="qw">🎯 Identifica formulários de fase, páginas de Interfaces e uso de Portal.</div></div>
+    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">Fase 11 — Atividades paralelas</div><div class="qt">"Essa fase gera alguma atividade em outra área ao mesmo tempo? Tem tarefas e solicitações dentro do card?"</div><div class="qw">🎯 Identifica atividades paralelas, cards filhos ou tarefas dentro do card.</div></div>
+    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">Fase 12 — Integração</div><div class="qt">"Essa fase precisa enviar ou receber dados de algum sistema externo? O que trafega e em qual direção?"</div><div class="qw">🎯 Mapeia integrações por fase.</div></div>
+    <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">Fase 13 — Renovação</div><div class="qt">"Esse processo tem vencimento? Ele precisa se repetir automaticamente após um período?"</div><div class="qw">🎯 Define fluxos de renovação automática — o processo se recria após um ciclo.</div></div>
   </div>
   <div class="sps"></div>
   <div class="sl">Quando a reunião trava</div>
   <div class="steps">
-    <div class="step"><div class="s-num">1</div><div class="s-b"><div class="s-t">Verificar se o cliente conhece os detalhes</div><div class="s-d">"Você mesmo executa esse processo no dia a dia e conhece todos os detalhes operacionais?" Se não, não force — extraia o máximo disponível.</div></div></div>
+    <div class="step"><div class="s-num">1</div><div class="s-b"><div class="s-t">Verificar se o cliente conhece os detalhes</div><div class="s-d">"Você mesmo executa esse processo no dia a dia e conhece todos os detalhes operacionais?"</div></div></div>
     <div class="step"><div class="s-num">2</div><div class="s-b"><div class="s-t">Extrair o máximo antes de redirecionar</div><div class="s-d">Visão geral, objetivo, sistemas usados, stakeholders. Cada informação aproveitada reduz o número de reuniões.</div></div></div>
-    <div class="step"><div class="s-num">3</div><div class="s-b"><div class="s-t">Incluir quem executa na próxima reunião</div><div class="s-d">"Para os detalhes operacionais, quem você indicaria para entrar numa próxima reunião de 30 minutos?" Não continue o mapeamento detalhado sem quem executa.</div></div></div>
-    <div class="step"><div class="s-num">4</div><div class="s-b"><div class="s-t">Se trava na explicação — pedir para mostrar</div><div class="s-d">"Sem problema, me mostra passo a passo que eu vou gravar." Ver o processo acontecendo ao vivo vale mais que qualquer explicação verbal.</div></div></div>
+    <div class="step"><div class="s-num">3</div><div class="s-b"><div class="s-t">Incluir quem executa na próxima reunião</div><div class="s-d">"Para os detalhes operacionais, quem você indicaria para entrar numa próxima reunião de 30 minutos?"</div></div></div>
+    <div class="step"><div class="s-num">4</div><div class="s-b"><div class="s-t">Se trava na explicação — pedir para mostrar</div><div class="s-d">"Sem problema, me mostra passo a passo que eu vou gravar."</div></div></div>
   </div>
   <div class="sps"></div>
-  <div class="sl">Praticando</div>
-  <div class="pbox"><h3>Simule o As-Is de um processo que você conhece</h3>
-    <div class="pf"><label>Qual processo você vai simular?</label><textarea class="aa" id="a1" placeholder="Ex: aprovação de férias, onboarding de clientes..." oninput="sv('a1')"></textarea><div class="sv-ok" id="sv-a1">✓ Salvo</div></div>
-    <div class="pf"><label>SIPOC — Como chegam as solicitações? Quem envia? O que envia? Onde vai?</label><textarea class="aa" id="a2" placeholder="Fornecedores → Entradas → Processo → Saídas → Clientes..." oninput="sv('a2')"></textarea><div class="sv-ok" id="sv-a2">✓ Salvo</div></div>
-    <div class="pf"><label>Detalhe uma fase: RACI, SLA, campos e condicionais</label><textarea class="aa" id="a3" placeholder="Fase: ... | Responsável: ... | SLA: ... | Campos: ... | Condicionais: ..." oninput="sv('a3')"></textarea><div class="sv-ok" id="sv-a3">✓ Salvo</div></div>
+
+  <!-- AÇÃO AS-IS -->
+  <div class="sl">Ação — As-Is</div>
+  <div class="abox">
+    <div class="abox-title"><span class="abadge">Ação</span> Registro do As-Is</div>
+    <div class="abox-desc">Documente o processo atual coletado nesta etapa.</div>
+    <div class="afield"><label>SIPOC — Fornecedores, Entradas, Processo, Saídas, Clientes</label><textarea class="aa" id="asis-sipoc" placeholder="Fornecedores: ... | Entradas: ... | Processo (macro): ... | Saídas: ... | Clientes: ..." oninput="sv('asis-sipoc')"></textarea><div class="sv-ok" id="sv-asis-sipoc">✓ Salvo</div></div>
+    <div class="afield"><label>Como chegam as solicitações (abertura do processo)</label><textarea class="aa" id="asis-abertura" placeholder="Manual / Integração / Formulário externo — descreva o fluxo de entrada..." oninput="sv('asis-abertura')"></textarea><div class="sv-ok" id="sv-asis-abertura">✓ Salvo</div></div>
+
+    <div class="afield"><label>RACI das fases — exemplo de preenchimento</label>
+    <table class="raci-table" id="raci-table">
+      <thead><tr><th>Fase</th><th>Responsável (R)</th><th>Consultado (C)</th><th>Informado (I)</th><th>Aprovador</th></tr></thead>
+      <tbody id="raci-body">
+        <tr><td><input type="text" placeholder="Fase 1"></td><td><input type="text" placeholder="Quem executa"></td><td><input type="text" placeholder="Quem consultar"></td><td><input type="text" placeholder="Quem informar"></td><td><input type="text" placeholder="Quem aprova"></td></tr>
+        <tr><td><input type="text" placeholder="Fase 2"></td><td><input type="text" placeholder="Quem executa"></td><td><input type="text" placeholder="Quem consultar"></td><td><input type="text" placeholder="Quem informar"></td><td><input type="text" placeholder="Quem aprova"></td></tr>
+        <tr><td><input type="text" placeholder="Fase 3"></td><td><input type="text" placeholder="Quem executa"></td><td><input type="text" placeholder="Quem consultar"></td><td><input type="text" placeholder="Quem informar"></td><td><input type="text" placeholder="Quem aprova"></td></tr>
+      </tbody>
+    </table>
+    <button onclick="addRaciRow()" style="font-size:11px;background:var(--roxo-xl);color:var(--roxo);border:1px solid rgba(102,0,255,0.2);padding:5px 12px;border-radius:5px;cursor:pointer;font-family:var(--font);font-weight:600;margin-bottom:14px;">+ Adicionar fase</button></div>
+
+    <div class="afield"><label>Detalhamento das fases (campos, SLA, condicionais, comunicações)</label><textarea class="aa" style="min-height:120px;" id="asis-fases" placeholder="Fase 1: | SLA: | Campos: | Condicionais: | E-mails: | Etiquetas:&#10;Fase 2: | SLA: | Campos: ..." oninput="sv('asis-fases')"></textarea><div class="sv-ok" id="sv-asis-fases">✓ Salvo</div></div>
+    <div class="afield"><label>Sistemas e integrações identificados</label><textarea class="aa" id="asis-int" placeholder="Sistema: ... | Direção: Pipefy → Sistema / Sistema → Pipefy | O que trafega: ..." oninput="sv('asis-int')"></textarea><div class="sv-ok" id="sv-asis-int">✓ Salvo</div></div>
+    <div class="afield"><label>Observações gerais do As-Is</label><textarea class="aa" id="asis-obs" placeholder="Informações relevantes, pontos de atenção, pendências identificadas..." oninput="sv('asis-obs')"></textarea><div class="sv-ok" id="sv-asis-obs">✓ Salvo</div></div>
+  </div>
+  <div class="doc-section">
+    <div class="doc-section-title">📄 Documento do As-Is</div>
+    <div class="doc-section-desc">Gera um arquivo Word com o mapeamento do processo atual desta etapa.</div>
+    <button class="doc-btn" onclick="gerarDoc('asis')">⬇ Gerar Doc — As-Is</button>
   </div>
 </div>
 <div class="mf"><button class="btn btn-s" onclick="go(1)">← Anterior</button><div class="mf-info">Módulo 3 de 6</div><button class="btn btn-p" onclick="nx(2)">Próximo módulo →</button></div>
@@ -435,7 +457,7 @@ p{color:var(--text2);margin-bottom:13px;font-size:13px;}
   <h2>O cliente disse como deveria ser. Não como é.</h2>
   <div class="case"><div class="case-hd"><span class="ctag ctag-r">Case Real — Profixlab</span><span class="case-ht">Retrabalho no processo de Parecer</span></div><div class="case-bd"><div class="cs"><div class="cs-l">O que o cliente disse</div><p class="cs-tx">"Na fase de Parecer, o analista verifica a data de contrato do fornecedor e registra o parecer."</p></div><div class="cs"><div class="cs-l">O que o cliente não disse</div><p class="cs-tx">O analista recebia uma planilha com dezenas de registros e o parecer era emitido para todos de uma só vez — não um a um.</p></div><div class="cs"><div class="cs-l">O que foi desenvolvido</div><p class="cs-tx">Um card por registro, analista parecendo um por um. Retrabalho crítico.</p></div><div class="hl">A pergunta que faltou: <strong>"Como esse dado chega até você hoje? Me mostra o arquivo ou o sistema."</strong></div></div></div>
   <div class="sps"></div>
-  <div class="sl">Perguntas de investigação de gap — use ao menos 3 por fase</div>
+  <div class="sl">Perguntas de gap — use ao menos 3 por fase</div>
   <div class="cp-hint">💡 Clique para revelar · Duplo clique para copiar</div>
   <div class="qg">
     <div class="qc" onclick="rv(this)" ondblclick="cp(this)"><div class="qn">Gap 01</div><div class="qt">"Como esse dado chega até você hoje? Me mostra o arquivo ou o sistema."</div><div class="qw">🎯 Revela o formato real da entrada. Evita mapear unitário quando o processo é em lote.</div></div>
@@ -462,11 +484,23 @@ p{color:var(--text2);margin-bottom:13px;font-size:13px;}
     <li onclick="ck(this)"><div class="cb"></div>O dono do processo vai aprovar formalmente antes do desenvolvimento?</li>
   </ul>
   <div class="sps"></div>
-  <div class="sl">Praticando</div>
-  <div class="pbox"><h3>Aplique as perguntas de gap no processo que você simulou</h3>
-    <div class="pf"><label>Quais gargalos ou pontos de dor você identificaria?</label><textarea class="aa" id="g1" placeholder="Onde o processo trava, o que dói, o que poderia ser melhor..." oninput="sv('g1')"></textarea><div class="sv-ok" id="sv-g1">✓ Salvo</div></div>
-    <div class="pf"><label>Quais exceções ou fluxos alternativos existem?</label><textarea class="aa" id="g2" placeholder="Situações fora do fluxo principal, o que pode dar errado..." oninput="sv('g2')"></textarea><div class="sv-ok" id="sv-g2">✓ Salvo</div></div>
-    <div class="pf"><label>Há sistemas externos que precisam trocar dados com esse processo?</label><textarea class="aa" id="g3" placeholder="ERP, CRM, plataformas de assinatura, planilhas, APIs..." oninput="sv('g3')"></textarea><div class="sv-ok" id="sv-g3">✓ Salvo</div></div>
+
+  <!-- AÇÃO GAPS -->
+  <div class="sl">Ação — Gaps</div>
+  <div class="abox">
+    <div class="abox-title"><span class="abadge">Ação</span> Registro dos Gaps</div>
+    <div class="abox-desc">Documente os gaps, exceções e pontos de dor identificados nesta etapa.</div>
+    <div class="afield"><label>Gargalos e pontos de dor identificados</label><textarea class="aa" id="gap-dor" placeholder="Onde o processo trava, o que dói, o que poderia ser melhor..." oninput="sv('gap-dor')"></textarea><div class="sv-ok" id="sv-gap-dor">✓ Salvo</div></div>
+    <div class="afield"><label>Exceções e fluxos alternativos</label><textarea class="aa" id="gap-exc" placeholder="Situações fora do fluxo principal, o que pode dar errado, casos especiais..." oninput="sv('gap-exc')"></textarea><div class="sv-ok" id="sv-gap-exc">✓ Salvo</div></div>
+    <div class="afield"><label>Regras não escritas identificadas</label><textarea class="aa" id="gap-regras" placeholder="Conhecimento tácito levantado — o que todo mundo sabe mas não está documentado..." oninput="sv('gap-regras')"></textarea><div class="sv-ok" id="sv-gap-regras">✓ Salvo</div></div>
+    <div class="afield"><label>Integrações com sistemas externos</label><textarea class="aa" id="gap-int" placeholder="Sistema: ... | Direção: ... | O que trafega: ... | Tecnologia: ..." oninput="sv('gap-int')"></textarea><div class="sv-ok" id="sv-gap-int">✓ Salvo</div></div>
+    <div class="afield"><label>Decisões em aberto (com responsável e prazo)</label><textarea class="aa" id="gap-dec" placeholder="Decisão: ... | Responsável: ... | Prazo: ... | Impacto se não resolvida: ..." oninput="sv('gap-dec')"></textarea><div class="sv-ok" id="sv-gap-dec">✓ Salvo</div></div>
+    <div class="afield"><label>Observações gerais dos Gaps</label><textarea class="aa" id="gap-obs" placeholder="Outros pontos relevantes identificados nesta etapa..." oninput="sv('gap-obs')"></textarea><div class="sv-ok" id="sv-gap-obs">✓ Salvo</div></div>
+  </div>
+  <div class="doc-section">
+    <div class="doc-section-title">📄 Documento dos Gaps</div>
+    <div class="doc-section-desc">Gera um arquivo Word com os gaps e pontos de atenção identificados.</div>
+    <button class="doc-btn" onclick="gerarDoc('gaps')">⬇ Gerar Doc — Gaps</button>
   </div>
 </div>
 <div class="mf"><button class="btn btn-s" onclick="go(2)">← Anterior</button><div class="mf-info">Módulo 4 de 6</div><button class="btn btn-p" onclick="nx(3)">Próximo módulo →</button></div>
@@ -474,38 +508,58 @@ p{color:var(--text2);margin-bottom:13px;font-size:13px;}
 
 <!-- M5 TO-BE -->
 <div class="mod" id="m4">
-<div class="hero"><div class="h-big">05</div><div class="h-tag">✏️ Módulo 5</div><div class="h-title">To-Be com <span>BPMN</span></div><div class="h-sub">Como transformar o As-Is em um desenho To-Be preciso, validado e pronto para desenvolver.</div><div class="h-meta"><div class="h-pill">⏱ 20 min</div><div class="h-pill">🎯 Prático</div></div></div>
+<div class="hero"><div class="h-big">05</div><div class="h-tag">✏️ Módulo 5</div><div class="h-title">To-Be com <span>BPMN</span></div><div class="h-sub">Transforme o As-Is em um desenho To-Be preciso, validado e pronto para desenvolver.</div><div class="h-meta"><div class="h-pill">⏱ 20 min</div><div class="h-pill">🎯 Prático</div></div></div>
 <div class="ct">
   <div class="sl">Quando desenhar o To-Be</div>
   <h2>Só depois de validar o As-Is</h2>
   <div class="concept"><p><strong>Regra de bolso:</strong> você está pronto para o To-Be quando consegue descrever o processo atual de ponta a ponta sem consultar notas — e o cliente concorda. Se o cliente corrigir, você ainda não terminou o As-Is.</p></div>
   <div class="sps"></div>
-  <div class="sl">Elementos base do BPMN</div>
-  <div class="bpg">
-    <div class="bpi"><div class="bps">⬭</div><div class="bpn">Evento de Início</div><div class="bpd">Círculo fino. Onde o processo começa. Um por fluxo principal.</div></div>
-    <div class="bpi"><div class="bps">⬭</div><div class="bpn">Evento de Fim</div><div class="bpd">Círculo espesso. Múltiplos possíveis: sucesso, cancelamento, reprovação.</div></div>
-    <div class="bpi"><div class="bps">▭</div><div class="bpn">Tarefa</div><div class="bpd">Retângulo arredondado. Cada fase ou atividade.</div></div>
-    <div class="bpi"><div class="bps">◇</div><div class="bpn">Gateway Exclusivo</div><div class="bpd">Losango com X. Bifurcação — só um caminho.</div></div>
-    <div class="bpi"><div class="bps">◇</div><div class="bpn">Gateway Paralelo</div><div class="bpd">Losango com +. Dois caminhos simultâneos.</div></div>
-    <div class="bpi"><div class="bps">═══</div><div class="bpn">Raia (Lane)</div><div class="bpd">Divisão por responsável. Cada raia = executor, área ou sistema.</div></div>
-  </div>
-  <div class="sps"></div>
-  <div class="sl">Tipos de tarefa — padrão Profixlab (referência Bizagi)</div>
-  <div class="bptg">
-    <div class="bpt bt-h"><div class="bpt-ic">▭</div><div class="s-b"><div class="bpt-n">Tarefa Manual / Humana</div><div class="bpt-d">Cinza, sem ícone especial. Executada por uma pessoa. Ex: "Analista revisa documentos".</div></div></div>
-    <div class="bpt bt-a"><div class="bpt-ic">⚙️</div><div class="s-b"><div class="bpt-n">Tarefa de Automação</div><div class="bpt-d">Borda preta, ícone ⚙️. Regra automática. Ex: "Enviar e-mail quando card avança".</div></div></div>
-    <div class="bpt bt-i"><div class="bpt-ic">🔴⚙️</div><div class="s-b"><div class="bpt-n">Tarefa de Integração</div><div class="bpt-d">Borda vermelha, ícone ⚙️. Conecta sistema externo. Ex: "Criar pedido no ERP".</div></div></div>
-    <div class="bpt bt-ia"><div class="bpt-ic">🟣⚙️</div><div class="s-b"><div class="bpt-n">Tarefa de IA</div><div class="bpt-d">Borda roxa, ícone ⚙️. Processada por IA. Ex: "Extrair dados do contrato".</div></div></div>
-  </div>
-  <div class="sps"></div>
   <div class="sl">Loop de validação</div>
   <div class="steps">
     <div class="step"><div class="s-num">1</div><div class="s-b"><div class="s-t">Construir o fluxograma na ferramenta Profixlab</div><div class="s-d">Monte o BPMN com todos os "vai e volta" do processo — fases de revisão, rejeição e reenvio precisam estar mapeados.</div></div></div>
-    <div class="step"><div class="s-num">2</div><div class="s-b"><div class="s-t">Apresentar em voz alta ao cliente</div><div class="s-d">"Desenhei com base no que entendi. Me acompanha — começa aqui, quando o valor é alto bifurca aqui, termina aqui. Está correto?" Não deixe o cliente só olhar.</div></div></div>
+    <div class="step"><div class="s-num">2</div><div class="s-b"><div class="s-t">Apresentar em voz alta ao cliente</div><div class="s-d">"Desenhei com base no que entendi. Me acompanha — começa aqui, bifurca aqui, termina aqui. Está correto?" Não deixe o cliente só olhar.</div></div></div>
     <div class="step"><div class="s-num">3</div><div class="s-b"><div class="s-t">Incorporar correções antes de validar</div><div class="s-d">Enquanto o To-Be não foi aprovado formalmente, incorpore todas as correções. Redesenhe até o cliente dizer: "É exatamente isso."</div></div></div>
-    <div class="step"><div class="s-num">4</div><div class="s-b"><div class="s-t">Validação formal com todos os stakeholders</div><div class="s-d">Aprovação documentada — e-mail ou confirmação registrada — de TODOS os stakeholders. A partir daqui, alterações estruturais são proibidas.</div></div></div>
+    <div class="step"><div class="s-num">4</div><div class="s-b"><div class="s-t">Validação formal com todos os stakeholders</div><div class="s-d">Aprovação documentada de TODOS os stakeholders. A partir daqui, alterações estruturais são proibidas.</div></div></div>
   </div>
   <div class="al al-w"><div class="al-ic">⚠️</div><div class="al-b"><div class="al-t">Mudanças estruturais vs. funcionais</div><div class="al-tx"><strong>Proibido após validação:</strong> novas fases · novas integrações · novas alçadas de aprovação · mudança de rota de fluxo · campos do formulário inicial.<br><br><strong>Permitido:</strong> texto de e-mail, reordenação de campos dentro de uma fase, SLA, nomenclatura.</div></div></div>
+  <div class="sps"></div>
+
+  <!-- AÇÃO TO-BE -->
+  <div class="sl">Ação — To-Be</div>
+  <div class="abox">
+    <div class="abox-title"><span class="abadge">Ação</span> Registro do To-Be</div>
+    <div class="abox-desc">Anexe o BPMN, adicione o link se estiver em ferramenta externa e registre as observações desta etapa.</div>
+
+    <div class="afield"><label>BPMN — Anexar arquivo <span>(PNG, PDF, XML ou imagem do fluxograma)</span></label>
+      <label class="file-lbl" for="tobe-file">📎 Clique para anexar o BPMN</label>
+      <input type="file" id="tobe-file" class="file-input" accept=".png,.jpg,.jpeg,.pdf,.xml,.bpmn" onchange="handleFile(this,'tobe-file-name')">
+      <div class="file-name" id="tobe-file-name">Nenhum arquivo selecionado</div>
+    </div>
+
+    <div class="afield"><label>Link do BPMN <span>(caso esteja em ferramenta como Miro, Lucidchart, ferramenta Profixlab, etc.)</span></label>
+      <textarea class="aa aa-sm" id="tobe-link" placeholder="https://..." oninput="sv('tobe-link')"></textarea>
+      <div class="sv-ok" id="sv-tobe-link">✓ Salvo</div>
+    </div>
+
+    <div class="afield"><label>Fases do To-Be (em ordem)</label><textarea class="aa" id="tobe-fases" placeholder="Fase 1: ... | Fase 2: ... | Fase 3: ..." oninput="sv('tobe-fases')"></textarea><div class="sv-ok" id="sv-tobe-fases">✓ Salvo</div></div>
+
+    <div class="afield"><label>Checklist de validação — marque o que foi confirmado</label></div>
+    <ul class="cklist" id="tobe-cl" style="margin-bottom:14px;">
+      <li onclick="ck(this)"><div class="cb"></div>Fluxograma apresentado ao cliente em voz alta</li>
+      <li onclick="ck(this)"><div class="cb"></div>Todos os "vai e volta" do processo estão mapeados</li>
+      <li onclick="ck(this)"><div class="cb"></div>Todos os gateways (bifurcações) têm regra definida</li>
+      <li onclick="ck(this)"><div class="cb"></div>Fases de conclusão definidas (sucesso, cancelamento, reprovação)</li>
+      <li onclick="ck(this)"><div class="cb"></div>Aprovação formal documentada de todos os stakeholders</li>
+      <li onclick="ck(this)"><div class="cb"></div>Cliente informado sobre restrições estruturais pós-desenvolvimento</li>
+    </ul>
+
+    <div class="afield"><label>Observações e mudanças registradas durante a validação</label><textarea class="aa" id="tobe-obs" placeholder="Correções feitas, ajustes solicitados pelo cliente, pontos que geraram discussão, decisões tomadas..." oninput="sv('tobe-obs')"></textarea><div class="sv-ok" id="sv-tobe-obs">✓ Salvo</div></div>
+  </div>
+  <div class="doc-section">
+    <div class="doc-section-title">📄 Documento do To-Be</div>
+    <div class="doc-section-desc">Gera um arquivo Word com o registro da validação do To-Be, link do BPMN e observações.</div>
+    <button class="doc-btn" onclick="gerarDoc('tobe')">⬇ Gerar Doc — To-Be</button>
+  </div>
 </div>
 <div class="mf"><button class="btn btn-s" onclick="go(3)">← Anterior</button><div class="mf-info">Módulo 5 de 6</div><button class="btn btn-p" onclick="nx(4)">Próximo módulo →</button></div>
 </div>
@@ -528,16 +582,6 @@ p{color:var(--text2);margin-bottom:13px;font-size:13px;}
     <tr><td>Documentação de transferência</td><td>O que foi desenvolvido, como usar, o que ficou fora do escopo</td><td>Registro formal da entrega — evita "não foi isso que pedi"</td></tr>
   </tbody></table>
   <div class="sps"></div>
-  <div class="sl">5 atributos obrigatórios por campo</div>
-  <ul class="cklist" id="campos-cl">
-    <li onclick="ck(this)"><div class="cb"></div><strong>Nome exato</strong> — como aparece para o usuário na solução</li>
-    <li onclick="ck(this)"><div class="cb"></div><strong>Tipo do campo</strong> — texto, número, moeda, data, dropdown, arquivo, fórmula, conectado a pipe/DB</li>
-    <li onclick="ck(this)"><div class="cb"></div><strong>Obrigatório?</strong> — Sim / Não / Condicional (obrigatório apenas quando X = Y)</li>
-    <li onclick="ck(this)"><div class="cb"></div><strong>Quem edita</strong> — solicitante, executor da fase, sistema, qualquer membro</li>
-    <li onclick="ck(this)"><div class="cb"></div><strong>Condicional SE→ENTÃO</strong> — se campo X = valor A, então mostrar / ocultar / obrigar campo Y</li>
-  </ul>
-  <div class="al al-ok"><div class="al-ic">✅</div><div class="al-b"><div class="al-t">Organize por fase, não por tipo</div><div class="al-tx">Documente todos os campos da Fase 1, depois Fase 2, e assim por diante. O desenvolvimento acontece fase a fase — organizar dessa forma elimina dúvidas de "qual campo vai em qual fase".</div></div></div>
-  <div class="sps"></div>
   <div class="sl">Checklist de documentação — para desenvolver</div>
   <ul class="cklist" id="doc-cl">
     <li onclick="ck(this)"><div class="cb"></div>SIPOC documentado e validado pelo cliente</li>
@@ -556,11 +600,22 @@ p{color:var(--text2);margin-bottom:13px;font-size:13px;}
     <li onclick="ck(this)"><div class="cb"></div>Cliente informado sobre restrições estruturais pós-desenvolvimento</li>
   </ul>
   <div class="sps"></div>
-  <div class="sl">Praticando</div>
-  <div class="pbox"><h3>Documente o processo que você simulou ao longo do treinamento</h3>
-    <div class="pf"><label>Liste as fases do To-Be em ordem</label><textarea class="aa" id="d1" placeholder="Fase 1: ... | Fase 2: ... | Fase 3: ..." oninput="sv('d1')"></textarea><div class="sv-ok" id="sv-d1">✓ Salvo</div></div>
-    <div class="pf"><label>Para a primeira fase: campos necessários (nome, tipo, obrigatório)</label><textarea class="aa" id="d2" placeholder="Campo 1: Nome (Texto) — Obrigatório&#10;Campo 2: Valor (Moeda) — Obrigatório&#10;..." oninput="sv('d2')"></textarea><div class="sv-ok" id="sv-d2">✓ Salvo</div></div>
-    <div class="pf"><label>Automações desse processo (Gatilho → Condição → Ação)</label><textarea class="aa" id="d3" placeholder="Quando card entra na Fase X → Enviar e-mail para responsável&#10;Quando campo Y = Z → Mover card para fase W..." oninput="sv('d3')"></textarea><div class="sv-ok" id="sv-d3">✓ Salvo</div></div>
+
+  <!-- AÇÃO DOCUMENTAÇÃO -->
+  <div class="sl">Ação — Documentação</div>
+  <div class="abox">
+    <div class="abox-title"><span class="abadge">Ação</span> Registro da Documentação Final</div>
+    <div class="abox-desc">Documente os entregáveis finais para o desenvolvimento.</div>
+    <div class="afield"><label>Fases e campos documentados (resumo)</label><textarea class="aa" style="min-height:100px;" id="doc-fases" placeholder="Fase 1: campos A, B, C | SLA: X dias | Condicionais: ...&#10;Fase 2: campos D, E | SLA: Y dias | ..." oninput="sv('doc-fases')"></textarea><div class="sv-ok" id="sv-doc-fases">✓ Salvo</div></div>
+    <div class="afield"><label>Automações mapeadas (Gatilho → Condição → Ação)</label><textarea class="aa" id="doc-auto" placeholder="1. Quando card entra na Fase X → Enviar e-mail para responsável&#10;2. Quando campo Y = Z → Mover card para fase W..." oninput="sv('doc-auto')"></textarea><div class="sv-ok" id="sv-doc-auto">✓ Salvo</div></div>
+    <div class="afield"><label>Integrações documentadas</label><textarea class="aa" id="doc-int" placeholder="Sistema: ... | Direção: ... | Campos: ... | Tecnologia: ..." oninput="sv('doc-int')"></textarea><div class="sv-ok" id="sv-doc-int">✓ Salvo</div></div>
+    <div class="afield"><label>E-mails / comunicações mapeadas</label><textarea class="aa" id="doc-emails" placeholder="E-mail 1: Gatilho: ... | Para: ... | Assunto: ... | Conteúdo: ...&#10;E-mail 2: ..." oninput="sv('doc-emails')"></textarea><div class="sv-ok" id="sv-doc-emails">✓ Salvo</div></div>
+    <div class="afield"><label>Observações finais / o que ficou fora do escopo</label><textarea class="aa" id="doc-obs" placeholder="Funcionalidades fora do escopo, pontos para próximas fases, observações para o desenvolvedor..." oninput="sv('doc-obs')"></textarea><div class="sv-ok" id="sv-doc-obs">✓ Salvo</div></div>
+  </div>
+  <div class="doc-section">
+    <div class="doc-section-title">📄 Documento da Documentação Final</div>
+    <div class="doc-section-desc">Gera um arquivo Word com todos os entregáveis documentados para o desenvolvimento.</div>
+    <button class="doc-btn" onclick="gerarDoc('doc')">⬇ Gerar Doc — Documentação</button>
   </div>
 </div>
 <div class="mf"><button class="btn btn-s" onclick="go(4)">← Anterior</button><div class="mf-info">Módulo 6 de 6</div><button class="btn btn-g" onclick="fin()">✓ Concluir Mapeamento</button></div>
@@ -596,9 +651,125 @@ function cp(el){navigator.clipboard.writeText(el.querySelector('.qt').textConten
 function ck(el){el.classList.toggle('ck');}
 const ans={};
 function sv(id){const el=document.getElementById(id);if(!el)return;ans[id]=el.value;const s=document.getElementById('sv-'+id);if(s){s.classList.add('on');setTimeout(()=>s.classList.remove('on'),1400);}}
+function handleFile(input,nameId){const f=input.files[0];if(f){document.getElementById(nameId).textContent='📎 '+f.name+' ('+Math.round(f.size/1024)+'KB)';}}
+function addRaciRow(){const tb=document.getElementById('raci-body');const tr=document.createElement('tr');tr.innerHTML='<td><input type="text" placeholder="Nova fase"></td><td><input type="text" placeholder="Quem executa"></td><td><input type="text" placeholder="Quem consultar"></td><td><input type="text" placeholder="Quem informar"></td><td><input type="text" placeholder="Quem aprova"></td>';tb.appendChild(tr);}
 function fin(){dn.add(5);document.querySelectorAll('.ni').forEach(n=>n.classList.add('done'));upd();document.querySelectorAll('.mod').forEach(m=>m.classList.remove('on'));document.getElementById('fscore').textContent=sc;document.getElementById('final').classList.add('on');window.scrollTo(0,0);}
 function rst(){dn.clear();sc=0;document.querySelectorAll('.ni').forEach(n=>n.classList.remove('done','active'));document.getElementById('final').classList.remove('on');upd();go(0);}
 function tst(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('on');setTimeout(()=>t.classList.remove('on'),2200);}
+
+// GERAR DOCUMENTO WORD (RTF format — opens in Word)
+function gerarDoc(tipo){
+  const emp=document.getElementById('ko-empresa')?.value||'Empresa não informada';
+  const proc=document.getElementById('ko-processo')?.value||'Processo não informado';
+  const cons=document.getElementById('ko-consultor')?.value||'';
+  const data=new Date().toLocaleDateString('pt-BR');
+
+  let titulo='', conteudo='';
+
+  if(tipo==='kickoff'){
+    titulo='Kick Off';
+    conteudo=buildSection('Dados do Projeto',[
+      ['Empresa / Cliente',emp],['Processo',proc],['Consultor',cons],['Data',data]
+    ])+buildSection('Objetivo e Definição de Sucesso',[['',gv('ko-objetivo')]])+
+    buildSection('Dono do Processo e Stakeholders',[['',gv('ko-stake')]])+
+    buildSection('Classificação do Projeto',[['',gv('ko-class')]])+
+    buildSection('Documentos',[['Recebidos / Pendentes',gv('ko-docs')]])+
+    buildSection('Restrições Estruturais Comunicadas',[['',gv('ko-restrict')]])+
+    buildSection('Próximos Passos e Agenda',[['',gv('ko-next')]])+
+    buildSection('Observações Gerais',[['',gv('ko-obs')]]);
+  } else if(tipo==='asis'){
+    titulo='As-Is — Processo Atual';
+    // RACI
+    let raciText='';
+    document.querySelectorAll('#raci-body tr').forEach(tr=>{
+      const cells=[...tr.querySelectorAll('input')].map(i=>i.value||'—');
+      if(cells.some(c=>c!=='—'))raciText+=cells.join(' | ')+'\n';
+    });
+    conteudo=buildSection('Identificação',[['Empresa',emp],['Processo',proc],['Consultor',cons],['Data',data]])+
+    buildSection('SIPOC',[['',gv('asis-sipoc')]])+
+    buildSection('Abertura do Processo',[['',gv('asis-abertura')]])+
+    buildSection('RACI por Fase',[['',raciText||'Não preenchido']])+
+    buildSection('Detalhamento das Fases',[['',gv('asis-fases')]])+
+    buildSection('Sistemas e Integrações',[['',gv('asis-int')]])+
+    buildSection('Observações',[['',gv('asis-obs')]]);
+  } else if(tipo==='gaps'){
+    titulo='Investigação de Gaps';
+    conteudo=buildSection('Identificação',[['Empresa',emp],['Processo',proc],['Consultor',cons],['Data',data]])+
+    buildSection('Gargalos e Pontos de Dor',[['',gv('gap-dor')]])+
+    buildSection('Exceções e Fluxos Alternativos',[['',gv('gap-exc')]])+
+    buildSection('Regras Não Escritas',[['',gv('gap-regras')]])+
+    buildSection('Integrações com Sistemas Externos',[['',gv('gap-int')]])+
+    buildSection('Decisões em Aberto',[['',gv('gap-dec')]])+
+    buildSection('Observações',[['',gv('gap-obs')]]);
+  } else if(tipo==='tobe'){
+    titulo='To-Be — Processo Futuro';
+    const link=gv('tobe-link');
+    const fname=document.getElementById('tobe-file-name')?.textContent||'Nenhum arquivo';
+    const checks=[...document.querySelectorAll('#tobe-cl li')].map(li=>(li.classList.contains('ck')?'[X] ':'[ ] ')+li.textContent.replace('✓','').trim()).join('\n');
+    conteudo=buildSection('Identificação',[['Empresa',emp],['Processo',proc],['Consultor',cons],['Data',data]])+
+    buildSection('BPMN',[['Arquivo anexado',fname],['Link',link||'Não informado']])+
+    buildSection('Fases do To-Be',[['',gv('tobe-fases')]])+
+    buildSection('Checklist de Validação',[['',checks]])+
+    buildSection('Observações e Mudanças Registradas',[['',gv('tobe-obs')]]);
+  } else if(tipo==='doc'){
+    titulo='Documentação para Desenvolver';
+    conteudo=buildSection('Identificação',[['Empresa',emp],['Processo',proc],['Consultor',cons],['Data',data]])+
+    buildSection('Fases e Campos',[['',gv('doc-fases')]])+
+    buildSection('Automações',[['',gv('doc-auto')]])+
+    buildSection('Integrações',[['',gv('doc-int')]])+
+    buildSection('E-mails e Comunicações',[['',gv('doc-emails')]])+
+    buildSection('Observações Finais / Fora do Escopo',[['',gv('doc-obs')]]);
+  }
+
+  const rtf=gerarRTF(emp, proc, titulo, conteudo, data);
+  downloadFile(`Profixlab_${tipo}_${emp.replace(/\s+/g,'_')}_${proc.replace(/\s+/g,'_')}.doc`, rtf, 'application/msword');
+  tst('✓ Documento gerado com sucesso!');
+}
+
+function gv(id){return document.getElementById(id)?.value?.trim()||'Não preenchido';}
+
+function buildSection(titulo,campos){
+  return {titulo,campos};
+}
+
+function gerarRTF(empresa, processo, modulo, secoes, data){
+  let body=`{\\rtf1\\ansi\\deff0
+{\\fonttbl{\\f0 Arial;}{\\f1 Arial;}}
+{\\colortbl;\\red20\\green27\\blue46;\\red102\\green0\\blue255;\\red85\\green204\\blue153;\\red74\\green85\\blue104;}
+
+\\paperw12240\\paperh15840\\margl1440\\margr1440\\margt1440\\margb1440
+
+{\\f0\\fs28\\b\\cf2 PROFIXLAB}{\\f0\\fs20\\cf4  |  Transformando Processos em Eficiência}\\par
+\\sb120
+{\\f0\\fs32\\b\\cf1 ${esc(modulo)}}\\par
+\\sb60
+{\\f0\\fs20\\cf4 Empresa: }{\\f0\\fs20\\b\\cf1 ${esc(empresa)}}{\\f0\\fs20\\cf4   |   Processo: }{\\f0\\fs20\\b\\cf1 ${esc(processo)}}{\\f0\\fs20\\cf4   |   Data: ${data}}\\par
+\\sb60\\brdrb\\brdrs\\brdrw10\\brsp20\\par\\sb120\n`;
+
+  for(const sec of secoes){
+    body+=`\\sb200{\\f0\\fs22\\b\\cf2 ${esc(sec.titulo)}}\\par\\sb60\n`;
+    for(const [lbl,val] of sec.campos){
+      if(lbl&&lbl!==''){
+        body+=`{\\f0\\fs19\\b\\cf1 ${esc(lbl)}:} `;
+      }
+      const lines=(val||'Não preenchido').split('\n');
+      body+=lines.map((l,i)=>i===0?`{\\f0\\fs19\\cf4 ${esc(l)}}`:(`\\par{\\f0\\fs19\\cf4 ${esc(l)}}`)).join('')+'\\par\\sb40\n';
+    }
+  }
+  body+='}';
+  return body;
+}
+
+function esc(s){return(s||'').replace(/\\/g,'\\\\').replace(/\{/g,'\\{').replace(/\}/g,'\\}');}
+
+function downloadFile(name,content,mime){
+  const blob=new Blob([content],{type:mime});
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);
+  a.download=name;
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
 </script>
 </body>
 </html>
